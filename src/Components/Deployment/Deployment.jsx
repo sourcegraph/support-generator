@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
-
 import './Deployment.css';
 
-export default function Deployment(props) {
-    const [selectedDeployment, setSelectedDeployment] = useState('Select Deployment');
-    const [hasNamespace, setHasNamespace] = useState(false);
-    const [namespace, setNamespace] = useState("");
-    
+export default function Deployment({
+    selectedDeployment, 
+    setSelectedDeployment,
+    hasNamespace,
+    setHasNamespace, 
+    namespace, 
+    setNamespace
+}) {
     return (
         <div className="deployment-container">
             {/* dropdown with options
