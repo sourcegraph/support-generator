@@ -1,7 +1,6 @@
 import {useState} from 'react';
 
 import Dropdown from "../UI/Dropdown"
-// NOTE: make three arrays... which will populate the options for each dropdown based on the deployment.
 import { 
     singleDockerOptions, 
     singleDockerTitles,
@@ -19,13 +18,13 @@ export default function Action({selectedDeployment}) {
     return (
         <div className="actions-container">
             {selectedDeployment === "single-docker" && 
-            <Dropdown
-                onChange={(e) => setSelectedAction(e.target.value)} 
-                setSelectedAction={setSelectedAction}
-                defaultValue={selectedAction}
-                optionValues={singleDockerOptions} 
-                optionTitles={singleDockerTitles} 
-            />
+                <Dropdown
+                    onChange={(e) => setSelectedAction(e.target.value)} 
+                    setSelectedAction={setSelectedAction}
+                    defaultValue={selectedAction}
+                    optionValues={singleDockerOptions} 
+                    optionTitles={singleDockerTitles} 
+                />
             }
 
             {selectedDeployment === "docker-compose" &&
@@ -47,6 +46,7 @@ export default function Action({selectedDeployment}) {
                     optionTitles={kubernetesTitles} 
                 />
             }
+
         </div>
     )
 }
