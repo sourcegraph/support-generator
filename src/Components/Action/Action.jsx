@@ -1,9 +1,10 @@
 import React from 'react';
+import './Action.css';
 
 export default function Action(props) {
     return (
-        <h1>
+        <div className="actions-container">
             Action Component goes here.
-        </h1>
+        </div>
     )
 }
