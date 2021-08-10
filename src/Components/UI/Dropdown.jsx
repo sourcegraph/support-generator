@@ -1,17 +1,17 @@
+
 export default function Dropdown({
-    onChange, 
+    onChange,
     defaultValue, 
-    value, 
     optionValues, 
     optionTitles, 
     selectedDeployment
 }) {
     function generateOptions() {
-        return optionValues.map((i) => {
+        return optionValues.map((value, i) => {
             return (
                 <option 
                     key={`option${i}`}
-                    value={optionValues[i]}
+                    value={value}
                 >
                     {optionTitles[i]}
                 </option>
@@ -23,7 +23,7 @@ export default function Dropdown({
         <div className="deployment-type">
             <select 
                 onChange={onChange} 
-                defaultValue={selectedDeployment}
+                defaultValue={defaultValue}
                 value={selectedDeployment}
             >
                 {optionTitles && generateOptions()}

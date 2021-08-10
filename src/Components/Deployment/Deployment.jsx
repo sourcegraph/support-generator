@@ -59,7 +59,6 @@ export default function Deployment({
                 we show or don't show a text field to type the 
                 name of the namespace
             */}
-            
         </div>
     )
 }
