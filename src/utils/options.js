@@ -65,5 +65,3 @@ export const kubernetesOptions = [
     "run-shell", 
     "check-dirty-database"
 ]
-
-

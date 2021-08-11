@@ -1,4 +1,3 @@
-
 export default function Dropdown({
     onChange,
     defaultValue, 
@@ -10,7 +9,7 @@ export default function Dropdown({
         return optionValues.map((value, i) => {
             return (
                 <option 
-                    key={`option${i}`}
+                    key={`option-${i}`}
                     value={value}
                 >
                     {optionTitles[i]}
