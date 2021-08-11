@@ -6,7 +6,8 @@ import Command from './Components/Command/Command';
 
 function App() {
   // add deployment type state here so it can be passed around to different components.
-  const [selectedDeployment, setSelectedDeployment] = useState('Select Deployment');
+  const [selectedDeployment, setSelectedDeployment] = useState("Select Deployment");
+  const [selectedAction, setSelectedAction] = useState("Function")
   const [hasNamespace, setHasNamespace] = useState(false);
   const [namespace, setNamespace] = useState("");
 
@@ -24,6 +25,8 @@ function App() {
         />
         <Action
           selectedDeployment={selectedDeployment}
+          selectedAction={selectedAction}
+          setSelectedAction={setSelectedAction}
         />
       </div>
       <div>

@@ -1,18 +1,20 @@
+import DropdownOption from './DropdownOption';
+
 export default function Dropdown({
     onChange,
     defaultValue, 
+    map,
     optionValues, 
     selectedDeployment
 }) {
     function generateOptions() {
-        return optionValues.map((value, i) => {
+        return optionValues.map((val, i) => {
             return (
-                <option 
+                <DropdownOption 
                     key={`option-${i}`}
-                    value={value}
-                >
-                    {value}
-                </option>
+                    value={val}
+                    opt={map[val]["option"] || null}
+                />
             )
         })
     }

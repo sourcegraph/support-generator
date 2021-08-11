@@ -1,14 +1,16 @@
 import {useState} from 'react';
 
-import Dropdown from "../UI/Dropdown"
+import Dropdown from "../UI/Dropdown";
 
 import {commands} from '../../utils/commands';
 import {getOptionValues} from '../../utils/helpers';
 
 import './Action.css';
 
-export default function Action({selectedDeployment}) {
-    const [selectedAction, setSelectedAction] = useState("function");
+export default function Action({selectedDeployment, selectedAction, setSelectedAction}) {
+    // const [selectedAction, setSelectedAction] = useState("Function");
+    console.log(selectedAction);
+    const [option, setOption] = useState("")
     const dockerMap = commands["Docker"];
     const dockerComposeMap = commands["Docker Compose"];
     const kubernetesMap = commands["Kubernetes"];
@@ -19,30 +21,71 @@ export default function Action({selectedDeployment}) {
     return (
         <div className="actions-container">
             {selectedDeployment === "Docker" && 
-                <Dropdown
-                    onChange={(e) => setSelectedAction(e.target.value)} 
-                    setSelectedAction={setSelectedAction}
-                    defaultValue={selectedAction}
-                    optionValues={dockerOptions} 
-                />
+                <>
+                    <Dropdown
+                        onChange={(e) => setSelectedAction(e.target.value)} 
+                        setSelectedAction={setSelectedAction}
+                        defaultValue={selectedAction}
+                        optionValues={dockerOptions} 
+                        map={dockerMap}
+                    />
+                    {dockerMap[selectedAction]["option"] &&
+                        <div>
+                            <input 
+                                type="text"
+                                placeholder={dockerMap[selectedAction]["option"]}
+                                value={option}
+                                onChange={(e) => setOption(e.target.value)}
+                            />
+                        </div> 
+                    }
+                </>
             }
 
             {selectedDeployment === "Docker Compose" &&
-                <Dropdown
-                    onChange={(e) => setSelectedAction(e.target.value)} 
-                    setSelectedAction={setSelectedAction}
-                    defaultValue={selectedAction}
-                    optionValues={dockerComposeOptions} 
-                />
+                <>
+                    <Dropdown
+                        onChange={(e) => setSelectedAction(e.target.value)} 
+                        setSelectedAction={setSelectedAction}
+                        defaultValue={selectedAction}
+                        optionValues={dockerComposeOptions} 
+                        map={dockerComposeMap}
+                    />
+
+                    {dockerComposeMap[selectedAction]["option"] &&
+                        <div>
+                            <input 
+                                type="text"
+                                placeholder={dockerComposeMap[selectedAction]["option"]}
+                                value={option}
+                                onChange={(e) => setOption(e.target.value)}
+                            />
+                        </div>
+                    }
+                </>
             }
 
             {selectedDeployment === "Kubernetes" &&
-                <Dropdown
-                    onChange={(e) => setSelectedAction(e.target.value)} 
-                    setSelectedAction={setSelectedAction}
-                    defaultValue={selectedAction}
-                    optionValues={kubernetesOptions} 
-                />
+                <>
+                    <Dropdown
+                        onChange={(e) => setSelectedAction(e.target.value)} 
+                        setSelectedAction={setSelectedAction}
+                        defaultValue={selectedAction}
+                        optionValues={kubernetesOptions} 
+                        map={kubernetesMap}
+                    />
+
+                    {kubernetesMap[selectedAction]["option"] && 
+                        <div>
+                            <input
+                                type="text"
+                                placeholder={kubernetesMap[selectedAction]["option"]}
+                                value={option}
+                                onChange={(e) => setOption(e.target.value)}
+                            />
+                        </div>
+                    }
+                </>
             }
 
         </div>
