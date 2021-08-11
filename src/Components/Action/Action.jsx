@@ -1,5 +1,3 @@
-import {useState} from 'react';
-
 import Dropdown from "../UI/Dropdown";
 
 import {commands} from '../../utils/commands';
@@ -7,14 +5,20 @@ import {getOptionValues} from '../../utils/helpers';
 
 import './Action.css';
 
-export default function Action({selectedDeployment, selectedAction, setSelectedAction}) {
-    const [option, setOption] = useState("")
+export default function Action({
+    selectedDeployment, 
+    selectedAction, 
+    setSelectedAction,
+    option,
+    setOption
+}) {
     const dockerMap = commands["Docker"];
     const dockerComposeMap = commands["Docker Compose"];
     const kubernetesMap = commands["Kubernetes"];
     const dockerOptions = getOptionValues(dockerMap);
     const dockerComposeOptions = getOptionValues(dockerComposeMap);
     const kubernetesOptions = getOptionValues(kubernetesMap);
+    console.log(dockerMap);
 
     return (
         <div className="actions-container">

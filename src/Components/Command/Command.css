@@ -1,0 +1,9 @@
+.command {
+    width: 65%;
+    margin: auto;
+    margin-top: 20px;
+    padding:25px;
+    background-color: rgb(7, 149, 206);
+    color: white;
+    font-weight: bold;
+}

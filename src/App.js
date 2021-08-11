@@ -10,6 +10,9 @@ function App() {
 	const [selectedAction, setSelectedAction] = useState("Function")
 	const [hasNamespace, setHasNamespace] = useState(false);
 	const [namespace, setNamespace] = useState("");
+	const [option, setOption] = useState("");
+	const [command, setCommand] = useState("");
+
 
 	return (
 		<div className="App">
@@ -28,10 +31,19 @@ function App() {
 					selectedDeployment={selectedDeployment}
 					selectedAction={selectedAction}
 					setSelectedAction={setSelectedAction}
+					option={option}
+					setOption={setOption}
 				/>
 			</div>
 			<div>
-				<Command />
+				<Command 
+					selectedDeployment={selectedDeployment}
+					selectedAction={selectedAction}
+					command={command}
+					setCommand={setCommand}
+					namespace={namespace}
+					option={option}
+				/>
 			</div>
 		</div>
 	);

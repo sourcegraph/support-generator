@@ -1,9 +1,22 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { commands } from '../../utils/commands';
+import './Command.css';
 
-export default function Command(props) {
+export default function Command({
+    selectedDeployment,
+    selectedAction,
+    command,
+    setCommand,
+    namespace,
+    option
+}) {
+    useEffect(() => {
+        console.log("reloaded")
+    }, [selectedDeployment, selectedAction, namespace, option])
+
     return (
-        <div>
-            Command Component goes here.
+        <div className="command">
+            {command}
         </div>
     )
 }
