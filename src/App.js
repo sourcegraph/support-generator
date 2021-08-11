@@ -18,6 +18,7 @@ function App() {
 				<Deployment
 					selectedDeployment={selectedDeployment}
 					setSelectedDeployment={setSelectedDeployment}
+					setSelectedAction={setSelectedAction}
 					hasNamespace={hasNamespace}
 					setHasNamespace={setHasNamespace}
 					namespace={namespace}

@@ -8,8 +8,6 @@ import {getOptionValues} from '../../utils/helpers';
 import './Action.css';
 
 export default function Action({selectedDeployment, selectedAction, setSelectedAction}) {
-    // const [selectedAction, setSelectedAction] = useState("Function");
-    console.log(selectedAction);
     const [option, setOption] = useState("")
     const dockerMap = commands["Docker"];
     const dockerComposeMap = commands["Docker Compose"];

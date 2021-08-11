@@ -3,6 +3,7 @@ import './Deployment.css';
 export default function Deployment({
     selectedDeployment, 
     setSelectedDeployment,
+    setSelectedAction,
     hasNamespace,
     setHasNamespace, 
     namespace, 
@@ -16,6 +17,7 @@ export default function Deployment({
                         setSelectedDeployment(e.target.value)
                         setNamespace("")
                         setHasNamespace(false)
+                        setSelectedAction("Function")
                     }} 
                     defaultValue={selectedDeployment}
                     value={selectedDeployment}
