@@ -1,49 +1,47 @@
 import {useState} from 'react';
 
 import Dropdown from "../UI/Dropdown"
-import { 
-    singleDockerOptions, 
-    singleDockerTitles,
-    dockerComposeOptions,
-    dockerComposeTitles, 
-    kubernetesOptions,
-    kubernetesTitles 
-} from '../../utils/options';
+
+import {commands} from '../../utils/commands';
+import {getOptionValues} from '../../utils/helpers';
 
 import './Action.css';
 
 export default function Action({selectedDeployment}) {
     const [selectedAction, setSelectedAction] = useState("function");
+    const dockerMap = commands["Docker"];
+    const dockerComposeMap = commands["Docker Compose"];
+    const kubernetesMap = commands["Kubernetes"];
+    const dockerOptions = getOptionValues(dockerMap);
+    const dockerComposeOptions = getOptionValues(dockerComposeMap);
+    const kubernetesOptions = getOptionValues(kubernetesMap);
 
     return (
         <div className="actions-container">
-            {selectedDeployment === "single-docker" && 
+            {selectedDeployment === "Docker" && 
                 <Dropdown
                     onChange={(e) => setSelectedAction(e.target.value)} 
                     setSelectedAction={setSelectedAction}
                     defaultValue={selectedAction}
-                    optionValues={singleDockerOptions} 
-                    optionTitles={singleDockerTitles} 
+                    optionValues={dockerOptions} 
                 />
             }
 
-            {selectedDeployment === "docker-compose" &&
+            {selectedDeployment === "Docker Compose" &&
                 <Dropdown
                     onChange={(e) => setSelectedAction(e.target.value)} 
                     setSelectedAction={setSelectedAction}
                     defaultValue={selectedAction}
                     optionValues={dockerComposeOptions} 
-                    optionTitles={dockerComposeTitles} 
                 />
             }
 
-            {selectedDeployment === "kubernetes" &&
+            {selectedDeployment === "Kubernetes" &&
                 <Dropdown
                     onChange={(e) => setSelectedAction(e.target.value)} 
                     setSelectedAction={setSelectedAction}
                     defaultValue={selectedAction}
                     optionValues={kubernetesOptions} 
-                    optionTitles={kubernetesTitles} 
                 />
             }
 

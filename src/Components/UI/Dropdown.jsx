@@ -2,7 +2,6 @@ export default function Dropdown({
     onChange,
     defaultValue, 
     optionValues, 
-    optionTitles, 
     selectedDeployment
 }) {
     function generateOptions() {
@@ -12,7 +11,7 @@ export default function Dropdown({
                     key={`option-${i}`}
                     value={value}
                 >
-                    {optionTitles[i]}
+                    {value}
                 </option>
             )
         })
@@ -25,7 +24,7 @@ export default function Dropdown({
                 defaultValue={defaultValue}
                 value={selectedDeployment}
             >
-                {optionTitles && generateOptions()}
+                {optionValues && generateOptions()}
             </select>
         </div>
     )

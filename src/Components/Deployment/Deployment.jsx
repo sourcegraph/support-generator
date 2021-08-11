@@ -10,14 +10,6 @@ export default function Deployment({
 }) {
     return (
         <div className="deployment-container">
-            {/* dropdown with options
-                on update, based on the option selected, 
-                the namespace checkbox should appear, 
-                or not appear.
-
-                Also... the Action dropdown should appear, once
-                any option is selected.
-            */}
             <div className="deployment-type">
                 <select 
                     onChange={(e) => {
@@ -28,13 +20,13 @@ export default function Deployment({
                     defaultValue={selectedDeployment}
                     value={selectedDeployment}
                 >
-                    <option value="select-deployment">Select Deployment</option>
-                    <option value="single-docker">Single Docker</option>
-                    <option value="docker-compose">Docker Compose</option>
-                    <option value="kubernetes">Kubernetes</option>
+                    <option value="select-deployment">Select Deployment Type...</option>
+                    <option value="Docker">Docker</option>
+                    <option value="Docker Compose">Docker Compose</option>
+                    <option value="Kubernetes">Kubernetes</option>
                 </select>
             </div>
-            {selectedDeployment === "kubernetes" && 
+            {selectedDeployment === "Kubernetes" && 
                 <div>
                     <input 
                         type="checkbox" 
@@ -54,11 +46,6 @@ export default function Deployment({
                     }
                 </div>
             } 
-            {/* 
-                Based on the state of namespace
-                we show or don't show a text field to type the 
-                name of the namespace
-            */}
         </div>
     )
 }

@@ -1,4 +1,4 @@
-export const commands = JSON.parse({
+export const commands = {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "github.schema.json#",
     "title": "List of Commands",
@@ -7,61 +7,67 @@ export const commands = JSON.parse({
     "type": "object",
     "additionalProperties": false,
     "Docker": {
-        // "Function": {
-        //     "command": string,
-        //     "container": string
-        //     "command2": string,
-        //     "description": string
-        // },
+        "Function": {
+            "value": "Function",
+            "command": "",
+            "description": "Default option"
+        },
         "Get Logs": {
+            "value": "Get Logs",
             "command": "docker logs ",
             "option": "$CONTAINER",
             "description": "Get the logs of a container."
         },
         "List Containers": {
+            "value": "List Containers",
             "command": "docker ps -a ",
             "description": "Get a list of containers."
         },
         "Install/Run Sourcegraph": {
+            "value": "Insall/Run Sourcegraph",
             "command": "docker run -d --publish 7080:7080 --publish 127.0.0.1:3370:3370 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph --volume ~/.sourcegraph/data:/var/opt/sourcegraph sourcegraph/server:",
             "option": "$VERSION",
             "description": "The docker run command first creates a writeable container layer over the specified image, and then starts it using the specified command."
         },
         "Upgrade Sourcegraph": {
+            "value": "Upgrade Sourcegraph",
             "command": "docker run -d --publish 7080:7080 --publish 127.0.0.1:3370:3370 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph --volume ~/.sourcegraph/data:/var/opt/sourcegraph sourcegraph/server:",
             "option": "$VERSION",
             "description": "All you need to do to upgrade Sourcegraph is to restart your Docker server with a new image tag."
         },
         "Run Bash Shell": {
+            "value": "Run Bash Shell",
             "command": "docker exec -it ",
             "option": "$CONTAINER",
             "command2": " bash",
             "description": "This allows you to execute an interactive bash shell on a running container."
         },
         "Kill Container": {
+            "value": "Kill Container",
             "command": "docker kill ",
             "option": "$CONTAINER",
             "description": "Kill one or more containers."
         },
         "Restart Container": {
+            "value": "Restart Container",
             "command": "docker restart ",
             "option": "$CONTAINER",
             "description": "Restart one or more containers."
         },
-        "Run Interative Shell": {
+        "Run Interactive Shell": {
+            "value": "Run Interactive Shell",
             "command": "docker exec -it ",
             "option": "$CONTAINER",
             "command2": " shell",
             "description": "This allows you to execute an interactive shell on a running container."
         }
-        
     },
     "Docker Compose": {
-        // "Function": {
-        //     "command": string,
-        //     "description": string,
-        //     "container": boolean
-        // },
+        "Function": {
+            "value": "Function",
+            "command": "",
+            "description": "Default option"
+        },
         "Get Logs": {
             "command": "docker-compose logs ",
             "option": "$CONTAINER",
@@ -94,15 +100,14 @@ export const commands = JSON.parse({
             "option": "$CONTAINER",
             "command2": " shell",
             "description": "This allows you to execute an interactive shell on a running container."
-        },
+        }
     },
     "Kubernetes": {
-        // "Function": {
-        //     "command": string,
-        //     "option": string,
-        //     "command2": string
-        //     "description": string
-        // },
+        "Function": {
+            "value": "Function",
+            "command": "",
+            "description": "Default option"
+        },
         "Get Logs": {
             "command": "kubectl logs -f ",
             "option": "$POD",
@@ -156,4 +161,4 @@ export const commands = JSON.parse({
             "description": "Get inside the PGSQL Pod to check for dirty database."
         }
     }
-}) 
+}
