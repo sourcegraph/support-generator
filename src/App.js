@@ -13,7 +13,6 @@ function App() {
 	const [option, setOption] = useState("");
 	const [command, setCommand] = useState("");
 
-
 	return (
 		<div className="App">
 			<h1>Command Line Generator</h1>
@@ -33,6 +32,9 @@ function App() {
 					setSelectedAction={setSelectedAction}
 					option={option}
 					setOption={setOption}
+					setCommand={setCommand}
+					hasNamespace={hasNamespace}
+					namespace={namespace}
 				/>
 			</div>
 			<div>

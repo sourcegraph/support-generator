@@ -1,8 +1,9 @@
+// ANCHOR Internal Modules
 import Dropdown from "../UI/Dropdown";
-
 import {commands} from '../../utils/commands';
 import {getOptionValues} from '../../utils/helpers';
 
+// CSS
 import './Action.css';
 
 export default function Action({
@@ -10,7 +11,10 @@ export default function Action({
     selectedAction, 
     setSelectedAction,
     option,
-    setOption
+    setOption,
+    setCommand,
+    namespace,
+    hasNamespace,
 }) {
     const dockerMap = commands["Docker"];
     const dockerComposeMap = commands["Docker Compose"];
@@ -18,18 +22,21 @@ export default function Action({
     const dockerOptions = getOptionValues(dockerMap);
     const dockerComposeOptions = getOptionValues(dockerComposeMap);
     const kubernetesOptions = getOptionValues(kubernetesMap);
-    console.log(dockerMap);
 
     return (
         <div className="actions-container">
             {selectedDeployment === "Docker" && 
                 <>
                     <Dropdown
-                        onChange={(e) => setSelectedAction(e.target.value)} 
-                        setSelectedAction={setSelectedAction}
+                        selectedAction={selectedAction}
                         defaultValue={selectedAction}
                         optionValues={dockerOptions} 
+                        option={option}
+                        setOption={setOption}
                         map={dockerMap}
+                        setSelectedAction={setSelectedAction}
+                        setCommand={setCommand}
+
                     />
                     {dockerMap[selectedAction]["option"] &&
                         <div>
@@ -47,11 +54,14 @@ export default function Action({
             {selectedDeployment === "Docker Compose" &&
                 <>
                     <Dropdown
-                        onChange={(e) => setSelectedAction(e.target.value)} 
-                        setSelectedAction={setSelectedAction}
+                        selectedAction={selectedAction}
                         defaultValue={selectedAction}
                         optionValues={dockerComposeOptions} 
                         map={dockerComposeMap}
+                        option={option}
+                        setOption={setOption}
+                        setSelectedAction={setSelectedAction}
+                        setCommand={setCommand}
                     />
 
                     {dockerComposeMap[selectedAction]["option"] &&
@@ -70,11 +80,16 @@ export default function Action({
             {selectedDeployment === "Kubernetes" &&
                 <>
                     <Dropdown
-                        onChange={(e) => setSelectedAction(e.target.value)} 
-                        setSelectedAction={setSelectedAction}
+                        selectedAction={selectedAction}
                         defaultValue={selectedAction}
                         optionValues={kubernetesOptions} 
                         map={kubernetesMap}
+                        option={option}
+                        setOption={setOption}
+                        setSelectedAction={setSelectedAction}
+                        setCommand={setCommand}
+                        hasNamespace={hasNamespace}
+                        namespace={namespace}
                     />
 
                     {kubernetesMap[selectedAction]["option"] && 
@@ -89,7 +104,6 @@ export default function Action({
                     }
                 </>
             }
-
         </div>
     )
 }

@@ -28,6 +28,7 @@ export default function Deployment({
                     <option value="Kubernetes">Kubernetes</option>
                 </select>
             </div>
+
             {selectedDeployment === "Kubernetes" && 
                 <div>
                     <input 
@@ -40,7 +41,7 @@ export default function Deployment({
                         <div>
                             <input 
                                 type="text"
-                                placeholder="enter namespace"
+                                placeholder="$POD_NAME"
                                 value={namespace}
                                 onChange={(e) => setNamespace(e.target.value)}
                             ></input>
