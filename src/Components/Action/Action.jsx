@@ -18,7 +18,7 @@ export default function Action({
 }) {
     const deploymentMap = commands[selectedDeployment];
     const listOptions = getOptionValues(deploymentMap);
-    console.log(deploymentMap)
+    console.log(option)
 
     return (
         <div className="actions-container">
