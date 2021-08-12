@@ -12,6 +12,7 @@ export default function Action({
     setSelectedAction,
     option,
     setOption,
+    command,
     setCommand,
     namespace,
     hasNamespace,
@@ -35,6 +36,7 @@ export default function Action({
                         setOption={setOption}
                         map={dockerMap}
                         setSelectedAction={setSelectedAction}
+                        command={setCommand}
                         setCommand={setCommand}
 
                     />
@@ -61,6 +63,7 @@ export default function Action({
                         option={option}
                         setOption={setOption}
                         setSelectedAction={setSelectedAction}
+                        command={setCommand}
                         setCommand={setCommand}
                     />
 
@@ -88,6 +91,7 @@ export default function Action({
                         setOption={setOption}
                         setSelectedAction={setSelectedAction}
                         setCommand={setCommand}
+                        command={setCommand}
                         hasNamespace={hasNamespace}
                         namespace={namespace}
                     />

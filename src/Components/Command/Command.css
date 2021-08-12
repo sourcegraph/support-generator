@@ -1,9 +1,38 @@
+.command-container {
+    margin-top: 20px;
+}
+
 .command {
     width: 65%;
     margin: auto;
-    margin-top: 20px;
-    padding:25px;
     background-color: rgb(7, 149, 206);
     color: white;
     font-weight: bold;
+    padding-top: 10px;
+    padding-bottom:10px;
+    text-align:center;
+    border:none;
 }
+
+.command::placeholder {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(7,149, 206);
+}
+
+input.command[type="text"] {
+    color: transparent;
+    text-shadow: 0 0 0 #fff;
+}
+
+input.command[type="text"]:focus {
+    outline:none;
+}
+
+button.copy-button:disabled,
+button.copy-button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #444444
+}
+

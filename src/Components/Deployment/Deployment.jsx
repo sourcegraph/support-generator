@@ -7,7 +7,8 @@ export default function Deployment({
     hasNamespace,
     setHasNamespace, 
     namespace, 
-    setNamespace
+    setNamespace,
+    setCommand,
 }) {
     return (
         <div className="deployment-container">
@@ -28,7 +29,7 @@ export default function Deployment({
                     <option value="Kubernetes">Kubernetes</option>
                 </select>
             </div>
-
+            
             {selectedDeployment === "Kubernetes" && 
                 <div>
                     <input 

@@ -10,6 +10,7 @@ export default function Dropdown({
     selectedDeployment,
     setSelectedAction,
     selectedAction,
+    command,
     setCommand,
     hasNamespace,
     namespace
@@ -28,17 +29,29 @@ export default function Dropdown({
 
     useEffect(() => {
         const command1 = map[selectedAction]["command"];
+        const command2 = map[selectedAction]["command2"]
+            ? map[selectedAction]["command2"]
+            : null;
 
-        if (hasNamespace) {
-            setCommand(`${command1} -n ${namespace}`)
+        if (hasNamespace && option === "") {
+            setCommand(`${command1} -n ${namespace} ${command2 ? command2 : ""}`);
         } else if (hasNamespace && option !== "") {
-            setCommand(`${command1} ${option} -n ${namespace}`);
+            setCommand(`${command1}${option} -n ${namespace} ${command2 ? command2 : ""}`);
         } else if (!hasNamespace && option !== "") {
-            setCommand(`${command1} ${option}`)
+            setCommand(`${command1}${option} ${command2 ? command2 : ""}`);
         } else {
-            setCommand(command1)
+            setCommand(`${command1}${command2 ? command2 : ""}`);
         }
-    }, [setCommand, selectedAction, map, namespace, hasNamespace, option])
+    }, [
+            setCommand, 
+            selectedAction, 
+            map, 
+            namespace, 
+            hasNamespace, 
+            option, 
+            command
+        ]
+    );
 
     return (
         <div className="deployment-type">

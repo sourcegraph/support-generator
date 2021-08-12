@@ -9,7 +9,7 @@ export const commands = {
     "Docker": {
         "Function": {
             "value": "Function",
-            "command": "",
+            "command": "[CHOOSE FUNCTION]",
             "description": "Default option"
         },
         "Get Logs": {
@@ -65,7 +65,7 @@ export const commands = {
     "Docker Compose": {
         "Function": {
             "value": "Function",
-            "command": "",
+            "command": "[CHOOSE FUNCTION]",
             "description": "Default option"
         },
         "Get Logs": {
@@ -105,7 +105,7 @@ export const commands = {
     "Kubernetes": {
         "Function": {
             "value": "Function",
-            "command": "",
+            "command": "[CHOOSE FUNCTION]",
             "description": "Default option"
         },
         "Get Logs": {

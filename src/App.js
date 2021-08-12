@@ -6,7 +6,7 @@ import Command from './Components/Command/Command';
 import './App.css';
 
 function App() {
-	const [selectedDeployment, setSelectedDeployment] = useState("Select Deployment");
+	const [selectedDeployment, setSelectedDeployment] = useState("select-deployment");
 	const [selectedAction, setSelectedAction] = useState("Function")
 	const [hasNamespace, setHasNamespace] = useState(false);
 	const [namespace, setNamespace] = useState("");
@@ -25,6 +25,7 @@ function App() {
 					setHasNamespace={setHasNamespace}
 					namespace={namespace}
 					setNamespace={setNamespace}
+					setCommand={setCommand}
 				/>
 				<Action
 					selectedDeployment={selectedDeployment}
@@ -32,6 +33,7 @@ function App() {
 					setSelectedAction={setSelectedAction}
 					option={option}
 					setOption={setOption}
+					command={command}
 					setCommand={setCommand}
 					hasNamespace={hasNamespace}
 					namespace={namespace}
