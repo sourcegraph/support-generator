@@ -1,4 +1,7 @@
+// ANCHOR External Modules
 import { useEffect } from 'react';
+
+// ANCHOR Internal Modules
 import DropdownOption from './DropdownOption';
 
 export default function Dropdown({

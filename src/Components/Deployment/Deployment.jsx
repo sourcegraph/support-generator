@@ -1,3 +1,4 @@
+// ANCHOR CSS
 import './Deployment.css';
 
 export default function Deployment({
@@ -8,7 +9,6 @@ export default function Deployment({
     setHasNamespace, 
     namespace, 
     setNamespace,
-    setCommand,
 }) {
     return (
         <div className="deployment-container">

@@ -3,8 +3,10 @@ import Dropdown from "../UI/Dropdown";
 import {commands} from '../../utils/commands';
 import {getOptionValues} from '../../utils/helpers';
 
-// CSS
+// ANCHOR CSS
 import './Action.css';
+
+
 
 export default function Action({
     selectedDeployment, 
@@ -26,6 +28,7 @@ export default function Action({
 
     return (
         <div className="actions-container">
+            {/* Docker Action Menu */}
             {selectedDeployment === "Docker" && 
                 <>
                     <Dropdown
@@ -53,6 +56,7 @@ export default function Action({
                 </>
             }
 
+            {/* Docker Compose Action Menu */}
             {selectedDeployment === "Docker Compose" &&
                 <>
                     <Dropdown
@@ -80,6 +84,7 @@ export default function Action({
                 </>
             }
 
+            {/* Kubernetes Menu */}
             {selectedDeployment === "Kubernetes" &&
                 <>
                     <Dropdown

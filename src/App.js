@@ -1,9 +1,15 @@
+// ANCHOR External Modules
 import {useState} from 'react'
+
+// ANCHOR Internal Modules
 import Deployment from './Components/Deployment/Deployment';
 import Action from './Components/Action/Action';
 import Command from './Components/Command/Command';
 
+// ANCHOR CSS
 import './App.css';
+
+
 
 function App() {
 	const [selectedDeployment, setSelectedDeployment] = useState("select-deployment");
@@ -16,7 +22,10 @@ function App() {
 	return (
 		<div className="App">
 			<h1>Command Line Generator</h1>
+
 			<div className="actions">
+				
+				{/* USER selects their deployment */}
 				<Deployment
 					selectedDeployment={selectedDeployment}
 					setSelectedDeployment={setSelectedDeployment}
@@ -27,6 +36,8 @@ function App() {
 					setNamespace={setNamespace}
 					setCommand={setCommand}
 				/>
+
+				{/* USER selects the action they want to take */}
 				<Action
 					selectedDeployment={selectedDeployment}
 					selectedAction={selectedAction}
@@ -39,6 +50,8 @@ function App() {
 					namespace={namespace}
 				/>
 			</div>
+
+			{/* Command generated from the first two options. */}
 			<div>
 				<Command 
 					selectedDeployment={selectedDeployment}

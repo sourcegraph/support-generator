@@ -1,3 +1,4 @@
+// ANCHOR CSS
 import './Command.css';
 
 export default function Command({
@@ -25,6 +26,7 @@ export default function Command({
                     />
                 )}
             </div>
+
             {selectedDeployment === "select-deployment" ? (
                 <button 
                 className="copy-button"
