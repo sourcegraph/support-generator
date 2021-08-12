@@ -18,35 +18,10 @@ export default function Action({
 }) {
     const deploymentMap = commands[selectedDeployment];
     const listOptions = getOptionValues(deploymentMap);
-    console.log(option)
 
     return (
         <div className="actions-container">
-        {
-            {
-            "Docker": <Dropdown
-                selectedAction={selectedAction}
-                defaultValue={selectedAction}
-                optionValues={listOptions}
-                option={option}
-                setOption={setOption}
-                map={deploymentMap}
-                setSelectedAction={setSelectedAction}
-                command={setCommand}
-                setCommand={setCommand}
-            />,
-            "Docker Compose": <Dropdown
-                selectedAction={selectedAction}
-                defaultValue={selectedAction}
-                optionValues={listOptions}
-                map={deploymentMap}
-                option={option}
-                setOption={setOption}
-                setSelectedAction={setSelectedAction}
-                command={setCommand}
-                setCommand={setCommand}
-            />,
-            "Kubernetes": <Dropdown
+        { selectedDeployment &&  <Dropdown
                 selectedAction={selectedAction}
                 defaultValue={selectedAction}
                 optionValues={listOptions}
@@ -58,8 +33,7 @@ export default function Action({
                 command={setCommand}
                 hasNamespace={hasNamespace}
                 namespace={namespace}
-            />,
-            }[selectedDeployment]
+            />
         }
         {deploymentMap && deploymentMap[selectedAction] && deploymentMap[selectedAction]["option"] && (
             <div>
