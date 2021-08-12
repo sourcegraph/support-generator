@@ -2,11 +2,7 @@ import './Command.css';
 
 export default function Command({
     selectedDeployment,
-    selectedAction,
     command,
-    setCommand,
-    namespace,
-    option
 }) {
     const copyCommand = () => {
         navigator.clipboard.writeText(command);
