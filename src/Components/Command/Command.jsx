@@ -29,17 +29,17 @@ export default function Command({
 
             {selectedDeployment === "select-deployment" ? (
                 <button 
-                className="copy-button"
-                onClick={copyCommand}
-                disabled
-            >
+                    className="copy-button"
+                    onClick={copyCommand}
+                    disabled
+                >
                 Copy
             </button>
             ) : (
                 <button 
-                className="copy-button"
-                onClick={copyCommand}
-            >
+                    className="copy-button"
+                    onClick={copyCommand}
+                >
                 Copy
             </button>
             )}

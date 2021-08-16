@@ -5,8 +5,9 @@
 .command {
     width: 65%;
     margin: auto;
-    background-color: rgb(7, 149, 206);
+    background-color: #A112FF;
     color: white;
+    font-family: "Source Code Pro", monospace;
     font-weight: bold;
     padding-top: 10px;
     padding-bottom:10px;
@@ -14,10 +15,14 @@
     border:none;
 }
 
+.command input {
+    width: 95%;
+}
+
 .command::placeholder {
     color: white;
     font-weight: bold;
-    background-color: rgb(7,149, 206);
+    background-color: #A112FF;
 }
 
 input.command[type="text"] {
@@ -34,5 +39,24 @@ button.copy-button[disabled] {
     border: 1px solid #999999;
     background-color: #cccccc;
     color: #444444
+}
+
+button.copy-button {
+    margin: 10px;
+    width: fit-content;
+    color: #A112FF;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    padding: 8px 12px 8px 12px;
+    font-size: 1.2rem;
+    background-color: white;
+    border: 2px solid #A112FF;
+    border-radius: 4px;
+    outline: none;
+}
+
+button.copy-button:hover {
+    background-color: #A112FF;
+    color:white;
+    cursor: pointer;
 }
 

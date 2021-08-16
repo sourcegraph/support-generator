@@ -7,7 +7,6 @@ import { getOptionValues } from "../../utils/helpers";
 import './Action.css';
 
 
-
 export default function Action({
     selectedDeployment,
     selectedAction,
@@ -42,7 +41,7 @@ export default function Action({
                 <input
                     type="text"
                     placeholder={deploymentMap[selectedAction]["option"]}
-                    value={option}
+                    value={option || ""}
                     onChange={(e) => setOption(e.target.value)}
                 />
             </div>
