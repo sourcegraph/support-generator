@@ -31,21 +31,22 @@ export default function Dropdown({
     }
 
     useEffect(() => {
-        const command1 = map[selectedAction]["command"];
-        const command2 = map[selectedAction]["command2"]
-            ? map[selectedAction]["command2"]
-            : null;
+        // pre-set option
+        if (map && selectedAction && map[selectedAction]["option"]) {
+            if(!option) setOption(map[selectedAction]["option"]);
+            const command1 = map[selectedAction]["command"];
+            const command2 = map[selectedAction]["command2"]
+                ? map[selectedAction]["command2"]
+                : null;
 
-        if (hasNamespace && option === "") {
-            setCommand(`${command1} -n ${namespace} ${command2 ? command2 : ""}`);
-        } else if (hasNamespace && option !== "") {
-            setCommand(`${command1}${option} -n ${namespace} ${command2 ? command2 : ""}`);
-        } else if (!hasNamespace && option !== "") {
-            setCommand(`${command1}${option} ${command2 ? command2 : ""}`);
-        } else {
-            setCommand(`${command1}${command2 ? command2 : ""}`);
+            if (hasNamespace) {
+                setCommand(`${command1} ${option} -n ${namespace} ${command2 ? command2 : ""}`);
+            } else {
+                setCommand(`${command1} ${option} ${command2 ? command2 : ""}`);
+            }
         }
     }, [
+        setOption,
             setCommand, 
             selectedAction, 
             map, 
