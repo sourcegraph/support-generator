@@ -14,6 +14,7 @@ export default function Deployment({
         <div className="deployment-container">
             <div className="deployment-type">
                 <select 
+                    className="deployment-dropdown"
                     onChange={(e) => {
                         setSelectedDeployment(e.target.value)
                         setNamespace("")
@@ -23,10 +24,10 @@ export default function Deployment({
                     defaultValue={selectedDeployment}
                     value={selectedDeployment}
                 >
-                    <option value="select-deployment">Select Deployment Type...</option>
-                    <option value="Docker">Docker</option>
-                    <option value="Docker Compose">Docker Compose</option>
-                    <option value="Kubernetes">Kubernetes</option>
+                    <option className="deployment-options" value="select-deployment">Select Deployment Type...</option>
+                    <option className="deployment-options" value="Docker">Docker</option>
+                    <option className="deployment-options" value="Docker Compose">Docker Compose</option>
+                    <option className="deployment-options" value="Kubernetes">Kubernetes</option>
                 </select>
             </div>
             

@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 // ANCHOR Internal Modules
 import DropdownOption from './DropdownOption';
 
+// ANCHOR CSS
+import './Dropdown.css';
+
 export default function Dropdown({
     defaultValue, 
     map,
@@ -58,8 +61,9 @@ export default function Dropdown({
     );
 
     return (
-        <div className="deployment-type">
+        <div>
             <select 
+                className="action-dropdown"
                 onChange={(e) => {
                     setSelectedAction(e.target.value);
                     setOption("")
