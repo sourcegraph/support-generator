@@ -35,11 +35,10 @@ export default function Action({
                 command={setCommand}
                 hasNamespace={hasNamespace}
                 namespace={namespace}
-                class={`.${selectedAction}-dropdown`}
             />
         }
         {deploymentMap && deploymentMap[selectedAction] && deploymentMap[selectedAction]["option"] && (
-            <div>
+            <div className="action-input">
                 <input
                     type="text"
                     placeholder={deploymentMap[selectedAction]["option"]}

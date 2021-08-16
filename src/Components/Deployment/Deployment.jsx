@@ -24,7 +24,7 @@ export default function Deployment({
                     defaultValue={selectedDeployment}
                     value={selectedDeployment}
                 >
-                    <option className="deployment-options" value="select-deployment">Select Deployment Type...</option>
+                    <option className="deployment-options" value="select-deployment">Select...</option>
                     <option className="deployment-options" value="Docker">Docker</option>
                     <option className="deployment-options" value="Docker Compose">Docker Compose</option>
                     <option className="deployment-options" value="Kubernetes">Kubernetes</option>
@@ -32,24 +32,28 @@ export default function Deployment({
             </div>
             
             {selectedDeployment === "Kubernetes" && 
-                <div>
-                    <input 
-                        type="checkbox" 
-                        value={hasNamespace}
-                        onChange={() => setHasNamespace(!hasNamespace)}
-                    ></input>  
-                    <label name="namespace">Namespace?</label>
-                    {hasNamespace &&
-                        <div>
-                            <input 
-                                type="text"
-                                placeholder="$POD_NAME"
-                                value={namespace}
-                                onChange={(e) => setNamespace(e.target.value)}
-                            ></input>
-                        </div>
-                    }
-                </div>
+                <>
+                    <div className="namespace-check">
+                        <input 
+                            type="checkbox" 
+                            value={hasNamespace}
+                            onChange={() => setHasNamespace(!hasNamespace)}
+                        />  
+                        <label className="namespace-label" name="namespace">I am using a namespace</label>
+                    </div>
+                    <div className="namespace-input">
+                        {hasNamespace &&
+                            <div>
+                                <input 
+                                    type="text"
+                                    placeholder="$POD_NAME"
+                                    value={namespace}
+                                    onChange={(e) => setNamespace(e.target.value)}
+                                ></input>
+                            </div>
+                        }
+                    </div>
+                </>
             } 
         </div>
     )

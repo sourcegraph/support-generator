@@ -1,8 +1,22 @@
 .actions-container {
-    border: 1px solid lightgray;
-    padding-left: 10px;
-    padding-top: 10px;
+    /* border: 1px solid lightgray; */
+    /* padding-left: 10px; */
+    /* padding-top: px; */
     padding-bottom: 10px;
     width: 50%;
     text-align: left;
+}
+
+.action-input {
+    margin-top: 10px;
+}
+
+.action-input input {
+    border-radius: 2px;
+    color:rgb(90,90,90);
+    font-family: 'Source Code Pro', monospace;
+    font-weight: regular;
+    padding: 5px;
+    outline: none;
+    border: 1px solid lightgray;
 }
