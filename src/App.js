@@ -8,6 +8,7 @@ import Command from './Components/Command/Command';
 
 // ANCHOR CSS
 import './App.css';
+import Descriptions from './Components/Descriptions/Descriptions';
 
 
 
@@ -64,7 +65,9 @@ function App() {
 				</div>
 
 				<div className="descriptions">
-					Here go the descriptions.
+					<Descriptions 
+						selectedDeployment={selectedDeployment}
+					/>
 				</div>
 			</div>
 			
