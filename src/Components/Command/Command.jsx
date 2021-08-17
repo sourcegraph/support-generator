@@ -11,7 +11,7 @@ export default function Command({
 
     return (
         <div className="command-container">
-            <div className="command">
+            <div className="command-input-container">
                 {selectedDeployment === "select-deployment" ? (
                     <input 
                         className="command"
@@ -27,22 +27,25 @@ export default function Command({
                 )}
             </div>
 
-            {selectedDeployment === "select-deployment" ? (
-                <button 
-                className="copy-button"
-                onClick={copyCommand}
-                disabled
-            >
-                Copy
-            </button>
-            ) : (
-                <button 
-                className="copy-button"
-                onClick={copyCommand}
-            >
-                Copy
-            </button>
-            )}
+            <div className="btn-container">
+                {selectedDeployment === "select-deployment" ? (
+                    <button 
+                        className="copy-button"
+                        onClick={copyCommand}
+                        disabled
+                    >
+                        Copy
+                    </button>
+                ) : (
+                    <button 
+                        className="copy-button"
+                        onClick={copyCommand}
+                    >
+                        Copy
+                    </button>
+                )}
+            </div>
+            
             
         </div>
         
