@@ -65,6 +65,7 @@ export default function Dropdown({
                 }} 
                 defaultValue={defaultValue}
                 value={selectedDeployment}
+                className="dropdown-menu"
             >
                 {optionValues && generateOptions()}
             </select>

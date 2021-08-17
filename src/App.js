@@ -31,7 +31,6 @@ function App() {
 			<div className="actions">
 				
 				{/* USER selects their deployment */}
-				<h3 className="section">Select your deployment type:</h3>
 				<Deployment
 					selectedDeployment={selectedDeployment}
 					setSelectedDeployment={setSelectedDeployment}
@@ -44,7 +43,6 @@ function App() {
 				/>
 
 				{/* USER selects the action they want to take */}
-				<h3 className="section">Select the action you want to take</h3>
 				<Action
 					selectedDeployment={selectedDeployment}
 					selectedAction={selectedAction}

@@ -1,8 +1,6 @@
 .actions-container {
-    border: 1px solid lightgray;
-    padding-left: 10px;
+    /* border: 1px solid lightgray; */
     padding-top: 10px;
-    padding-bottom: 10px;
     width: 50%;
     text-align: left;
 }

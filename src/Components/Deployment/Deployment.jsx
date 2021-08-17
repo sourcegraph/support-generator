@@ -12,6 +12,7 @@ export default function Deployment({
 }) {
     return (
         <div className="deployment-container">
+            <h3 className="section">Select your deployment type:</h3>
             <div className="deployment-type">
                 <select 
                     onChange={(e) => {
@@ -22,6 +23,7 @@ export default function Deployment({
                     }} 
                     defaultValue={selectedDeployment}
                     value={selectedDeployment}
+                    className="dropdown-menu"
                 >
                     <option value="select-deployment">Select Deployment Type...</option>
                     <option value="Docker">Docker</option>
@@ -32,19 +34,23 @@ export default function Deployment({
             
             {selectedDeployment === "Kubernetes" && 
                 <div>
-                    <input 
-                        type="checkbox" 
-                        value={hasNamespace}
-                        onChange={() => setHasNamespace(!hasNamespace)}
-                    ></input>  
-                    <label name="namespace">Namespace?</label>
+                    <div className="namespace-check">
+                        <input 
+                            type="checkbox" 
+                            value={hasNamespace}
+                            onChange={() => setHasNamespace(!hasNamespace)}
+                        ></input>  
+                        <label className="namespace-label" name="namespace">I am using a namespace.</label>
+                    </div>
+                    
                     {hasNamespace &&
-                        <div>
+                        <div className="namespace-input">
                             <input 
                                 type="text"
-                                placeholder="$POD_NAME"
+                                placeholder="$NAMESPACE"
                                 value={namespace}
                                 onChange={(e) => setNamespace(e.target.value)}
+                                className="text-input"
                             ></input>
                         </div>
                     }
