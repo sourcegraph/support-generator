@@ -21,11 +21,17 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1>Command Line Generator</h1>
+			<img 
+				alt="sourcegraph-logo" 
+				src="images/Sourcegraph_Logo_FullColor_light.png" 
+				className="logo"
+			/>
+			<h2 className="subtitle">Command Line Generator</h2>
 
 			<div className="actions">
 				
 				{/* USER selects their deployment */}
+				<h3 className="section">Select your deployment type:</h3>
 				<Deployment
 					selectedDeployment={selectedDeployment}
 					setSelectedDeployment={setSelectedDeployment}
@@ -38,6 +44,7 @@ function App() {
 				/>
 
 				{/* USER selects the action they want to take */}
+				<h3 className="section">Select the action you want to take</h3>
 				<Action
 					selectedDeployment={selectedDeployment}
 					selectedAction={selectedAction}
