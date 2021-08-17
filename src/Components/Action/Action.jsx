@@ -44,7 +44,7 @@ export default function Action({
 
                     />
                     {dockerMap[selectedAction]["option"] &&
-                        <div>
+                        <div className="action-option">
                             <input 
                                 type="text"
                                 placeholder={dockerMap[selectedAction]["option"]}
@@ -73,7 +73,7 @@ export default function Action({
                     />
 
                     {dockerComposeMap[selectedAction]["option"] &&
-                        <div>
+                        <div className="action-option">
                             <input 
                                 type="text"
                                 placeholder={dockerComposeMap[selectedAction]["option"]}
@@ -89,7 +89,6 @@ export default function Action({
             {/* Kubernetes Menu */}
             {selectedDeployment === "Kubernetes" &&
                 <>
-                    <h3 className="section">Select the action you want to take:</h3>
                     <Dropdown
                         selectedAction={selectedAction}
                         defaultValue={selectedAction}
@@ -105,7 +104,7 @@ export default function Action({
                     />
 
                     {kubernetesMap[selectedAction]["option"] && 
-                        <div>
+                        <div className="action-option">
                             <input
                                 type="text"
                                 placeholder={kubernetesMap[selectedAction]["option"]}
