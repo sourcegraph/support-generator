@@ -58,7 +58,7 @@ export default function Dropdown({
 
     return (
         <div className="deployment-type">
-            <h4 className="section">Select the action you want to take:</h4>
+            <h4 className="section">Select action to take:</h4>
             <select 
                 onChange={(e) => {
                     setSelectedAction(e.target.value);

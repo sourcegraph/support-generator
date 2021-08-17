@@ -28,33 +28,46 @@ function App() {
 			/>
 			<h2 className="subtitle">Command Line Generator</h2>
 
-			<div className="actions">
-				
-				{/* USER selects their deployment */}
-				<Deployment
-					selectedDeployment={selectedDeployment}
-					setSelectedDeployment={setSelectedDeployment}
-					setSelectedAction={setSelectedAction}
-					hasNamespace={hasNamespace}
-					setHasNamespace={setHasNamespace}
-					namespace={namespace}
-					setNamespace={setNamespace}
-					setCommand={setCommand}
-				/>
+			<div className="container">
+				<div className="actions">
 
-				{/* USER selects the action they want to take */}
-				<Action
-					selectedDeployment={selectedDeployment}
-					selectedAction={selectedAction}
-					setSelectedAction={setSelectedAction}
-					option={option}
-					setOption={setOption}
-					command={command}
-					setCommand={setCommand}
-					hasNamespace={hasNamespace}
-					namespace={namespace}
-				/>
+					{/* USER selects their deployment */}
+					<div className="deploy-container">
+						<Deployment
+							selectedDeployment={selectedDeployment}
+							setSelectedDeployment={setSelectedDeployment}
+							setSelectedAction={setSelectedAction}
+							hasNamespace={hasNamespace}
+							setHasNamespace={setHasNamespace}
+							namespace={namespace}
+							setNamespace={setNamespace}
+							setCommand={setCommand}
+						/>
+					
+					{/* USER selects the action they want to take */}
+						<Action
+							selectedDeployment={selectedDeployment}
+							selectedAction={selectedAction}
+							setSelectedAction={setSelectedAction}
+							option={option}
+							setOption={setOption}
+							command={command}
+							setCommand={setCommand}
+							hasNamespace={hasNamespace}
+							namespace={namespace}
+						/>
+					</div>
+					
+				</div>
+
+				<div className="line-break">
+				</div>
+
+				<div className="descriptions">
+					Here go the descriptions.
+				</div>
 			</div>
+			
 
 			{/* Command generated from the first two options. */}
 			<div>

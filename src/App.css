@@ -6,12 +6,36 @@
   margin-top: 100px;
 }
 
+.container {
+  width: 65%;
+  margin: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
 .actions {
-  /* border: 1px solid black; */
-  margin:auto;
+  /* border: 1px solid #00cbec; */
   display: flex;
   flex-flow: column nowrap;
-  width: 65%;
+  width: 45%;
+  min-width: 400px;
+  min-height: 325px;
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+.line-break {
+  height: 275px;
+  min-height: 275px;
+  border-left: 1px solid lightgray;
+}
+
+.descriptions {
+  width: 50%;
+  min-height: 325px;
+  min-width: 400px;
+  /* border: 1px solid #00cbec; */
 }
 
 .logo {
@@ -28,4 +52,10 @@
   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   font-weight: 600;
   text-align: left;
+}
+
+.deploy-container {
+  /* border: 1px solid #00cbec; */
+  width: 85%;
+  margin-left: auto;
 }

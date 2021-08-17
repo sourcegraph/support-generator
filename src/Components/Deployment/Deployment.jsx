@@ -12,8 +12,9 @@ export default function Deployment({
 }) {
     return (
         <div className="deployment-container">
-            <h4 className="section">Select your deployment type:</h4>
+            
             <div className="deployment-type">
+                <h4 className="section">Select deployment:</h4>
                 <select 
                     onChange={(e) => {
                         setSelectedDeployment(e.target.value)
@@ -25,7 +26,7 @@ export default function Deployment({
                     value={selectedDeployment}
                     className="dropdown-menu"
                 >
-                    <option value="select-deployment">Select Deployment Type...</option>
+                    <option value="select-deployment">Select Your Deployment Type...</option>
                     <option value="Docker">Docker</option>
                     <option value="Docker Compose">Docker Compose</option>
                     <option value="Kubernetes">Kubernetes</option>
