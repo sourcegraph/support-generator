@@ -12,7 +12,7 @@ export default function Deployment({
 }) {
     return (
         <div className="deployment-container">
-            <h3 className="section">Select your deployment type:</h3>
+            <h4 className="section">Select your deployment type:</h4>
             <div className="deployment-type">
                 <select 
                     onChange={(e) => {
