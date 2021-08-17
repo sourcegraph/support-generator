@@ -20,7 +20,7 @@
   flex-flow: column nowrap;
   width: 45%;
   min-width: 400px;
-  min-height: 325px;
+  min-height: 360px;
   margin-left: auto;
   margin-right: 0px;
 }
@@ -31,9 +31,9 @@
   border-left: 1px solid lightgray;
 }
 
-.descriptions {
+.descriptions-container {
   width: 50%;
-  min-height: 325px;
+  min-height: 360px;
   min-width: 400px;
   /* border: 1px solid #00cbec; */
 }
@@ -54,8 +54,13 @@
   text-align: left;
 }
 
+.section.right { 
+  /* border: 1px solid black; */
+  padding-left: 44px;
+}
+
 .deploy-container {
   /* border: 1px solid #00cbec; */
-  width: 85%;
+  width: 65%;
   margin-left: auto;
 }

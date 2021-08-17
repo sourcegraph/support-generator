@@ -64,7 +64,7 @@ function App() {
 				<div className="line-break">
 				</div>
 
-				<div className="descriptions">
+				<div className="descriptions-container">
 					<Descriptions 
 						selectedDeployment={selectedDeployment}
 					/>

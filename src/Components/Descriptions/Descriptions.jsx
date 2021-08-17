@@ -28,7 +28,7 @@ export default function Descriptions({selectedDeployment}) {
 
     return (
         <div>
-            <h4>Descriptions</h4>
+            <h4 className="section right">Descriptions</h4>
             {mapKeys ? (
                 <ul className="desc-list">
                     {generateDescriptions()}
