@@ -3,13 +3,15 @@ import './Descriptions.css';
 
 export default function Description({key, func, info, currentInfoOpen, setCurrentInfoOpen}) {
     const [showInfoOption, setShowInfoOption] = useState(false);
-    const [infoOpen, setInfoOpen] = useState(false);
+    const [showDesc, setShowDesc] = useState(false);
 
     const handleExpand = () => {
         if (currentInfoOpen !== func) {
             setCurrentInfoOpen(func);
+            setShowDesc(true)
         } else {
             setCurrentInfoOpen("Function")
+            setShowDesc(false)
         }
         
     }
@@ -36,7 +38,18 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
                                 className="expand"
                                 onClick={handleExpand}
                             >
-                                i {`<`}
+                                <div>
+                                    i
+                                </div>
+                                {showDesc ? (
+                                    <div className="rotated">
+                                        {`<`}
+                                    </div>
+                                ) : (
+                                    <div>
+                                        {`<`}
+                                    </div>
+                                )}
                             </button>
                         }
                     </div>

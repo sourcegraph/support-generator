@@ -29,9 +29,16 @@
     font-size: .7rem;
     cursor: pointer;
     transition: .2s;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
 }
 
 
 .info-key {
     font-weight: bold;
+}
+
+.rotated {
+    transform: rotate(-0.25);
 }
