@@ -17,7 +17,6 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
     }
 
     useEffect(() => {
-        console.log(currentInfoOpen);
     }, [currentInfoOpen])
 
     return (
@@ -29,7 +28,7 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
                     onMouseEnter={() => setShowInfoOption(true)}
                     onMouseLeave={() => setShowInfoOption(false)}
                 >
-                    <div className="row">
+                    <div className={`row ${currentInfoOpen === func && 'expanded'}`}>
                         <div>
                             {func}
                         </div>
@@ -39,9 +38,9 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
                                 onClick={handleExpand}
                             >
                                 <div>
-                                    i
+                                    i&nbsp;
                                 </div>
-                                {showDesc ? (
+                                {(showDesc && currentInfoOpen === func) ? (
                                     <div className="rotated">
                                         {`<`}
                                     </div>
