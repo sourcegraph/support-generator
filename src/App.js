@@ -13,8 +13,8 @@ import Descriptions from './Components/Descriptions/Descriptions';
 
 
 function App() {
-	const [selectedDeployment, setSelectedDeployment] = useState("select-deployment");
-	const [selectedAction, setSelectedAction] = useState("Function")
+	const [selectedDeployment, setSelectedDeployment] = useState("Docker");
+	const [selectedAction, setSelectedAction] = useState("Get Logs")
 	const [hasNamespace, setHasNamespace] = useState(false);
 	const [namespace, setNamespace] = useState("");
 	const [option, setOption] = useState("");

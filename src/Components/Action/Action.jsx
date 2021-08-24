@@ -19,12 +19,10 @@ export default function Action({
     namespace,
     hasNamespace,
 }) {
-    const dockerMap = commands["Docker"];
-    const dockerComposeMap = commands["Docker Compose"];
-    const kubernetesMap = commands["Kubernetes"];
-    const dockerOptions = getOptionValues(dockerMap);
-    const dockerComposeOptions = getOptionValues(dockerComposeMap);
-    const kubernetesOptions = getOptionValues(kubernetesMap);
+    const commandsMap = commands[selectedDeployment];
+    const dockerOptions = getOptionValues(commandsMap);
+    const dockerComposeOptions = getOptionValues(commandsMap);
+    const kubernetesOptions = getOptionValues(commandsMap);
 
     return (
         <div className="actions-container">
@@ -37,17 +35,17 @@ export default function Action({
                         optionValues={dockerOptions} 
                         option={option}
                         setOption={setOption}
-                        map={dockerMap}
+                        map={commandsMap}
                         setSelectedAction={setSelectedAction}
                         command={setCommand}
                         setCommand={setCommand}
 
                     />
-                    {dockerMap[selectedAction]["option"] &&
+                    {commandsMap[selectedAction] &&
                         <div className="action-option">
                             <input 
                                 type="text"
-                                placeholder={dockerMap[selectedAction]["option"]}
+                                placeholder={commandsMap[selectedAction]["option"]}
                                 value={option}
                                 onChange={(e) => setOption(e.target.value)}
                                 className="text-input"
@@ -64,7 +62,7 @@ export default function Action({
                         selectedAction={selectedAction}
                         defaultValue={selectedAction}
                         optionValues={dockerComposeOptions} 
-                        map={dockerComposeMap}
+                        map={commandsMap}
                         option={option}
                         setOption={setOption}
                         setSelectedAction={setSelectedAction}
@@ -72,11 +70,11 @@ export default function Action({
                         setCommand={setCommand}
                     />
 
-                    {dockerComposeMap[selectedAction]["option"] &&
+                    {commandsMap[selectedAction] &&
                         <div className="action-option">
                             <input 
                                 type="text"
-                                placeholder={dockerComposeMap[selectedAction]["option"]}
+                                placeholder={commandsMap[selectedAction]["option"]}
                                 value={option}
                                 onChange={(e) => setOption(e.target.value)}
                                 className="text-input"
@@ -93,7 +91,7 @@ export default function Action({
                         selectedAction={selectedAction}
                         defaultValue={selectedAction}
                         optionValues={kubernetesOptions} 
-                        map={kubernetesMap}
+                        map={commandsMap}
                         option={option}
                         setOption={setOption}
                         setSelectedAction={setSelectedAction}
@@ -103,11 +101,11 @@ export default function Action({
                         namespace={namespace}
                     />
 
-                    {kubernetesMap[selectedAction]["option"] && 
+                    {commandsMap[selectedAction] && 
                         <div className="action-option">
                             <input
                                 type="text"
-                                placeholder={kubernetesMap[selectedAction]["option"]}
+                                placeholder={commandsMap[selectedAction]["option"]}
                                 value={option}
                                 onChange={(e) => setOption(e.target.value)}
                                 className="text-input"
