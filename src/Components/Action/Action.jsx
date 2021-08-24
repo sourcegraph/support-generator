@@ -1,16 +1,16 @@
 // ANCHOR Internal Modules
 import Dropdown from "../UI/Dropdown";
-import {commands} from '../../utils/commands';
-import {getOptionValues} from '../../utils/helpers';
+import { commands } from "../../utils/commands";
+import { getOptionValues } from "../../utils/helpers";
 
-// ANCHOR CSS
-import './Action.css';
+// CSS
+import "./Action.css";
 
 
 
 export default function Action({
-    selectedDeployment, 
-    selectedAction, 
+    selectedDeployment,
+    selectedAction,
     setSelectedAction,
     option,
     setOption,
@@ -52,5 +52,6 @@ export default function Action({
                 }
             </>          
         </div>
-    )
+    );
 }
+

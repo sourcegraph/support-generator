@@ -45,14 +45,15 @@ export default function Dropdown({
             }
         }
     }, [
-            setCommand, 
-            selectedAction, 
-            setOption,
-            map, 
-            namespace, 
-            hasNamespace, 
-            option, 
-            command
+        setOption,
+        setCommand, 
+        selectedAction, 
+        setOption,
+        map, 
+        namespace, 
+        hasNamespace, 
+        option, 
+        command
         ]
     );
 
