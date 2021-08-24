@@ -15,7 +15,7 @@
         },
         "List Containers": {
             "value": "List Containers",
-            "command": "docker ps -a",
+            "command": "docker ps -A",
             "option": "",
             "description": "Get a list of containers."
         },
@@ -54,7 +54,7 @@
             "value": "Run Interactive Shell",
             "command": "docker exec -it",
             "option": "$CONTAINER",
-            "command2": " shell",
+            "command2": "shell",
             "description": "This allows you to execute an interactive shell on a running container."
         }
     },
@@ -87,13 +87,13 @@
         "Run Bash Shell": {
             "command": "docker-compose exec -it",
             "option": "$CONTAINER",
-            "command2": " bash",
+            "command2": "bash",
             "description": "This allows you to execute an interactive bash shell on a running container."
         },
         "Run Interative Shell": {
             "command": "docker-compose exec -it",
             "option": "$CONTAINER",
-            "command2": " shell",
+            "command2": "shell",
             "description": "This allows you to execute an interactive shell on a running container."
         }
     },

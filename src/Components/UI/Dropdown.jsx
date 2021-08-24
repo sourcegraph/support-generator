@@ -30,12 +30,9 @@ export default function Dropdown({
         })
     }
 
-    function readyCheck() {
-        map[selectedAction] && setOption(map[selectedAction]["option"]);
-    }
-
     useEffect(() => {
         if(map[selectedAction]){
+            !option && setOption(map[selectedAction]["option"]);
             const command1 = map[selectedAction]["command"];
             const command2 = map[selectedAction]["command2"]
                 ? map[selectedAction]["command2"]
@@ -65,7 +62,7 @@ export default function Dropdown({
             <select 
                 onChange={(e) => {
                     setSelectedAction(e.target.value);
-                    readyCheck();
+                    setOption("");
                 }} 
                 defaultValue={defaultValue}
                 value={selectedDeployment}
