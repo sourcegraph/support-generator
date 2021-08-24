@@ -13,13 +13,13 @@ export default function Command({
         <div className="command-container">
             <div className="command-input-container">
                 {selectedDeployment === "select-deployment" ? (
-                    <input 
+                    <textarea 
                         className="command"
                         type="text"
                         placeholder="[SELECT DEPLOYMENT TYPE]"
                     />
                 ) : (
-                    <input 
+                    <textarea 
                         className="command"
                         type="text"
                         defaultValue={command}

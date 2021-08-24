@@ -27,7 +27,7 @@ function App() {
 				src="images/Sourcegraph_Logo_FullColor_light.png" 
 				className="logo"
 			/>
-			<h2 className="subtitle">Command Line Generator</h2>
+			<h2 className="subtitle">Command Generator</h2>
 
 			<div className="container">
 				<div className="actions">
