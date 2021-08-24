@@ -1,3 +1,4 @@
+// ANCHOR CSS
 import './Command.css';
 
 export default function Command({
@@ -10,37 +11,41 @@ export default function Command({
 
     return (
         <div className="command-container">
-            <div className="command">
+            <div className="command-input-container">
                 {selectedDeployment === "select-deployment" ? (
-                    <input 
+                    <textarea 
                         className="command"
                         type="text"
                         placeholder="[SELECT DEPLOYMENT TYPE]"
                     />
                 ) : (
-                    <input 
+                    <textarea 
                         className="command"
                         type="text"
                         defaultValue={command}
                     />
                 )}
             </div>
-            {selectedDeployment === "select-deployment" ? (
-                <button 
-                className="copy-button"
-                onClick={copyCommand}
-                disabled
-            >
-                Copy
-            </button>
-            ) : (
-                <button 
-                className="copy-button"
-                onClick={copyCommand}
-            >
-                Copy
-            </button>
-            )}
+
+            <div className="btn-container">
+                {selectedDeployment === "select-deployment" ? (
+                    <button 
+                        className="copy-button"
+                        onClick={copyCommand}
+                        disabled
+                    >
+                        Copy
+                    </button>
+                ) : (
+                    <button 
+                        className="copy-button"
+                        onClick={copyCommand}
+                    >
+                        Copy
+                    </button>
+                )}
+            </div>
+            
             
         </div>
         

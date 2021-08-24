@@ -6,6 +6,8 @@ import { getOptionValues } from "../../utils/helpers";
 // CSS
 import "./Action.css";
 
+
+
 export default function Action({
     selectedDeployment,
     selectedAction,
@@ -16,36 +18,39 @@ export default function Action({
     namespace,
     hasNamespace,
 }) {
-    const deploymentMap = commands[selectedDeployment];
-    const listOptions = getOptionValues(deploymentMap);
+    const mapCommands = commands[selectedDeployment];
+    const listActions = getOptionValues(mapCommands);
 
     return (
         <div className="actions-container">
-        { selectedDeployment &&  <Dropdown
-                selectedAction={selectedAction}
-                defaultValue={selectedAction}
-                optionValues={listOptions}
-                map={deploymentMap}
-                option={option}
-                setOption={setOption}
-                setSelectedAction={setSelectedAction}
-                setCommand={setCommand}
-                command={setCommand}
-                hasNamespace={hasNamespace}
-                namespace={namespace}
-            />
-        }
-        {deploymentMap && deploymentMap[selectedAction] && deploymentMap[selectedAction]["option"] && (
-            <div>
-                <input
-                    type="text"
-                    placeholder={deploymentMap[selectedAction]["option"]}
-                    value={option}
-                    onChange={(e) => setOption(e.target.value)}
+            {/* Action Menu */}
+            <>
+                <Dropdown
+                    selectedAction={selectedAction}
+                    defaultValue={selectedAction}
+                    optionValues={listActions} 
+                    map={mapCommands}
+                    option={option}
+                    setOption={setOption}
+                    setSelectedAction={setSelectedAction}
+                    setCommand={setCommand}
+                    command={setCommand}
+                    hasNamespace={hasNamespace}
+                    namespace={namespace}
                 />
-            </div>
-            
-        )}
+
+                {mapCommands[selectedAction] && mapCommands[selectedAction]["option"] &&
+                    <div className="action-option">
+                        <input
+                            type="text"
+                            placeholder={mapCommands[selectedAction]["option"]}
+                            value={option}
+                            onChange={(e) => setOption(e.target.value)}
+                            className="text-input"
+                        />
+                    </div>
+                }
+            </>          
         </div>
     );
 }
