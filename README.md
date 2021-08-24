@@ -1,6 +1,11 @@
 # Command Generator
 
+![image](https://user-images.githubusercontent.com/68532117/130660424-d4263667-17c4-4b87-a51e-22bf7fdcba58.png)
+
+
 The Command Generator is a simple web app that can be used to generate the most frequently used commands for different deployment type when running Sourcegraph.
+
+## Features
 
 ## Development
 
