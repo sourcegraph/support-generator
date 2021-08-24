@@ -45,7 +45,9 @@
 .subtitle {
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  color: #6C757D;
+  padding-bottom: 3%;
 }
 
 .section {
