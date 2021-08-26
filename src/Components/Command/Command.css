@@ -8,19 +8,20 @@
 
 .command {
     word-wrap: normal;
-    width: 50%;
-    height: 50px;
+    width: 40%;
+    max-height: 10%;
     margin: auto;
     background-color: #A112FF;
     color: white;
     font-family: "Source Code Pro", monospace;
     font-weight: bold;
-    font-size: .8rem;
+    font-size: 1rem;
     padding: 10px;
     white-space: normal;
     text-align: center;
     border: none;
     border-radius: 2px;
+    font-weight: bold;
 }
 
 .command::placeholder {
@@ -30,6 +31,8 @@
 }
 
 textarea.command[type="text"] {
+    padding-top: 3%;
+    padding-bottom: 3%;
     color: transparent;
     text-shadow: 0 0 0 #fff;
 }
@@ -52,7 +55,7 @@ button.copy-button[disabled] {
 }
 
 .btn-container {
-    width: 50%;
+    width: 40%;
     margin: auto;
     margin-top: 15px;
     text-align: right;
