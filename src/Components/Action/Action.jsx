@@ -47,6 +47,7 @@ export default function Action({
                             value={option}
                             onChange={(e) => setOption(e.target.value)}
                             className="text-input"
+                            autoFocus
                         />
                     </div>
                 }

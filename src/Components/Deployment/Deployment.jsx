@@ -26,7 +26,7 @@ export default function Deployment({
                     value={selectedDeployment}
                     className="dropdown-menu"
                 >
-                    <option value="select-deployment">Select Your Deployment Type...</option>
+                    {/* <option value="">Select Your Deployment Type...</option> */}
                     <option value="Docker">Docker</option>
                     <option value="Docker Compose">Docker Compose</option>
                     <option value="Kubernetes">Kubernetes</option>
@@ -52,6 +52,7 @@ export default function Deployment({
                                 value={namespace}
                                 onChange={(e) => setNamespace(e.target.value)}
                                 className="text-input"
+                                autoFocus
                             ></input>
                         </div>
                     }
