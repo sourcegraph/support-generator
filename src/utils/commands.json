@@ -152,8 +152,35 @@
         "Check Dirty Database": {
             "command": "kubectl exec",
             "option": "$PGSQL_POD",
-            "command2": " -- psql -U sg -c 'SELECT * FROM schema_migrations'",
+            "command2": "-- psql -U sg -c 'SELECT * FROM schema_migrations'",
             "description": "Get inside the PGSQL Pod to check for dirty database."
+        },
+        "Generate Postgres Database Dump": {
+            "command": "kubectl exec -it -- bash",
+            "option": "$PGSQL_POD",
+            "command2": "-c 'pg_dump -C -U sg' > sourcegraph_db.out",
+            "description": "This allows you to generate a database dump for Postgres."
+        },
+        "Generate Code Intel Database Dump": {
+            "command": "kubectl exec -it -- bash",
+            "option": "$CODEINTEL_POD",
+            "command2": "-c 'pg_dump -C -U sg' > codeintel_db.out",
+            "description": "This allows you to generate a database dump for the Code Intel service."
+        },
+        "Stop existing deployment": {
+            "command": "kubectl scale --replicas=0 deployment/sourcegraph-frontend",
+            "option": "",
+            "description": "Stop the existing deployment by removing the frontend."
+        },
+        "Show pod metrics": {
+            "command": "kubectl top pod -- containers",
+            "option": "$POD",
+            "description": "This allows you to show metrics for a given pod and it's containers."
+        },
+        "Check Storage Class": {
+            "command":"kubectl get storage class",
+            "option": "",
+            "description":"This allows you to check the existence of a storage class and it's name."
         }
     }
 }
