@@ -18,8 +18,6 @@
     color: rgb(47, 47, 47);
     outline: #00CBEC;
     padding: 5px;
-    max-width: 350px;
-    min-width: fit-content;
 }
 
 .text-input {
@@ -31,8 +29,6 @@
     outline: #00cbec;
     padding: 5px;
     margin-top: 3px;
-    max-width: 338px;
-    min-width: fit-content;
 }
 
 .namespace-check {

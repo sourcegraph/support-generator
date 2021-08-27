@@ -9,9 +9,11 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
         if (currentInfoOpen !== func) {
             setCurrentInfoOpen(func);
             setShowDesc(true)
+            setShowInfoOption(true)
         } else {
             setCurrentInfoOpen("Function")
             setShowDesc(false)
+            setShowInfoOption(false)
         }
         
     }
@@ -25,8 +27,8 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
                 <li 
                     key={key}
                     className="desc-item"
-                    onMouseEnter={() => setShowInfoOption(true)}
-                    onMouseLeave={() => setShowInfoOption(false)}
+                    onMouseEnter={() => handleExpand()}
+                    onMouseLeave={() => handleExpand()}
                 >
                     <div className={`row ${currentInfoOpen === func && 'expanded'}`}>
                         <div>
@@ -35,7 +37,6 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
                         {showInfoOption && 
                             <button
                                 className="expand"
-                                onClick={handleExpand}
                             >
                                 <div>
                                     i&nbsp;
