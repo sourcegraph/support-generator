@@ -30,7 +30,7 @@ function App() {
 		<div className="App">
 			<img 
 				alt="sourcegraph-logo" 
-				src="/images/Sourcegraph_Logo_FullColor_light.png" 
+				src="https://github.com/sourcegraph/support-generator/blob/main/public/images/Sourcegraph_Logo_FullColor_light.png?raw=true" 
 				className="logo"
 			/>
 			<h2 className="subtitle">Command Generator</h2>

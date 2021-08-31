@@ -64,8 +64,9 @@ export default function Dropdown({
             <h4 className="section">Select action to take:</h4>
             <select 
                 onChange={(e) => {
+                    let encoded = encodeURIComponent(e.target.value)
                     setSelectedAction(e.target.value);
-                    history.push(`/${deployment}/${e.target.value}`);
+                    history.push(`/${deployment}/${encoded}`);
                     setOption("");
                 }} 
                 defaultValue={defaultValue}
