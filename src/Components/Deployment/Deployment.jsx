@@ -1,3 +1,4 @@
+import { useParams, useHistory } from 'react-router';
 // ANCHOR CSS
 import './Deployment.css';
 
@@ -10,6 +11,16 @@ export default function Deployment({
     namespace, 
     setNamespace,
 }) {
+    let {deployment, namespaceParam} = useParams();
+    let history = useHistory();
+    if(deployment==="Docker" || deployment==="docker") setSelectedDeployment("Docker")
+    if(deployment==="Docker Compose" || deployment==="dc") setSelectedDeployment("Docker Compose")
+    if(deployment==="Kubernetes" || deployment==="k8s") setSelectedDeployment("Kubernetes")
+    if(namespaceParam) {
+        setHasNamespace(true);
+        setNamespace(namespaceParam);
+    }
+
     return (
         <div className="deployment-container">
             
@@ -17,16 +28,16 @@ export default function Deployment({
                 <h4 className="section">Select deployment:</h4>
                 <select 
                     onChange={(e) => {
+                        history.push(`/${e.target.value}`);
                         setSelectedDeployment(e.target.value)
                         setNamespace("")
                         setHasNamespace(false)
-                        setSelectedAction("Function")
+                        setSelectedAction("Get Logs")
                     }} 
                     defaultValue={selectedDeployment}
                     value={selectedDeployment}
                     className="dropdown-menu"
                 >
-                    {/* <option value="">Select Your Deployment Type...</option> */}
                     <option value="Docker">Docker</option>
                     <option value="Docker Compose">Docker Compose</option>
                     <option value="Kubernetes">Kubernetes</option>

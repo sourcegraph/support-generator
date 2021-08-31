@@ -1,5 +1,6 @@
 // ANCHOR External Modules
 import { useEffect } from 'react';
+import { useHistory } from 'react-router';
 
 // ANCHOR Internal Modules
 import DropdownOption from './DropdownOption';
@@ -10,6 +11,7 @@ export default function Dropdown({
     optionValues, 
     option,
     setOption,
+    deployment,
     selectedDeployment,
     setSelectedAction,
     selectedAction,
@@ -29,7 +31,7 @@ export default function Dropdown({
             )
         })
     }
-
+    let history = useHistory();
     useEffect(() => {
         if(map[selectedAction]){
             !option && setOption(map[selectedAction]["option"]);
@@ -63,6 +65,7 @@ export default function Dropdown({
             <select 
                 onChange={(e) => {
                     setSelectedAction(e.target.value);
+                    history.push(`/${deployment}/${e.target.value}`);
                     setOption("");
                 }} 
                 defaultValue={defaultValue}
