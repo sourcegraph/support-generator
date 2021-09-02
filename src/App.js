@@ -26,7 +26,7 @@ function App() {
 	const [command, setCommand] = useState("");
 
 	return (
-		<Router>
+		<Router basename="/support-generator">
 		<div className="App">
 			<img 
 				alt="sourcegraph-logo" 

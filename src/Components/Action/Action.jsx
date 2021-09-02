@@ -24,7 +24,6 @@ export default function Action({
     const listActions = getOptionValues(mapCommands);
     let {deployment, action, podParam} = useParams();
     !action ? action = selectedAction : action = decodeURIComponent(action);
-    console.log(action)
     if(podParam) setOption(podParam)
 
     return (
