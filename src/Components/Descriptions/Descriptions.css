@@ -1,0 +1,65 @@
+.desc-list {
+    list-style: none;
+    text-align: left;
+    font-family: "Source Code Pro", monospace;
+    font-size: .9rem;
+}
+
+.description {
+    list-style: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 5px;
+}
+
+.row {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .9rem;
+    cursor: default;
+    border-radius: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 340px;
+}
+
+.row:hover {
+    background-color: rgb(248, 248, 248);
+}
+
+.row.expanded {
+    background-color: rgb(248,248,248);
+    font-weight: bold;
+}
+
+.expand {
+    border: none;
+    background-color: transparent;
+    font-family: "Source Code Pro", monospace;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: .2s;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.info-key {
+    font-weight: bold;
+}
+
+.rotated {
+    transform: rotate(-90deg);
+}
+
+.command-info {
+    background-color: rgb(248,248,248);
+    font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
+    font-size: .9rem;
+    padding-bottom: 10px;
+    width: 350px;
+}

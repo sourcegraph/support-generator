@@ -1,38 +1,80 @@
 .command-container {
-    margin-top: 20px;
+    margin-top: 40px;
+}
+
+.command-input-container {
+    width: 100%;
 }
 
 .command {
-    width: 65%;
+    word-wrap: normal;
+    width: 40%;
+    max-height: 10%;
     margin: auto;
-    background-color: rgb(7, 149, 206);
+    background-color: #A112FF;
     color: white;
+    font-family: "Source Code Pro", monospace;
     font-weight: bold;
-    padding-top: 10px;
-    padding-bottom:10px;
-    text-align:center;
-    border:none;
+    font-size: 1rem;
+    padding: 10px;
+    white-space: normal;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
 }
 
 .command::placeholder {
     color: white;
     font-weight: bold;
-    background-color: rgb(7,149, 206);
+    background-color: #A112FF;
 }
 
-input.command[type="text"] {
+textarea.command[type="text"] {
+    padding-top: 3%;
+    padding-bottom: 3%;
     color: transparent;
     text-shadow: 0 0 0 #fff;
 }
 
-input.command[type="text"]:focus {
+textarea.command[type="text"]:focus {
     outline:none;
 }
 
 button.copy-button:disabled,
 button.copy-button[disabled] {
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    color: #444444
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: lightgray;
+    width: 100px;
+    height: 40px;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-weight: regular;
+    font-size: 1.0rem;
 }
 
+.btn-container {
+    width: 40%;
+    margin: auto;
+    margin-top: 15px;
+    text-align: right;
+}
+
+.copy-button {
+    border: 2px solid #A112FF;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: #A112FF;
+    width: 100px;
+    height: 40px;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.0rem;
+}
+
+.copy-button:hover {
+    background-color: #A112FF;
+    color: white;
+    cursor: pointer;
+}

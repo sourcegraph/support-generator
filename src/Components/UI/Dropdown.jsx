@@ -1,5 +1,6 @@
 // ANCHOR External Modules
 import { useEffect } from 'react';
+import { useHistory } from 'react-router';
 
 // ANCHOR Internal Modules
 import DropdownOption from './DropdownOption';
@@ -10,6 +11,7 @@ export default function Dropdown({
     optionValues, 
     option,
     setOption,
+    deployment,
     selectedDeployment,
     setSelectedAction,
     selectedAction,
@@ -29,11 +31,10 @@ export default function Dropdown({
             )
         })
     }
-
+    let history = useHistory();
     useEffect(() => {
-        // pre-set option
-        if (map && selectedAction && map[selectedAction]["option"]) {
-            if(!option) setOption(map[selectedAction]["option"]);
+        if(map[selectedAction]){
+            !option && setOption(map[selectedAction]["option"]);
             const command1 = map[selectedAction]["command"];
             const command2 = map[selectedAction]["command2"]
                 ? map[selectedAction]["command2"]
@@ -47,25 +48,30 @@ export default function Dropdown({
         }
     }, [
         setOption,
-            setCommand, 
-            selectedAction, 
-            map, 
-            namespace, 
-            hasNamespace, 
-            option, 
-            command
+        setCommand, 
+        selectedAction, 
+        setOption,
+        map, 
+        namespace, 
+        hasNamespace, 
+        option, 
+        command
         ]
     );
 
     return (
         <div className="deployment-type">
+            <h4 className="section">Select action to take:</h4>
             <select 
                 onChange={(e) => {
+                    let encoded = encodeURIComponent(e.target.value)
                     setSelectedAction(e.target.value);
-                    setOption("")
+                    history.push(`/${deployment}/${encoded}`);
+                    setOption("");
                 }} 
                 defaultValue={defaultValue}
                 value={selectedDeployment}
+                className="dropdown-menu"
             >
                 {optionValues && generateOptions()}
             </select>

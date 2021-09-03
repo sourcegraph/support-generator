@@ -1,8 +1,50 @@
 .deployment-container {
-    border: 1px solid lightgray;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    /* border: 1px solid lightgray; */
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
     width: 50%;
     text-align: left;
+}
+
+.deployment-type {
+    width: 100%;
+}
+
+.dropdown-menu {
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    font-family: "Source Sans Pro", monospace;
+    font-size: 1rem;
+    color: rgb(47, 47, 47);
+    outline: #00CBEC;
+    padding: 5px;
+}
+
+.text-input {
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    font-family: "Source Code Pro", monospace;
+    font-size: 1rem;
+    color: rgb(47, 47, 47);
+    outline: #00cbec;
+    padding: 5px;
+    margin-top: 3px;
+}
+
+.namespace-check {
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+}
+
+.namespace-label {
+    margin-left: 4px;
+}
+
+.namespace-input {
+    margin-top: 10px;
+    width: 100%;
 }

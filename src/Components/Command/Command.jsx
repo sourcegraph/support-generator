@@ -1,3 +1,6 @@
+// ANCHOR External Modules
+import {useState, useEffect} from 'react'
+
 // ANCHOR CSS
 import './Command.css';
 
@@ -5,44 +8,37 @@ export default function Command({
     selectedDeployment,
     command,
 }) {
+    const [copy, setCopy] = useState("Copy")
+
+    useEffect(() => {
+        setCopy("Copy");
+    }, [command, selectedDeployment])
+
     const copyCommand = () => {
         navigator.clipboard.writeText(command);
+        setCopy("Copied!");
     }
 
     return (
         <div className="command-container">
-            <div className="command">
-                {selectedDeployment === "select-deployment" ? (
-                    <input 
+            <div className="command-input-container">
+                <textarea 
                         className="command"
                         type="text"
-                        placeholder="[SELECT DEPLOYMENT TYPE]"
-                    />
-                ) : (
-                    <input 
-                        className="command"
-                        type="text"
-                        defaultValue={command}
-                    />
-                )}
+                        defaultValue={selectedDeployment === "select-deployment" ? "[SELECT DEPLOYMENT TYPE]" : command}
+                />
             </div>
 
-            {selectedDeployment === "select-deployment" ? (
-                <button 
-                className="copy-button"
-                onClick={copyCommand}
-                disabled
-            >
-                Copy
-            </button>
-            ) : (
-                <button 
-                className="copy-button"
-                onClick={copyCommand}
-            >
-                Copy
-            </button>
-            )}
+            <div className="btn-container">
+                    <button 
+                        className="copy-button"
+                        onClick={copyCommand}
+                        disabled={selectedDeployment === "select-deployment" ? true : false}
+                    >
+                        {copy}
+                    </button>
+            </div>
+            
             
         </div>
         
