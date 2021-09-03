@@ -1,3 +1,4 @@
+import { useParams } from 'react-router';
 // ANCHOR Internal Modules
 import Dropdown from "../UI/Dropdown";
 import { commands } from "../../utils/commands";
@@ -18,17 +19,22 @@ export default function Action({
     namespace,
     hasNamespace,
 }) {
+    
     const mapCommands = commands[selectedDeployment];
     const listActions = getOptionValues(mapCommands);
+    let {deployment, action, podParam} = useParams();
+    !action ? action = selectedAction : action = decodeURIComponent(action);
+    if(podParam) setOption(podParam)
 
     return (
         <div className="actions-container">
             {/* Action Menu */}
             <>
                 <Dropdown
-                    selectedAction={selectedAction}
-                    defaultValue={selectedAction}
+                    selectedAction={action}
+                    defaultValue={action}
                     optionValues={listActions} 
+                    deployment={deployment}
                     map={mapCommands}
                     option={option}
                     setOption={setOption}
