@@ -61,7 +61,11 @@ export default function Deployment({
                                 type="text"
                                 placeholder="$NAMESPACE"
                                 value={namespace}
-                                onChange={(e) => setNamespace(e.target.value)}
+                                onChange={(e) => {
+                                    setNamespace(e.target.value)
+                                    // console.log(namespace);
+                                }
+                                }
                                 className="text-input"
                                 autoFocus
                             ></input>

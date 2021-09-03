@@ -65,8 +65,6 @@ function App() {
 							/>
 						</div>
 					)} />
-					
-					
 				</div>
 
 				<div className="line-break">

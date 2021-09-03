@@ -31,7 +31,9 @@ export default function Dropdown({
             )
         })
     }
+
     let history = useHistory();
+
     useEffect(() => {
         if(map[selectedAction]){
             !option && setOption(map[selectedAction]["option"]);
@@ -50,7 +52,6 @@ export default function Dropdown({
         setOption,
         setCommand, 
         selectedAction, 
-        setOption,
         map, 
         namespace, 
         hasNamespace, 
