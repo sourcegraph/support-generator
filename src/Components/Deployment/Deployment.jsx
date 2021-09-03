@@ -1,4 +1,4 @@
-import { useParams, useHistory } from 'react-router';
+import { useParams, useHistory } from 'react-router-dom';
 // ANCHOR CSS
 import './Deployment.css';
 
@@ -11,19 +11,26 @@ export default function Deployment({
     namespace, 
     setNamespace,
 }) {
-    let {deployment, namespaceParam} = useParams();
+    let {deployment} = useParams();
+    
+    // NOTE test to print out value of using the useParams() hook.
+    // console.log("deployment = ", deployment)
+    // console.log("namespaceParam = ", namespaceParam);
+
+
     let history = useHistory();
-    if(deployment==="Docker" || deployment==="docker") setSelectedDeployment("Docker")
-    if(deployment==="Docker Compose" || deployment==="dc") setSelectedDeployment("Docker Compose")
-    if(deployment==="Kubernetes" || deployment==="k8s") setSelectedDeployment("Kubernetes")
-    if(namespaceParam) {
-        setHasNamespace(true);
-        setNamespace(namespaceParam);
-    }
+    if (deployment==="Docker" || deployment==="docker") setSelectedDeployment("Docker")
+    if (deployment==="Docker Compose" || deployment==="dc") setSelectedDeployment("Docker Compose")
+    if (deployment==="Kubernetes" || deployment==="k8s") setSelectedDeployment("Kubernetes")
+    
+    // FIXME namespaceParam is undefined so this never evaluates.
+    // if (namespaceParam) {
+    //     setHasNamespace(true);
+    //     setNamespace(namespace);
+    // }
 
     return (
         <div className="deployment-container">
-            
             <div className="deployment-type">
                 <h4 className="section">Select deployment:</h4>
                 <select 
@@ -51,7 +58,7 @@ export default function Deployment({
                             type="checkbox" 
                             value={hasNamespace}
                             onChange={() => setHasNamespace(!hasNamespace)}
-                        ></input>  
+                        />  
                         <label className="namespace-label" name="namespace">I am using a namespace.</label>
                     </div>
                     
