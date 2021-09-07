@@ -1,5 +1,5 @@
 // ANCHOR External Modules
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
 // ANCHOR CSS
 import './Command.css';
@@ -22,26 +22,26 @@ export default function Command({
     return (
         <div className="command-container">
             <div className="command-input-container">
-                <textarea 
-                        className="command"
-                        type="text"
-                        defaultValue={selectedDeployment === "select-deployment" ? "[SELECT DEPLOYMENT TYPE]" : command}
+                <textarea
+                    className="command"
+                    type="text"
+                    defaultValue={selectedDeployment === "select-deployment" ? "[SELECT DEPLOYMENT TYPE]" : command}
                 />
             </div>
 
             <div className="btn-container">
-                    <button 
-                        className="copy-button"
-                        onClick={copyCommand}
-                        disabled={selectedDeployment === "select-deployment" ? true : false}
-                    >
-                        {copy}
-                    </button>
+                <button
+                    className="copy-button"
+                    onClick={copyCommand}
+                    disabled={selectedDeployment === "select-deployment" ? true : false}
+                >
+                    {copy}
+                </button>
             </div>
-            
-            
+
+
         </div>
-        
+
     )
 }
 

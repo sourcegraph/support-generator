@@ -19,13 +19,13 @@ export default function Action({
     namespace,
     hasNamespace,
 }) {
-    
+
     const mapCommands = commands[selectedDeployment];
     const listActions = getOptionValues(mapCommands);
-    let {deployment, action, podParam} = useParams();
-    
+    let { deployment, action, podParam } = useParams();
+
     !action ? action = selectedAction : action = decodeURIComponent(action);
-    if(podParam) setOption(podParam)
+    if (podParam) setOption(podParam)
 
     return (
         <div className="actions-container">
@@ -34,7 +34,7 @@ export default function Action({
                 <Dropdown
                     selectedAction={action}
                     defaultValue={action}
-                    optionValues={listActions} 
+                    optionValues={listActions}
                     deployment={deployment}
                     map={mapCommands}
                     option={option}
@@ -58,7 +58,7 @@ export default function Action({
                         />
                     </div>
                 }
-            </>          
+            </>
         </div>
     );
 }

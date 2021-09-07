@@ -1,6 +1,6 @@
-export default function DropdownOption({value, opt}) {
+export default function DropdownOption({ value, opt }) {
     return (
-        <option 
+        <option
             value={value}
             opt={opt}
         >

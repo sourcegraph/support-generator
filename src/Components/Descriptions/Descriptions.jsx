@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import {commands} from '../../utils/commands';
+import { commands } from '../../utils/commands';
 import { getOptionValues } from '../../utils/helpers';
 import Description from './Description';
 
 import './Descriptions.css';
 
-export default function Descriptions({selectedDeployment}) {
+export default function Descriptions({ selectedDeployment }) {
     const deploymentMap = commands[selectedDeployment];
     const mapKeys = getOptionValues(deploymentMap);
     // const [isInfoOpen, setIsInfoOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function Descriptions({selectedDeployment}) {
         return mapKeys.map((mapKey, i) => {
             const vals = deploymentMap[mapKey];
             return (
-                <Description 
+                <Description
                     key={`desc-${i}`}
                     func={mapKeys[i]}
                     info={vals}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Descriptions.css';
 
-export default function Description({key, func, info, currentInfoOpen, setCurrentInfoOpen}) {
+export default function Description({ key, func, info, currentInfoOpen, setCurrentInfoOpen }) {
     const [showInfoOption, setShowInfoOption] = useState(false);
     const [showDesc, setShowDesc] = useState(false);
 
@@ -15,7 +15,7 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
             setShowDesc(false)
             setShowInfoOption(false)
         }
-        
+
     }
 
     useEffect(() => {
@@ -24,7 +24,7 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
     return (
         <>
             {func !== "Function" &&
-                <li 
+                <li
                     key={key}
                     className="desc-item"
                     onMouseEnter={() => handleExpand()}
@@ -34,7 +34,7 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
                         <div>
                             {func}
                         </div>
-                        {showInfoOption && 
+                        {showInfoOption &&
                             <button
                                 className="expand"
                             >
@@ -53,7 +53,7 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
                             </button>
                         }
                     </div>
-                    {currentInfoOpen === func && 
+                    {currentInfoOpen === func &&
                         <div className="command-info">
                             <ul className="description">
                                 <li>

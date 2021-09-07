@@ -6,9 +6,9 @@ import { useHistory } from 'react-router';
 import DropdownOption from './DropdownOption';
 
 export default function Dropdown({
-    defaultValue, 
+    defaultValue,
     map,
-    optionValues, 
+    optionValues,
     option,
     setOption,
     deployment,
@@ -23,7 +23,7 @@ export default function Dropdown({
     function generateOptions() {
         return optionValues.map((val, i) => {
             return (
-                <DropdownOption 
+                <DropdownOption
                     key={`option-${i}`}
                     value={val}
                     opt={map[val]["option"] || null}
@@ -35,7 +35,7 @@ export default function Dropdown({
     let history = useHistory();
 
     useEffect(() => {
-        if(map[selectedAction]){
+        if (map[selectedAction]) {
             !option && setOption(map[selectedAction]["option"]);
             const command1 = map[selectedAction]["command"];
             const command2 = map[selectedAction]["command2"]
@@ -50,26 +50,26 @@ export default function Dropdown({
         }
     }, [
         setOption,
-        setCommand, 
-        selectedAction, 
-        map, 
-        namespace, 
-        hasNamespace, 
-        option, 
+        setCommand,
+        selectedAction,
+        map,
+        namespace,
+        hasNamespace,
+        option,
         command
-        ]
+    ]
     );
 
     return (
         <div className="deployment-type">
             <h4 className="section">Select action to take:</h4>
-            <select 
+            <select
                 onChange={(e) => {
                     let encoded = encodeURIComponent(e.target.value)
                     setSelectedAction(e.target.value);
                     history.push(`/${deployment}/${encoded}`);
                     setOption("");
-                }} 
+                }}
                 defaultValue={defaultValue}
                 value={selectedDeployment}
                 className="dropdown-menu"
