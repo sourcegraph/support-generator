@@ -1,0 +1,29 @@
+.generated-uri-container {
+    width: 100%;
+    margin-top: 30px;
+    /* border: 1px solid black; */
+}
+
+.generated-uri {
+    width: 65%;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    font-family: "Source Code Pro",
+        monospace;
+    font-size: 1rem;
+    color: rgb(47, 47, 47);
+    outline: #00cbec;
+    padding: 5px;
+    margin-top: 3px;
+    min-width: fit-content;
+    padding-left: 10px;
+}
+
+input.generated-uri[type="text"] {
+    color: gray;
+    text-shadow: 0 0 0 #fff;
+}
+
+input.generated-uri[type="text"]:focus {
+    outline: none;
+}

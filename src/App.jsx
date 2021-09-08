@@ -1,10 +1,12 @@
 // ANCHOR External Modules
-import {useState} from 'react'
+import { useState } from 'react'
 
 // ANCHOR Internal Modules
 import Deployment from './Components/Deployment/Deployment';
 import Action from './Components/Action/Action';
 import Command from './Components/Command/Command';
+import GenerateLink from './Components/UI/GenerateLink';
+import GeneratedURI from './Components/UI/GeneratedURI';
 
 // ANCHOR CSS
 import './App.css';
@@ -19,12 +21,13 @@ function App() {
 	const [namespace, setNamespace] = useState("");
 	const [option, setOption] = useState("");
 	const [command, setCommand] = useState("");
+	const [generatedURI, setGeneratedURI] = useState("");
 
 	return (
 		<div className="App">
-			<img 
-				alt="sourcegraph-logo" 
-				src="images/Sourcegraph_Logo_FullColor_light.png" 
+			<img
+				alt="sourcegraph-logo"
+				src="images/Sourcegraph_Logo_FullColor_light.png"
 				className="logo"
 			/>
 			<h2 className="subtitle">Command Line Generator</h2>
@@ -43,9 +46,10 @@ function App() {
 							namespace={namespace}
 							setNamespace={setNamespace}
 							setCommand={setCommand}
+							setOption={setOption}
 						/>
-					
-					{/* USER selects the action they want to take */}
+
+						{/* USER selects the action they want to take */}
 						<Action
 							selectedDeployment={selectedDeployment}
 							selectedAction={selectedAction}
@@ -57,24 +61,38 @@ function App() {
 							hasNamespace={hasNamespace}
 							namespace={namespace}
 						/>
+
+
+						<GenerateLink
+							deployment={selectedDeployment}
+							action={selectedAction}
+							namespace={namespace}
+							option={option}
+							setGeneratedURI={setGeneratedURI}
+						/>
 					</div>
-					
+
 				</div>
 
 				<div className="line-break">
 				</div>
 
 				<div className="descriptions-container">
-					<Descriptions 
+					<Descriptions
 						selectedDeployment={selectedDeployment}
 					/>
 				</div>
 			</div>
-			
+
+
 
 			{/* Command generated from the first two options. */}
 			<div>
-				<Command 
+				<GeneratedURI
+					generatedURI={generatedURI}
+					setGeneratedURI={setGeneratedURI}
+				/>
+				<Command
 					selectedDeployment={selectedDeployment}
 					selectedAction={selectedAction}
 					command={command}

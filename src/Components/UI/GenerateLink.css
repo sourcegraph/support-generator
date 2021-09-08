@@ -1,0 +1,40 @@
+.generate-btn-container {
+    width: 91%;
+    margin-top: 30px;
+    text-align: left;
+    /* border: 1px solid black; */
+}
+
+button.generate-btn:disabled,
+button.generate-btn[disabled] {
+    border: 2px solid lightgray;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: lightgray;
+    width: 100%;
+    height: 40px;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.0rem;
+}
+
+.generate-btn {
+    border: 2px solid #A112FF;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: #A112FF;
+    width: 100%;
+    height: 40px;
+    font-family: "Source Sans Pro",
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-weight: 600;
+    font-size: 1.0rem;
+}
+
+.generate-btn:hover {
+    background-color: #A112FF;
+    color: white;
+    cursor: pointer;
+}

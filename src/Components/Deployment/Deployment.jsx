@@ -2,26 +2,28 @@
 import './Deployment.css';
 
 export default function Deployment({
-    selectedDeployment, 
+    selectedDeployment,
     setSelectedDeployment,
     setSelectedAction,
     hasNamespace,
-    setHasNamespace, 
-    namespace, 
+    setHasNamespace,
+    namespace,
     setNamespace,
+    setOption
 }) {
     return (
         <div className="deployment-container">
-            
+
             <div className="deployment-type">
                 <h4 className="section">Select deployment:</h4>
-                <select 
+                <select
                     onChange={(e) => {
                         setSelectedDeployment(e.target.value)
                         setNamespace("")
                         setHasNamespace(false)
                         setSelectedAction("Function")
-                    }} 
+                        setOption("");
+                    }}
                     defaultValue={selectedDeployment}
                     value={selectedDeployment}
                     className="dropdown-menu"
@@ -32,21 +34,21 @@ export default function Deployment({
                     <option value="Kubernetes">Kubernetes</option>
                 </select>
             </div>
-            
-            {selectedDeployment === "Kubernetes" && 
+
+            {selectedDeployment === "Kubernetes" &&
                 <div>
                     <div className="namespace-check">
-                        <input 
-                            type="checkbox" 
+                        <input
+                            type="checkbox"
                             value={hasNamespace}
                             onChange={() => setHasNamespace(!hasNamespace)}
-                        ></input>  
+                        ></input>
                         <label className="namespace-label" name="namespace">I am using a namespace.</label>
                     </div>
-                    
+
                     {hasNamespace &&
                         <div className="namespace-input">
-                            <input 
+                            <input
                                 type="text"
                                 placeholder="$NAMESPACE"
                                 value={namespace}
@@ -56,7 +58,7 @@ export default function Deployment({
                         </div>
                     }
                 </div>
-            } 
+            }
         </div>
     )
 }
