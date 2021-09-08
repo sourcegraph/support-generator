@@ -43,7 +43,8 @@ export default function Deployment({
                         setHasNamespace(false)
                         setSelectedAction("Get Logs")
                     }}
-                    defaultValue={selectedDeployment}
+                    // NOTE commented out due to error in console saying select items can only have defaultValue or value. Not both.
+                    // defaultValue={selectedDeployment}
                     value={selectedDeployment}
                     className="dropdown-menu"
                 >
@@ -56,11 +57,32 @@ export default function Deployment({
             {selectedDeployment === "Kubernetes" &&
                 <div>
                     <div className="namespace-check">
-                        <input
-                            type="checkbox"
-                            value={hasNamespace}
-                            onChange={() => setHasNamespace(!hasNamespace)}
-                        />
+                        {/** 
+                        * NOTE this ternary statement is SO hacky, 
+                        * but I had a hard time getting the checkbox
+                        * to work otherwise. I am open to other solutions.
+                        */}
+                        {hasNamespace ? (
+                            <input
+                                type="checkbox"
+                                value={hasNamespace}
+                                onChange={() => {
+                                    console.log("hasNamespace: ", hasNamespace);
+                                    setHasNamespace(!hasNamespace)
+                                }}
+                                checked
+                            />
+                        ) : (
+                            <input
+                                type="checkbox"
+                                value={hasNamespace}
+                                onChange={() => {
+                                    console.log("hasNamespace: ", hasNamespace);
+                                    setHasNamespace(!hasNamespace)
+                                }}
+                            />
+                        )}
+
                         <label className="namespace-label" name="namespace">I am using a namespace.</label>
                     </div>
 
