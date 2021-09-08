@@ -58,32 +58,34 @@ export default function Deployment({
                 <div>
                     <div className="namespace-check">
                         {/** 
-                        * NOTE this ternary statement is SO hacky, 
-                        * but I had a hard time getting the checkbox
-                        * to work otherwise. I am open to other solutions.
+                        * FIXME this ternary statement is functional but
+                        * it is very hacky. I had a hard time getting the checkbox
+                        * to work otherwise. I am open to and would prefer another
+                        * solution if anyone has any ideas.
                         */}
                         {hasNamespace ? (
                             <input
                                 type="checkbox"
                                 value={hasNamespace}
-                                onChange={() => {
-                                    console.log("hasNamespace: ", hasNamespace);
-                                    setHasNamespace(!hasNamespace)
-                                }}
+                                onChange={() => setHasNamespace(!hasNamespace)}
                                 checked
                             />
                         ) : (
                             <input
                                 type="checkbox"
+                                id="namespaceCheck"
                                 value={hasNamespace}
-                                onChange={() => {
-                                    console.log("hasNamespace: ", hasNamespace);
-                                    setHasNamespace(!hasNamespace)
-                                }}
+                                onChange={() => setHasNamespace(!hasNamespace)}
                             />
                         )}
 
-                        <label className="namespace-label" name="namespace">I am using a namespace.</label>
+                        <label
+                            for="namespaceCheck"
+                            className="namespace-label"
+                            name="namespace"
+                        >
+                            I am using a namespace.
+                        </label>
                     </div>
 
                     {hasNamespace &&
@@ -98,7 +100,7 @@ export default function Deployment({
                                 }
                                 }
                                 className="text-input"
-                                autoFocus
+                            // autoFocus
                             ></input>
                         </div>
                     }

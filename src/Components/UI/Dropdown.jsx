@@ -36,7 +36,7 @@ export default function Dropdown({
 
     useEffect(() => {
         if (map[selectedAction]) {
-            !option && setOption(map[selectedAction]["option"]);
+            // !option && setOption(map[selectedAction]["option"]);
             const command1 = map[selectedAction]["command"];
             const command2 = map[selectedAction]["command2"]
                 ? map[selectedAction]["command2"]
@@ -67,11 +67,12 @@ export default function Dropdown({
                 onChange={(e) => {
                     let encoded = encodeURIComponent(e.target.value)
                     setSelectedAction(e.target.value);
+                    console.log(selectedAction)
                     history.push(`/${deployment}/${encoded}`);
                     setOption("");
                 }}
-                defaultValue={defaultValue}
-                value={selectedDeployment}
+                // defaultValue={defaultValue}
+                value={selectedAction}
                 className="dropdown-menu"
             >
                 {optionValues && generateOptions()}
