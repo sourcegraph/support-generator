@@ -11,19 +11,20 @@ export default function GenerateLink({
     const generateURL = () => {
         let depURI = encodeURIComponent(deployment)
         let actURI = encodeURIComponent(action)
+        let base_url = window.location.href;
         let url;
 
         if (!namespace && !option) {
-            url = `/${depURI}/${actURI}/`
+            url = `${depURI}/${actURI}/`
         } else if (namespace && !option) {
-            url = `/${depURI}/${actURI}/${namespace}/`
+            url = `${depURI}/${actURI}/${namespace}/`
         } else if (namespace && option) {
-            url = `/${depURI}/${actURI}/${namespace}/${option}`
+            url = `${depURI}/${actURI}/${namespace}/${option}`
         } else if (!namespace && option) {
-            url = `/${depURI}/${actURI}/none/${option}`
+            url = `${depURI}/${actURI}/none/${option}`
         }
 
-        setGeneratedURI(url);
+        setGeneratedURI(`${base_url}${url}`);
     }
 
     return (
