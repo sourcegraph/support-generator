@@ -13,23 +13,11 @@ export default function Deployment({
     namespace,
     setNamespace,
 }) {
-    let { deployment } = useParams();
-
-    // NOTE test to print out value of using the useParams() hook.
-    // console.log("deployment = ", deployment)
-    // console.log("namespaceParam = ", namespaceParam);
-
-
+    // let { deployment } = useParams();
     let history = useHistory();
-    if (deployment === "Docker" || deployment === "docker") setSelectedDeployment("Docker")
-    if (deployment === "Docker Compose" || deployment === "dc") setSelectedDeployment("Docker Compose")
-    if (deployment === "Kubernetes" || deployment === "k8s") setSelectedDeployment("Kubernetes")
-
-    // FIXME namespaceParam is undefined so this never evaluates.
-    // if (namespaceParam) {
-    //     setHasNamespace(true);
-    //     setNamespace(namespace);
-    // }
+    // if (deployment === "Docker" || deployment === "docker") setSelectedDeployment("Docker")
+    // if (deployment === "Docker Compose" || deployment === "dc") setSelectedDeployment("Docker Compose")
+    // if (deployment === "Kubernetes" || deployment === "k8s") setSelectedDeployment("Kubernetes")
 
     return (
         <div className="deployment-container">

@@ -1,4 +1,4 @@
-import { useParams } from 'react-router';
+// import { useParams } from 'react-router';
 // ANCHOR Internal Modules
 import Dropdown from "../UI/Dropdown";
 import { commands } from "../../utils/commands";
@@ -22,22 +22,28 @@ export default function Action({
 
     const mapCommands = commands[selectedDeployment];
     const listActions = getOptionValues(mapCommands);
-    let { deployment, action, podParam } = useParams();
+
+    // NOTE: B i tried to figure out what you were doing here but it seems to be 
+    // breaking all the re-rendering that needs to happen.
+
+    // let { deployment, action, podParam } = useParams();
+
 
     // !action ? action = selectedAction : action = decodeURIComponent(action);
-    // // console.log(podParam);
     // if (podParam) setOption(podParam)
-    console.log(option)
 
     return (
         <div className="actions-container">
             {/* Action Menu */}
             <>
                 <Dropdown
-                    selectedAction={action}
-                    defaultValue={action}
+                    // selectedAction={action}
+                    selectedAction={selectedAction}
+                    // defaultValue={action}
+                    defaultValue={selectedAction}
                     optionValues={listActions}
-                    deployment={deployment}
+                    // deployment={deployment}
+                    deployment={selectedDeployment}
                     map={mapCommands}
                     option={option}
                     setOption={setOption}
