@@ -64,7 +64,7 @@
         "Kill Containers": {
             "command": "docker-compose kill",
             "option": "",
-            "description": "Get a list of containers."
+            "description": "Forces running containers to stop by sending a SIGKILL signal."
         },
         "Start Sourcegraph": {
             "command": "docker-compose up -d",
