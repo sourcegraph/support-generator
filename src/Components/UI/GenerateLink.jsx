@@ -28,24 +28,23 @@ export default function GenerateLink({
     }
 
     return (
-        <div className="generate-btn-container">
+        <>
             {action === "Function" ? (
                 <button
                     className="generate-btn"
                     onClick={generateURL}
                     disabled
                 >
-                    Generate URI
+                    Generate URL for re-use
                 </button>
             ) : (
                 <button
                     className="generate-btn"
                     onClick={generateURL}
                 >
-                    Generate URL
+                    Generate URL for re-use
                 </button>
             )}
-
-        </div>
+        </>
     )
 }

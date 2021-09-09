@@ -34,43 +34,15 @@ input.command[type="text"] {
 }
 
 input.command[type="text"]:focus {
-    outline:none;
+    outline: none;
 }
 
-button.copy-button:disabled,
-button.copy-button[disabled] {
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    background-color: #ffffff;
-    color: lightgray;
-    width: 100px;
-    height: 40px;
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
-    font-weight: regular;
-    font-size: 1.0rem;
-}
-
-.btn-container {
+.btns-container {
     width: 65%;
     margin: auto;
-    margin-top: 15px;
-    text-align: right;
-}
-
-.copy-button {
-    border: 2px solid #A112FF;
-    border-radius: 3px;
-    background-color: #ffffff;
-    color: #A112FF;
-    width: 100px;
-    height: 40px;
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 1.0rem;
-}
-
-.copy-button:hover {
-    background-color: #A112FF;
-    color: white;
-    cursor: pointer;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    margin-top: 10px;
 }

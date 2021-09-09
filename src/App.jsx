@@ -5,7 +5,6 @@ import { useState } from 'react'
 import Deployment from './Components/Deployment/Deployment';
 import Action from './Components/Action/Action';
 import Command from './Components/Command/Command';
-import GenerateLink from './Components/UI/GenerateLink';
 import GeneratedURI from './Components/UI/GeneratedURI';
 
 // ANCHOR CSS
@@ -61,15 +60,6 @@ function App() {
 							hasNamespace={hasNamespace}
 							namespace={namespace}
 						/>
-
-
-						<GenerateLink
-							deployment={selectedDeployment}
-							action={selectedAction}
-							namespace={namespace}
-							option={option}
-							setGeneratedURI={setGeneratedURI}
-						/>
 					</div>
 
 				</div>
@@ -88,17 +78,17 @@ function App() {
 
 			{/* Command generated from the first two options. */}
 			<div>
-				<GeneratedURI
-					generatedURI={generatedURI}
-					setGeneratedURI={setGeneratedURI}
-				/>
 				<Command
 					selectedDeployment={selectedDeployment}
 					selectedAction={selectedAction}
 					command={command}
-					setCommand={setCommand}
 					namespace={namespace}
 					option={option}
+					setGeneratedURI={setGeneratedURI}
+				/>
+				<GeneratedURI
+					generatedURI={generatedURI}
+					setGeneratedURI={setGeneratedURI}
 				/>
 			</div>
 		</div>
