@@ -14,13 +14,24 @@ import Descriptions from './Components/Descriptions/Descriptions';
 
 
 function App() {
-	const [selectedDeployment, setSelectedDeployment] = useState("select-deployment");
-	const [selectedAction, setSelectedAction] = useState("Function")
-	const [hasNamespace, setHasNamespace] = useState(false);
-	const [namespace, setNamespace] = useState("");
-	const [option, setOption] = useState("");
+	const queryParams = new URLSearchParams(window.location.search);
+
+	const deployment = queryParams.get('deployment');
+	const action = queryParams.get('function');
+	const nSpace = queryParams.get('namespace');
+	const opt = queryParams.get('option');
+
+	const [selectedDeployment, setSelectedDeployment] = useState(deployment || "select-deployment");
+	const [selectedAction, setSelectedAction] = useState(action || "Function")
+	const [namespace, setNamespace] = useState(nSpace || "");
+	const [hasNamespace, setHasNamespace] = useState(nSpace ? true : false);
+	const [option, setOption] = useState(opt || "");
 	const [command, setCommand] = useState("");
 	const [generatedURI, setGeneratedURI] = useState("");
+
+
+
+
 
 	return (
 		<div className="App">
