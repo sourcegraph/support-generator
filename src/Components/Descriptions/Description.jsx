@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import './Descriptions.css';
 
 export default function Description({
-    key,
     func,
     info,
     currentInfoOpen,
@@ -30,7 +29,6 @@ export default function Description({
         <>
             {func !== "Function" &&
                 <li
-                    key={key}
                     className="desc-item"
                     onMouseEnter={() => setShowInfoOption(true)}
                     onMouseLeave={() => setShowInfoOption(false)}
@@ -63,7 +61,7 @@ export default function Description({
                         <div className="command-info">
                             <ul className="description">
                                 <li>
-                                    <span className="info-key">Description:&nbsp;</span>{info.description}
+                                    {info.description}
                                 </li>
                             </ul>
                         </div>

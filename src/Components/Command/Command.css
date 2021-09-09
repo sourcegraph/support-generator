@@ -8,6 +8,7 @@
     width: 100%;
     max-width: 1010px;
     margin: auto;
+    margin-top: 40px;
 }
 
 /*TODO make it so text can wrap in the text area*/
