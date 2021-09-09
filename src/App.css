@@ -8,6 +8,7 @@
 
 .container {
   width: 65%;
+  max-width: 1020px;
   margin: auto;
   display: flex;
   flex-flow: row nowrap;
@@ -33,6 +34,7 @@
 
 .descriptions-container {
   width: 50%;
+  max-width: 500px;
   min-height: 360px;
   min-width: 400px;
   /* border: 1px solid #00cbec; */

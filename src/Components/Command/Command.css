@@ -7,10 +7,14 @@
 
 .command-input-container {
     width: 100%;
+    max-width: 1010px;
+    margin: auto;
+    /* border: 1px solid black; */
 }
 
 .command {
     width: 100%;
+    max-width: 1000px;
     height: 50px;
     margin: auto;
     background-color: #A112FF;
@@ -42,7 +46,8 @@ input.command[type="text"]:focus {
 
 .btns-container {
     width: 100%;
-    /* margin: auto; */
+    max-width: 1000px;
+    margin: auto;
     /* border: 1px solid black; */
     display: flex;
     flex-flow: row nowrap;
