@@ -5,7 +5,6 @@
     margin: auto;
     display: flex;
     flex-flow: column nowrap;
-    /* border: 1px solid black; */
 }
 
 .generated-uri {
@@ -45,7 +44,6 @@ input.generated-uri[type="text"]:focus {
     font-size: 1.0;
     font-weight: light;
     visibility: hidden;
-    /* border: 1px solid black; */
     width: 500px;
     text-align: left;
 }
@@ -70,12 +68,6 @@ button.copy-url[disabled] {
     padding-left: 22px;
     justify-self: flex-end;
 }
-
-/* .btn-container {
-    width: 65%;
-    margin: auto;
-    text-align: right;
-} */
 
 .copy-url {
     border: 2px solid #A112FF;

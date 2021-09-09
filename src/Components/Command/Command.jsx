@@ -1,8 +1,14 @@
+// ANCHOR External Modules
 import { useState, useEffect } from 'react';
 
-// ANCHOR CSS
+// ANCHOR Internal Modules
 import CopyBtn from '../UI/CopyBtn';
+
+// ANCHOR CSS
 import './Command.css';
+
+
+
 
 export default function Command({
     selectedDeployment,

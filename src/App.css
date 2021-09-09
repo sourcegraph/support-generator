@@ -16,7 +16,6 @@
 }
 
 .actions {
-  /* border: 1px solid #00cbec; */
   display: flex;
   flex-flow: column nowrap;
   width: 45%;
@@ -37,7 +36,6 @@
   max-width: 500px;
   min-height: 360px;
   min-width: 400px;
-  /* border: 1px solid #00cbec; */
 }
 
 .logo {
@@ -57,12 +55,10 @@
 }
 
 .section.right {
-  /* border: 1px solid black; */
   padding-left: 44px;
 }
 
 .deploy-container {
-  /* border: 1px solid #00cbec; */
   width: 65%;
   margin-left: auto;
 }

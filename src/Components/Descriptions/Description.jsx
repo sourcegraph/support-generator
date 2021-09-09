@@ -1,7 +1,16 @@
+// ANCHOR External Modules
 import { useEffect, useState } from 'react';
+
+// ANCHOR CSS
 import './Descriptions.css';
 
-export default function Description({key, func, info, currentInfoOpen, setCurrentInfoOpen}) {
+export default function Description({
+    key,
+    func,
+    info,
+    currentInfoOpen,
+    setCurrentInfoOpen
+}) {
     const [showInfoOption, setShowInfoOption] = useState(false);
     const [showDesc, setShowDesc] = useState(false);
 
@@ -13,16 +22,14 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
             setCurrentInfoOpen("Function")
             setShowDesc(false)
         }
-        
     }
 
-    useEffect(() => {
-    }, [currentInfoOpen])
+    useEffect(() => { }, [currentInfoOpen])
 
     return (
         <>
             {func !== "Function" &&
-                <li 
+                <li
                     key={key}
                     className="desc-item"
                     onMouseEnter={() => setShowInfoOption(true)}
@@ -32,7 +39,7 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
                         <div>
                             {func}
                         </div>
-                        {showInfoOption && 
+                        {showInfoOption &&
                             <button
                                 className="expand"
                                 onClick={handleExpand}
@@ -52,7 +59,7 @@ export default function Description({key, func, info, currentInfoOpen, setCurren
                             </button>
                         }
                     </div>
-                    {currentInfoOpen === func && 
+                    {currentInfoOpen === func &&
                         <div className="command-info">
                             <ul className="description">
                                 <li>

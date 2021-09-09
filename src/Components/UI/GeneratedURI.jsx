@@ -1,8 +1,13 @@
+// ANCHOR External Modules
 import { useState, useEffect } from 'react';
 
+// ANCHOR Internal Modules
 import GenerateLink from './GenerateLink';
 
+// ANCHOR CSS
 import './GeneratedURI.css';
+
+
 
 export default function GeneratedURI({
     selectedDeployment,

@@ -1,21 +1,27 @@
+// ANCHOR External Modules 
 import { useState } from 'react';
-import {commands} from '../../utils/commands';
+
+// ANCHOR Internal Modules
+import { commands } from '../../utils/commands';
 import { getOptionValues } from '../../utils/helpers';
 import Description from './Description';
 
+// ANCHOR CSS
 import './Descriptions.css';
 
-export default function Descriptions({selectedDeployment}) {
+
+
+export default function Descriptions({ selectedDeployment }) {
     const deploymentMap = commands[selectedDeployment];
     const mapKeys = getOptionValues(deploymentMap);
-    // const [isInfoOpen, setIsInfoOpen] = useState(false);
     const [currentInfoOpen, setCurrentInfoOpen] = useState("Function");
+    const len = mapKeys.length;
 
     const generateDescriptions = () => {
         return mapKeys.map((mapKey, i) => {
             const vals = deploymentMap[mapKey];
             return (
-                <Description 
+                <Description
                     key={`desc-${i}`}
                     func={mapKeys[i]}
                     info={vals}
@@ -29,13 +35,13 @@ export default function Descriptions({selectedDeployment}) {
     return (
         <div>
             <h4 className="section right">Descriptions</h4>
-            {mapKeys ? (
+            {len !== 0 ? (
                 <ul className="desc-list">
                     {generateDescriptions()}
                 </ul>
             ) : (
-                <div>
-                    Choose Deployment to get descriptions.
+                <div className="desc-list placeholder">
+                    <p>Choose Deployment to list function descriptions.</p>
                 </div>
             )}
         </div>

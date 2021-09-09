@@ -14,7 +14,6 @@ export default function Action({
     setSelectedAction,
     option,
     setOption,
-    command,
     setCommand,
     namespace,
     hasNamespace,
@@ -29,6 +28,7 @@ export default function Action({
 
     return (
         <div className="actions-container">
+
             {/* Docker Action Menu */}
             {selectedDeployment === "Docker" &&
                 <>

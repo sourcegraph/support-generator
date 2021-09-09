@@ -96,7 +96,10 @@ function App() {
 					option={option}
 					setGeneratedURI={setGeneratedURI}
 				/>
+
+				{/* divider */}
 				<Or />
+
 				<GeneratedURI
 					selectedDeployment={selectedDeployment}
 					selectedAction={selectedAction}
