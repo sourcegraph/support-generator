@@ -9,22 +9,19 @@ export default function GenerateLink({
     setGeneratedURI
 }) {
     const generateURL = () => {
-        let depURI = encodeURIComponent(deployment)
-        let actURI = encodeURIComponent(action)
-        let base_url = window.location.href;
-        let url;
+        const BASE_URL = (window.location.href).split("?")[0];
 
-        if (!namespace && !option) {
-            url = `${depURI}/${actURI}/`
-        } else if (namespace && !option) {
-            url = `${depURI}/${actURI}/${namespace}/`
-        } else if (namespace && option) {
-            url = `${depURI}/${actURI}/${namespace}/${option}`
-        } else if (!namespace && option) {
-            url = `${depURI}/${actURI}/none/${option}`
-        }
+        const DEPLOYMENT_PARAM = deployment ? `?deployment=${encodeURIComponent(deployment)}` : "";
+        const ACTION_PARAM = action ? `&function=${encodeURIComponent(action)}` : "";
+        const NAMESPACE_PARAM = namespace ? `&namespace=${namespace}` : "";
+        const OPTION_PARAM = option ? `&option=${option}` : "";
 
-        setGeneratedURI(`${base_url}${url}`);
+        const QUERY_STRING = DEPLOYMENT_PARAM
+            + ACTION_PARAM
+            + NAMESPACE_PARAM
+            + OPTION_PARAM;
+
+        setGeneratedURI(`${BASE_URL}${QUERY_STRING}`);
     }
 
     return (

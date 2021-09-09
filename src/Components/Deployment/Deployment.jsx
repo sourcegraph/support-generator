@@ -40,11 +40,21 @@ export default function Deployment({
             {selectedDeployment === "Kubernetes" &&
                 <div>
                     <div className="namespace-check">
-                        <input
-                            type="checkbox"
-                            value={hasNamespace}
-                            onChange={() => setHasNamespace(!hasNamespace)}
-                        ></input>
+                        {hasNamespace ? (
+                            <input
+                                type="checkbox"
+                                value={hasNamespace}
+                                onChange={() => setHasNamespace(!hasNamespace)}
+                                checked
+                            />
+                        ) : (
+                            <input
+                                type="checkbox"
+                                value={hasNamespace}
+                                onChange={() => setHasNamespace(!hasNamespace)}
+                            />
+                        )}
+
                         <label className="namespace-label" name="namespace">I am using a namespace.</label>
                     </div>
 
@@ -56,7 +66,7 @@ export default function Deployment({
                                 value={namespace}
                                 onChange={(e) => setNamespace(e.target.value)}
                                 className="text-input"
-                            ></input>
+                            />
                         </div>
                     }
                 </div>
