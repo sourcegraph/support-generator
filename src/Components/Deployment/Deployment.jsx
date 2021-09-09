@@ -26,7 +26,6 @@ export default function Deployment({
                         setOption("");
                         setGeneratedURI("")
                     }}
-                    defaultValue={selectedDeployment}
                     value={selectedDeployment}
                     className="dropdown-menu"
                 >
