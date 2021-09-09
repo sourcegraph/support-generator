@@ -5,9 +5,9 @@ import { useEffect } from 'react';
 import DropdownOption from './DropdownOption';
 
 export default function Dropdown({
-    defaultValue, 
+    defaultValue,
     map,
-    optionValues, 
+    optionValues,
     option,
     setOption,
     selectedDeployment,
@@ -16,12 +16,13 @@ export default function Dropdown({
     command,
     setCommand,
     hasNamespace,
-    namespace
+    namespace,
+    setGeneratedURI
 }) {
     function generateOptions() {
         return optionValues.map((val, i) => {
             return (
-                <DropdownOption 
+                <DropdownOption
                     key={`option-${i}`}
                     value={val}
                     opt={map[val]["option"] || null}
@@ -46,24 +47,25 @@ export default function Dropdown({
             setCommand(`${command1}${command2 ? command2 : ""}`);
         }
     }, [
-            setCommand, 
-            selectedAction, 
-            map, 
-            namespace, 
-            hasNamespace, 
-            option, 
-            command
-        ]
+        setCommand,
+        selectedAction,
+        map,
+        namespace,
+        hasNamespace,
+        option,
+        command
+    ]
     );
 
     return (
         <div className="deployment-type">
             <h4 className="section">Select action to take:</h4>
-            <select 
+            <select
                 onChange={(e) => {
                     setSelectedAction(e.target.value);
-                    setOption("")
-                }} 
+                    setOption("");
+                    setGeneratedURI("");
+                }}
                 defaultValue={defaultValue}
                 value={selectedDeployment}
                 className="dropdown-menu"

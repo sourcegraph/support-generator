@@ -9,7 +9,8 @@ export default function Deployment({
     setHasNamespace,
     namespace,
     setNamespace,
-    setOption
+    setOption,
+    setGeneratedURI
 }) {
     return (
         <div className="deployment-container">
@@ -23,6 +24,7 @@ export default function Deployment({
                         setHasNamespace(false)
                         setSelectedAction("Function")
                         setOption("");
+                        setGeneratedURI("")
                     }}
                     defaultValue={selectedDeployment}
                     value={selectedDeployment}

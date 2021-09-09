@@ -1,7 +1,7 @@
 // ANCHOR Internal Modules
 import Dropdown from "../UI/Dropdown";
-import {commands} from '../../utils/commands';
-import {getOptionValues} from '../../utils/helpers';
+import { commands } from '../../utils/commands';
+import { getOptionValues } from '../../utils/helpers';
 
 // ANCHOR CSS
 import './Action.css';
@@ -9,8 +9,8 @@ import './Action.css';
 
 
 export default function Action({
-    selectedDeployment, 
-    selectedAction, 
+    selectedDeployment,
+    selectedAction,
     setSelectedAction,
     option,
     setOption,
@@ -18,6 +18,7 @@ export default function Action({
     setCommand,
     namespace,
     hasNamespace,
+    setGeneratedURI
 }) {
     const dockerMap = commands["Docker"];
     const dockerComposeMap = commands["Docker Compose"];
@@ -29,30 +30,30 @@ export default function Action({
     return (
         <div className="actions-container">
             {/* Docker Action Menu */}
-            {selectedDeployment === "Docker" && 
+            {selectedDeployment === "Docker" &&
                 <>
                     <Dropdown
                         selectedAction={selectedAction}
                         defaultValue={selectedAction}
-                        optionValues={dockerOptions} 
+                        optionValues={dockerOptions}
                         option={option}
                         setOption={setOption}
                         map={dockerMap}
                         setSelectedAction={setSelectedAction}
                         command={setCommand}
                         setCommand={setCommand}
-
+                        setGeneratedURI={setGeneratedURI}
                     />
                     {dockerMap[selectedAction]["option"] &&
                         <div className="action-option">
-                            <input 
+                            <input
                                 type="text"
                                 placeholder={dockerMap[selectedAction]["option"]}
                                 value={option}
                                 onChange={(e) => setOption(e.target.value)}
                                 className="text-input"
                             />
-                        </div> 
+                        </div>
                     }
                 </>
             }
@@ -63,7 +64,7 @@ export default function Action({
                     <Dropdown
                         selectedAction={selectedAction}
                         defaultValue={selectedAction}
-                        optionValues={dockerComposeOptions} 
+                        optionValues={dockerComposeOptions}
                         map={dockerComposeMap}
                         option={option}
                         setOption={setOption}
@@ -74,7 +75,7 @@ export default function Action({
 
                     {dockerComposeMap[selectedAction]["option"] &&
                         <div className="action-option">
-                            <input 
+                            <input
                                 type="text"
                                 placeholder={dockerComposeMap[selectedAction]["option"]}
                                 value={option}
@@ -92,7 +93,7 @@ export default function Action({
                     <Dropdown
                         selectedAction={selectedAction}
                         defaultValue={selectedAction}
-                        optionValues={kubernetesOptions} 
+                        optionValues={kubernetesOptions}
                         map={kubernetesMap}
                         option={option}
                         setOption={setOption}
@@ -103,7 +104,7 @@ export default function Action({
                         namespace={namespace}
                     />
 
-                    {kubernetesMap[selectedAction]["option"] && 
+                    {kubernetesMap[selectedAction]["option"] &&
                         <div className="action-option">
                             <input
                                 type="text"

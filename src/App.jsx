@@ -26,7 +26,7 @@ function App() {
 		<div className="App">
 			<img
 				alt="sourcegraph-logo"
-				src="images/Sourcegraph_Logo_FullColor_light.png"
+				src="https://github.com/sourcegraph/support-generator/blob/main/public/images/Sourcegraph_Logo_FullColor_light.png?raw=true"
 				className="logo"
 			/>
 			<h2 className="subtitle">Command Line Generator</h2>
@@ -46,6 +46,7 @@ function App() {
 							setNamespace={setNamespace}
 							setCommand={setCommand}
 							setOption={setOption}
+							setGeneratedURI={setGeneratedURI}
 						/>
 
 						{/* USER selects the action they want to take */}
@@ -59,6 +60,7 @@ function App() {
 							setCommand={setCommand}
 							hasNamespace={hasNamespace}
 							namespace={namespace}
+							setGeneratedURI={setGeneratedURI}
 						/>
 					</div>
 
