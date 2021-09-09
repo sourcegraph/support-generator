@@ -17,7 +17,7 @@ export default function Command({
                     <input
                         className="command"
                         type="text"
-                        placeholder="[SELECT DEPLOYMENT TYPE]"
+                        placeholder="[SELECT DEPLOYMENT TYPE and FUNCTION]"
                     />
                 ) : (
                     <input
@@ -30,7 +30,7 @@ export default function Command({
             <div className="btns-container">
                 <CopyBtn
                     selectedDeployment={selectedDeployment}
-                    onClick={copyCommand}
+                    copyCommand={copyCommand}
                 />
             </div>
 
