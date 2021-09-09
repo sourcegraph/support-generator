@@ -10,6 +10,7 @@ import GeneratedURI from './Components/UI/GeneratedURI';
 // ANCHOR CSS
 import './App.css';
 import Descriptions from './Components/Descriptions/Descriptions';
+import Or from './Components/UI/Or';
 
 
 
@@ -86,7 +87,7 @@ function App() {
 
 
 			{/* Command generated from the first two options. */}
-			<div>
+			<div className="user-options-container">
 				<Command
 					selectedDeployment={selectedDeployment}
 					selectedAction={selectedAction}
@@ -95,7 +96,12 @@ function App() {
 					option={option}
 					setGeneratedURI={setGeneratedURI}
 				/>
+				<Or />
 				<GeneratedURI
+					selectedDeployment={selectedDeployment}
+					selectedAction={selectedAction}
+					namespace={namespace}
+					option={option}
 					generatedURI={generatedURI}
 					setGeneratedURI={setGeneratedURI}
 				/>

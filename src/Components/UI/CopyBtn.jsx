@@ -9,14 +9,14 @@ export default function CopyBtn({ selectedDeployment, copyCommand }) {
                     onClick={copyCommand}
                     disabled
                 >
-                    Copy
+                    Copy Command
                 </button>
             ) : (
                 <button
                     className="copy-button"
                     onClick={copyCommand}
                 >
-                    Copy
+                    Copy Command
                 </button>
             )}
         </>

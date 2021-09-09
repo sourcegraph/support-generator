@@ -16,6 +16,7 @@ button.generate-btn[disabled] {
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
     font-weight: 600;
     font-size: 1.0rem;
+    margin-top: 10px;
 }
 
 .generate-btn {
@@ -33,6 +34,8 @@ button.generate-btn[disabled] {
         sans-serif;
     font-weight: 600;
     font-size: 1.0rem;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 .generate-btn:hover {
@@ -41,4 +44,5 @@ button.generate-btn[disabled] {
     cursor: pointer;
     padding-right: 22px;
     padding-left: 22px;
+    margin-top: 10px;
 }

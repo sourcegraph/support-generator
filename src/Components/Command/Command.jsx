@@ -1,15 +1,10 @@
 // ANCHOR CSS
 import CopyBtn from '../UI/CopyBtn';
-import GenerateLink from '../UI/GenerateLink';
 import './Command.css';
 
 export default function Command({
     selectedDeployment,
     command,
-    selectedAction,
-    namespace,
-    option,
-    setGeneratedURI
 }) {
     const copyCommand = () => {
         navigator.clipboard.writeText(command);
@@ -36,13 +31,6 @@ export default function Command({
                 <CopyBtn
                     selectedDeployment={selectedDeployment}
                     onClick={copyCommand}
-                />
-                <GenerateLink
-                    deployment={selectedDeployment}
-                    action={selectedAction}
-                    namespace={namespace}
-                    option={option}
-                    setGeneratedURI={setGeneratedURI}
                 />
             </div>
 

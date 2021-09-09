@@ -1,22 +1,23 @@
 .generated-uri-container {
-    width: 100%;
-    margin-top: 30px;
+    width: 65%;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
     /* border: 1px solid black; */
 }
 
 .generated-uri {
-    width: 65%;
+    width: 100%;
     border: 1px solid lightgray;
-    border-radius: 2px;
+    border-radius: 4px;
     font-family: "Source Code Pro",
         monospace;
-    font-size: .8rem;
-    color: rgb(47, 47, 47);
+    font-size: 1rem;
+    color: rgb(70, 70, 70);
     outline: #00cbec;
-    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-top: 3px;
-    min-width: fit-content;
-    padding-left: 10px;
 }
 
 input.generated-uri[type="text"] {
@@ -26,4 +27,72 @@ input.generated-uri[type="text"] {
 
 input.generated-uri[type="text"]:focus {
     outline: none;
+}
+
+.copied-url-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+
+.copied-message {
+    color: #ff5543;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-size: 1.0;
+    font-weight: light;
+    visibility: hidden;
+    /* border: 1px solid black; */
+    width: 500px;
+    text-align: left;
+}
+
+.copied-message.show {
+    visibility: visible;
+}
+
+button.copy-url:disabled,
+button.copy-url[disabled] {
+    border: 2px solid lightgray;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: lightgray;
+    width: fit-content;
+    height: 40px;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-weight: regular;
+    margin-top: 10px;
+    font-size: 1.0rem;
+    padding-right: 22px;
+    padding-left: 22px;
+    justify-self: flex-end;
+}
+
+/* .btn-container {
+    width: 65%;
+    margin: auto;
+    text-align: right;
+} */
+
+.copy-url {
+    border: 2px solid #A112FF;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: #A112FF;
+    width: fit-content;
+    height: 40px;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.0rem;
+    margin-top: 10px;
+    padding-right: 22px;
+    padding-left: 22px;
+    justify-self: flex-end;
+}
+
+.copy-url:hover {
+    background-color: #A112FF;
+    color: white;
+    cursor: pointer;
+    padding-right: 22px;
+    padding-left: 22px;
 }
