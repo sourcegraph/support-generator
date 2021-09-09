@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 // ANCHOR CSS
 import CopyBtn from '../UI/CopyBtn';
 import './Command.css';
@@ -6,9 +8,20 @@ export default function Command({
     selectedDeployment,
     command,
 }) {
+    const [commandCopied, setCommandCopied] = useState(false);
+
     const copyCommand = () => {
         navigator.clipboard.writeText(command);
+        setCommandCopied(true);
     }
+
+    useEffect(() => {
+        if (commandCopied) {
+            setTimeout(() => {
+                setCommandCopied(false);
+            }, 3000);
+        }
+    }, [commandCopied, setCommandCopied]);
 
     return (
         <div className="command-container">
@@ -28,6 +41,9 @@ export default function Command({
                 )}
             </div>
             <div className="btns-container">
+                <p className={`copied-message ${commandCopied && "show"}`}>
+                    Command copied to clipboard.
+                </p>
                 <CopyBtn
                     selectedDeployment={selectedDeployment}
                     copyCommand={copyCommand}
@@ -38,4 +54,3 @@ export default function Command({
 
     )
 }
-
