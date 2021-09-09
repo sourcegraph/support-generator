@@ -29,10 +29,6 @@ function App() {
 	const [command, setCommand] = useState("");
 	const [generatedURI, setGeneratedURI] = useState("");
 
-
-
-
-
 	return (
 		<div className="App">
 			<img

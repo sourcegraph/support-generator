@@ -71,6 +71,7 @@ export default function Action({
                         setSelectedAction={setSelectedAction}
                         command={setCommand}
                         setCommand={setCommand}
+                        setGeneratedURI={setGeneratedURI}
                     />
 
                     {dockerComposeMap[selectedAction]["option"] &&
@@ -102,6 +103,7 @@ export default function Action({
                         command={setCommand}
                         hasNamespace={hasNamespace}
                         namespace={namespace}
+                        setGeneratedURI={setGeneratedURI}
                     />
 
                     {kubernetesMap[selectedAction]["option"] &&
