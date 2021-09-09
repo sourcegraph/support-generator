@@ -13,7 +13,7 @@
 .dropdown-menu {
     border: 1px solid lightgray;
     border-radius: 2px;
-    font-family: "Source Sans Pro", monospace;
+    font-family: sfmono-regular, consolas, menlo, dejavu sans mono, monospace;
     font-size: 1rem;
     color: rgb(47, 47, 47);
     outline: #00CBEC;
@@ -23,7 +23,7 @@
 .text-input {
     border: 1px solid lightgray;
     border-radius: 2px;
-    font-family: "Source Code Pro", monospace;
+    font-family: sfmono-regular, consolas, menlo, dejavu sans mono, monospace;
     font-size: 1rem;
     color: rgb(47, 47, 47);
     outline: #00cbec;
@@ -36,7 +36,7 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-family: sfmono-regular, consolas, menlo, dejavu sans mono, monospace;
     font-size: .8rem;
 }
 

@@ -13,7 +13,7 @@
     margin: auto;
     background-color: #A112FF;
     color: white;
-    font-family: "Source Code Pro", monospace;
+    font-family: sfmono-regular, consolas, menlo, dejavu sans mono, monospace;
     font-weight: bold;
     font-size: 1rem;
     padding: 10px;
@@ -49,7 +49,7 @@ button.copy-button[disabled] {
     color: lightgray;
     width: 100px;
     height: 40px;
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-family: sfmono-regular, consolas, menlo, dejavu sans mono, monospace;
     font-weight: regular;
     font-size: 1.0rem;
 }
@@ -68,7 +68,7 @@ button.copy-button[disabled] {
     color: #A112FF;
     width: 100px;
     height: 40px;
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-family: sfmono-regular, consolas, menlo, dejavu sans mono, monospace;
     font-weight: 600;
     font-size: 1.0rem;
 }

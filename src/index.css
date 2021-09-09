@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-family: sfmono-regular, consolas, menlo, dejavu sans mono, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: 'Source Code Pro', sans-serif;
+  font-family: sfmono-regular, consolas, menlo, dejavu sans mono, monospace;
 }
 
 select, input[type="text"]{
