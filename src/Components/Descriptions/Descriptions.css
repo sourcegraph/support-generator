@@ -71,4 +71,24 @@
     font-size: .7rem;
     padding-bottom: 10px;
     width: 350px;
+    animation: fadeIN .2s linear;
+    opacity: 1;
+}
+
+/* .description {
+    opacity: 1;
+    animation: fade .2s linear;
+} */
+
+@keyframes fadeIN {
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
 }

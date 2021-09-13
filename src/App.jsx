@@ -11,7 +11,6 @@ import './App.css';
 import Descriptions from './Components/Descriptions/Descriptions';
 import Or from './Components/UI/Or';
 import GeneratedCommand from './Components/Command/GeneratedCommand';
-// import DescriptionList from './Components/Desc/DescriptionList';
 
 
 
