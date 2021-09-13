@@ -1,4 +1,5 @@
 // ANCHOR css
+import { useEffect } from 'react';
 import './GenerateLink.css';
 
 
@@ -9,10 +10,18 @@ export default function GenerateLink({
     action,
     namespace,
     option,
+    generatedURI,
     setGeneratedURI
 }) {
+    console.log("generated URI: ", generatedURI);
     const generateURL = () => {
         const BASE_URL = (window.location.href).split("?")[0];
+
+        if (generatedURI.length !== 0) {
+            setGeneratedURI("");
+            window.location.href = BASE_URL
+            return;
+        }
 
         const DEPLOYMENT_PARAM = deployment ? `?deployment=${encodeURIComponent(deployment)}` : "";
         const ACTION_PARAM = action ? `&function=${encodeURIComponent(action)}` : "";
@@ -27,6 +36,10 @@ export default function GenerateLink({
         setGeneratedURI(`${BASE_URL}${QUERY_STRING}`);
     }
 
+    useEffect(() => {
+
+    }, [generatedURI])
+
     return (
         <>
             {action === "Function" ? (
@@ -35,14 +48,23 @@ export default function GenerateLink({
                     onClick={generateURL}
                     disabled
                 >
-                    Generate URL for re-use
+                    {generatedURI !== "" ? (
+                        <>Clear Command</>
+                    ) : (
+                        <>Generate URL for re-use</>
+                    )}
+
                 </button>
             ) : (
                 <button
                     className="generate-btn"
                     onClick={generateURL}
                 >
-                    Generate URL for re-use
+                    {generatedURI !== "" ? (
+                        <>Clear Command</>
+                    ) : (
+                        <>Generate URL for re-use</>
+                    )}
                 </button>
             )}
         </>

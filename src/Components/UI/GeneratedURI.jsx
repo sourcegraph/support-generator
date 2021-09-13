@@ -51,6 +51,7 @@ export default function GeneratedURI({
                     namespace={namespace}
                     option={option}
                     setGeneratedURI={setGeneratedURI}
+                    generatedURI={generatedURI}
                 />
                 {generatedURI ? (
                     <button

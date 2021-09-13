@@ -28,17 +28,15 @@ export default function GeneratedCommand({
     return (
         <div className="generated-command-container">
             <div className="generated-command">
-                {selectedDeployment === 'select-deployment' &&
+                {selectedDeployment === 'select-deployment' ? (
                     <>
                         [SELECT DEPLOYMENT TYPE and FUNCTION]
                     </>
-                }
-
-                {(selectedDeployment !== 'select-deployment') &&
+                ) : (
                     <>
                         {command}
                     </>
-                }
+                )}
             </div>
             <div className="btns-container">
                 <p className={`copied-message ${commandCopied && "show"}`}>
@@ -49,6 +47,6 @@ export default function GeneratedCommand({
                     copyCommand={copyCommand}
                 />
             </div>
-        </div>
+        </div >
     )
 }

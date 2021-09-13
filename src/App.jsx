@@ -4,7 +4,6 @@ import { useState } from 'react'
 // ANCHOR Internal Modules
 import Deployment from './Components/Deployment/Deployment';
 import Action from './Components/Action/Action';
-// import Command from './Components/Command/Command';
 import GeneratedURI from './Components/UI/GeneratedURI';
 
 // ANCHOR CSS
@@ -97,18 +96,11 @@ function App() {
 					option={option}
 					setGeneratedURI={setGeneratedURI}
 				/>
-				{/* <Command
-					selectedDeployment={selectedDeployment}
-					selectedAction={selectedAction}
-					command={command}
-					namespace={namespace}
-					option={option}
-					setGeneratedURI={setGeneratedURI}
-				/> */}
 
 				{/* divider */}
 				<Or />
 
+				{/* URI Generated so that user can revisit with the same options selected */}
 				<GeneratedURI
 					selectedDeployment={selectedDeployment}
 					selectedAction={selectedAction}
