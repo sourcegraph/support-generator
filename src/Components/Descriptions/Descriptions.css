@@ -58,6 +58,11 @@
 
 .rotated {
     transform: rotate(-90deg);
+    transition-duration: .2s;
+}
+
+.not-rotated {
+    transition-duration: .2s;
 }
 
 .command-info {

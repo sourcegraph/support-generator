@@ -51,7 +51,7 @@ export default function Description({
                                         {`<`}
                                     </div>
                                 ) : (
-                                    <div>
+                                    <div className="not-rotated">
                                         {`<`}
                                     </div>
                                 )}
