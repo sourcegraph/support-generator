@@ -45,33 +45,33 @@ export default function GeneratedURI({
                 <p className={`copied-message ${copiedUrl && "show"}`}>
                     URL copied to clipboard
                 </p>
-                <GenerateLink
-                    deployment={selectedDeployment}
-                    action={selectedAction}
-                    namespace={namespace}
-                    option={option}
-                    setGeneratedURI={setGeneratedURI}
-                    generatedURI={generatedURI}
-                />
-                {generatedURI ? (
-                    <button
-                        className="copy-url"
-                        onClick={copyUrl}
-                    >
-                        Copy URL
-                    </button>
+                <div>
+                    <GenerateLink
+                        deployment={selectedDeployment}
+                        action={selectedAction}
+                        namespace={namespace}
+                        option={option}
+                        setGeneratedURI={setGeneratedURI}
+                        generatedURI={generatedURI}
+                    />
+                    {generatedURI ? (
+                        <button
+                            className="copy-url"
+                            onClick={copyUrl}
+                        >
+                            Copy URL
+                        </button>
 
-                ) : (
-                    <button
-                        className="copy-url"
-                        onClick={copyUrl}
-                        disabled
-                    >
-                        Copy URL
-                    </button>
-                )}
-
-
+                    ) : (
+                        <button
+                            className="copy-url"
+                            onClick={copyUrl}
+                            disabled
+                        >
+                            Copy URL
+                        </button>
+                    )}
+                </div>
             </div>
 
         </div>

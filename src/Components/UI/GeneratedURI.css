@@ -35,7 +35,7 @@ input.generated-uri[type="text"]:focus {
 .copied-url-container {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .copied-message {
@@ -43,13 +43,14 @@ input.generated-uri[type="text"]:focus {
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
     font-size: 1.0;
     font-weight: light;
-    visibility: hidden;
+    opacity: 0;
     width: 500px;
     text-align: left;
+    transition-duration: .4s;
 }
 
 .copied-message.show {
-    visibility: visible;
+    opacity: 1;
 }
 
 button.copy-url:disabled,
