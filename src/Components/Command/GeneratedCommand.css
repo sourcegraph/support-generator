@@ -1,0 +1,20 @@
+.generated-command-container {
+    padding-top: 45px;
+    height: fit-content;
+    width: fit-content;
+    min-height: 100px;
+    max-width: 1000px;
+    min-width: 1000px;
+    margin: auto;
+
+}
+
+.generated-command {
+    font-family: "Source Code Pro", monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: #A112FF;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: white;
+}

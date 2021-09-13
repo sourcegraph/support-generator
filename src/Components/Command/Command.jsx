@@ -1,3 +1,20 @@
+/**
+ * 
+ * NOTE: 
+ * 
+ * This component is deprecated and has been replaced by the GeneratedCommand component.
+ * I did so because using an input was unnecessary and it was easier to style and deal with 
+ * a div instead.
+ * 
+ * Keeping here for the time being. Will delete after the new component has been tested
+ * by the team.
+ * 
+ */
+
+
+
+
+
 // ANCHOR External Modules
 import { useState, useEffect } from 'react';
 

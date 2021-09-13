@@ -4,13 +4,14 @@ import { useState } from 'react'
 // ANCHOR Internal Modules
 import Deployment from './Components/Deployment/Deployment';
 import Action from './Components/Action/Action';
-import Command from './Components/Command/Command';
+// import Command from './Components/Command/Command';
 import GeneratedURI from './Components/UI/GeneratedURI';
 
 // ANCHOR CSS
 import './App.css';
 import Descriptions from './Components/Descriptions/Descriptions';
 import Or from './Components/UI/Or';
+import GeneratedCommand from './Components/Command/GeneratedCommand';
 
 
 
@@ -88,7 +89,7 @@ function App() {
 
 			{/* Command generated from the first two options. */}
 			<div className="user-options-container">
-				<Command
+				<GeneratedCommand
 					selectedDeployment={selectedDeployment}
 					selectedAction={selectedAction}
 					command={command}
@@ -96,6 +97,14 @@ function App() {
 					option={option}
 					setGeneratedURI={setGeneratedURI}
 				/>
+				{/* <Command
+					selectedDeployment={selectedDeployment}
+					selectedAction={selectedAction}
+					command={command}
+					namespace={namespace}
+					option={option}
+					setGeneratedURI={setGeneratedURI}
+				/> */}
 
 				{/* divider */}
 				<Or />

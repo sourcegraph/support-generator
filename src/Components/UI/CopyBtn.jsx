@@ -1,10 +1,10 @@
 // ANCHOR css
 import './CopyBtn.css';
 
-export default function CopyBtn({ selectedDeployment, copyCommand }) {
+export default function CopyBtn({ selectedAction, copyCommand }) {
     return (
         <>
-            {selectedDeployment === "select-deployment" ? (
+            {selectedAction === "Function" ? (
                 <button
                     className="copy-button"
                     onClick={copyCommand}
