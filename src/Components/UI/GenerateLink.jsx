@@ -4,7 +4,6 @@ import './GenerateLink.css';
 
 
 
-
 export default function GenerateLink({
     deployment,
     action,
@@ -13,7 +12,6 @@ export default function GenerateLink({
     generatedURI,
     setGeneratedURI
 }) {
-    console.log("generated URI: ", generatedURI);
     const generateURL = () => {
         const BASE_URL = (window.location.href).split("?")[0];
 
@@ -48,13 +46,9 @@ export default function GenerateLink({
                     onClick={generateURL}
                     disabled
                 >
-                    {generatedURI !== "" ? (
-                        <>Clear Command</>
-                    ) : (
-                        <>Generate URL for re-use</>
-                    )}
-
+                    Generate URL for re-use
                 </button>
+
             ) : (
                 <button
                     className="generate-btn"
@@ -66,7 +60,8 @@ export default function GenerateLink({
                         <>Generate URL for re-use</>
                     )}
                 </button>
-            )}
+            )
+            }
         </>
     )
 }
