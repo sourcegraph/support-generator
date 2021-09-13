@@ -18,3 +18,13 @@
     padding-bottom: 25px;
     color: white;
 }
+
+.btns-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 10px;
+}
