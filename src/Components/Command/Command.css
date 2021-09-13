@@ -3,7 +3,7 @@
 
     This is the css for the deprecated Command Component.
     Please see note at the top of Command Component.
-    
+
 */
 
 
@@ -54,7 +54,7 @@ input.command[type="text"]:focus {
     outline: none;
 }
 
-.btns-container {
+/* .btns-container {
     width: 100%;
     max-width: 1000px;
     margin: auto;
@@ -62,4 +62,4 @@ input.command[type="text"]:focus {
     flex-flow: row nowrap;
     justify-content: flex-end;
     margin-top: 10px;
-}
+} */
