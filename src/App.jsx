@@ -8,10 +8,10 @@ import GeneratedURI from './Components/UI/GeneratedURI';
 
 // ANCHOR CSS
 import './App.css';
-// import Descriptions from './Components/Descriptions/Descriptions';
+import Descriptions from './Components/Descriptions/Descriptions';
 import Or from './Components/UI/Or';
 import GeneratedCommand from './Components/Command/GeneratedCommand';
-import DescriptionList from './Components/Desc/DescriptionList';
+// import DescriptionList from './Components/Desc/DescriptionList';
 
 
 
@@ -82,7 +82,9 @@ function App() {
 					{/* <Descriptions
 						selectedDeployment={selectedDeployment}
 					/> */}
-					<DescriptionList />
+					<Descriptions
+						selectedDeployment={selectedDeployment}
+					/>
 				</div>
 			</div>
 
