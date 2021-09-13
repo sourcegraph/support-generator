@@ -46,6 +46,7 @@
 
 .namespace-label {
     margin-left: 4px;
+    min-width: fit-content;
 }
 
 .namespace-input {

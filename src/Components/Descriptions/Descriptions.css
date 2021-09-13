@@ -75,11 +75,6 @@
     opacity: 1;
 }
 
-/* .description {
-    opacity: 1;
-    animation: fade .2s linear;
-} */
-
 @keyframes fadeIN {
 
     0% {
