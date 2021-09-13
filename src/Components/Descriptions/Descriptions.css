@@ -25,7 +25,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: .8rem;
-    cursor: default;
+    cursor: pointer;
     border-radius: 2px;
     padding-left: 5px;
     padding-right: 5px;

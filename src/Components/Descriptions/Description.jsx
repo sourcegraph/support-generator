@@ -32,6 +32,7 @@ export default function Description({
                     className="desc-item"
                     onMouseEnter={() => setShowInfoOption(true)}
                     onMouseLeave={() => setShowInfoOption(false)}
+                    onClick={handleExpand}
                 >
                     <div className={`row ${currentInfoOpen === func && 'expanded'}`}>
                         <div>
