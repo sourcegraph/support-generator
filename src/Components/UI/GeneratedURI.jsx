@@ -56,7 +56,7 @@ export default function GeneratedURI({
                     />
                     {generatedURI ? (
                         <button
-                            className="copy-url"
+                            className="btn w-margin"
                             onClick={copyUrl}
                         >
                             Copy URL
@@ -64,7 +64,7 @@ export default function GeneratedURI({
 
                     ) : (
                         <button
-                            className="copy-url"
+                            className="btn w-margin"
                             onClick={copyUrl}
                             disabled
                         >

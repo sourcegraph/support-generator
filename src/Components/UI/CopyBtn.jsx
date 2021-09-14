@@ -6,7 +6,7 @@ export default function CopyBtn({ selectedAction, copyCommand }) {
         <>
             {selectedAction === "Function" ? (
                 <button
-                    className="copy-button"
+                    className="btn"
                     onClick={copyCommand}
                     disabled
                 >
@@ -14,7 +14,7 @@ export default function CopyBtn({ selectedAction, copyCommand }) {
                 </button>
             ) : (
                 <button
-                    className="copy-button"
+                    className="btn"
                     onClick={copyCommand}
                 >
                     Copy Command
