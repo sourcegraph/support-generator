@@ -1,6 +1,6 @@
 button.generate-btn:disabled,
 button.generate-btn[disabled] {
-    border: 2px solid lightgray;
+    border: 2px solid #f4f7fb;
     border-radius: 3px;
     background-color: #ffffff;
     color: lightgray;
@@ -15,10 +15,10 @@ button.generate-btn[disabled] {
 }
 
 .generate-btn {
-    border: 2px solid #A112FF;
+    border: 2px solid #5033e1;
     border-radius: 3px;
     background-color: #ffffff;
-    color: #A112FF;
+    color: #5033e1;
     width: fit-content;
     padding-right: 22px;
     padding-left: 22px;
@@ -34,7 +34,7 @@ button.generate-btn[disabled] {
 }
 
 .generate-btn:hover {
-    background-color: #A112FF;
+    background-color: #5033e1;
     color: white;
     cursor: pointer;
     padding-right: 22px;
