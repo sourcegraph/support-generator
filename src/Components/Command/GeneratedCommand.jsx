@@ -30,11 +30,11 @@ export default function GeneratedCommand({
             <div className="generated-command">
                 {selectedDeployment === 'select-deployment' ? (
                     <>
-                        $ [SELECT DEPLOYMENT TYPE and FUNCTION]
+                        [SELECT DEPLOYMENT TYPE and FUNCTION]
                     </>
                 ) : (
                     <>
-                        $ {command}
+                        {command}
                     </>
                 )}
             </div>
