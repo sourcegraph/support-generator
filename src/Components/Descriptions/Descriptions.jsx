@@ -34,7 +34,14 @@ export default function Descriptions({ selectedDeployment }) {
 
     return (
         <div>
-            <h4 className="section right">Descriptions</h4>
+            <h4 className="section right">Descriptions &nbsp;
+                {len !== 0 &&
+                    <span className="instruction">
+                        (click to expand)
+                    </span>
+                }
+
+            </h4>
             {len !== 0 ? (
                 <ul className="desc-list">
                     {generateDescriptions()}

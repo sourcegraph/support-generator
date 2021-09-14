@@ -6,17 +6,18 @@
     max-width: 1000px;
     min-width: 1000px;
     margin: auto;
-
 }
 
 .generated-command {
     font-family: "Source Code Pro", monospace;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.2rem;
-    background-color: #A112FF;
+    background-color: #ffffff;
     padding-top: 25px;
     padding-bottom: 25px;
-    color: white;
+    color: rgb(84, 84, 84);
+    border-radius: 3px;
+    border: 1px solid rgb(177, 177, 177);
 }
 
 .btns-container {

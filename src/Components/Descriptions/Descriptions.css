@@ -17,6 +17,10 @@
     padding-right: 5px;
 }
 
+.instruction {
+    font-weight: normal;
+}
+
 .row {
     padding-top: 2px;
     padding-bottom: 2px;
@@ -50,6 +54,15 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    position: relative;
+    left: 40px;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+.expand.active {
+    opacity: 1;
+    transform: translateX(-40px);
 }
 
 .info-key {

@@ -38,25 +38,23 @@ export default function Description({
                         <div>
                             {func}
                         </div>
-                        {showInfoOption &&
-                            <button
-                                className="expand"
-                                onClick={handleExpand}
-                            >
-                                <div>
-                                    i&nbsp;
+                        <button
+                            className={`expand ${showInfoOption && "active"}`}
+                            onClick={handleExpand}
+                        >
+                            <div>
+                                i&nbsp;
+                            </div>
+                            {(showDesc && currentInfoOpen === func) ? (
+                                <div className="rotated">
+                                    {`<`}
                                 </div>
-                                {(showDesc && currentInfoOpen === func) ? (
-                                    <div className="rotated">
-                                        {`<`}
-                                    </div>
-                                ) : (
-                                    <div className="not-rotated">
-                                        {`<`}
-                                    </div>
-                                )}
-                            </button>
-                        }
+                            ) : (
+                                <div className="not-rotated">
+                                    {`<`}
+                                </div>
+                            )}
+                        </button>
                     </div>
                     {currentInfoOpen === func &&
                         <div className="command-info">
