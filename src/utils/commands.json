@@ -106,7 +106,7 @@
             "description": "Default option"
         },
         "Get Logs": {
-            "command": "kubectl logs -f",
+            "command": "kubectl logs",
             "option": "$POD",
             "description": "Get the logs of a specified pod."
         },
@@ -145,7 +145,7 @@
             "option": "",
             "description": "List all Persistent Volumes (PVs) that have been provisioned."
         },
-        "Port Forward Sourcegraph": {
+        "Port Forward Sourcegraph Frontend": {
             "command": "kubectl port-forward svc/sourcegraph-frontend 3080:30080",
             "option": "",
             "description": "This allows you to access your deployed Sourcegraph instance locally."
