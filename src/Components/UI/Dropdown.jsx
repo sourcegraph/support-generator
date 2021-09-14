@@ -40,11 +40,11 @@ export default function Dropdown({
         if (hasNamespace && option === "") {
             setCommand(`${command1} -n ${namespace} ${command2 ? command2 : ""}`);
         } else if (hasNamespace && option !== "") {
-            setCommand(`${command1}${option} -n ${namespace} ${command2 ? command2 : ""}`);
+            setCommand(`${command1} ${option} -n ${namespace} ${command2 ? command2 : ""}`);
         } else if (!hasNamespace && option !== "") {
-            setCommand(`${command1}${option} ${command2 ? command2 : ""}`);
+            setCommand(`${command1} ${option} ${command2 ? command2 : ""}`);
         } else {
-            setCommand(`${command1}${command2 ? command2 : ""}`);
+            setCommand(`${command1} ${command2 ? command2 : ""}`);
         }
     }, [
         setCommand,
