@@ -1,6 +1,6 @@
 button.copy-button:disabled,
 button.copy-button[disabled] {
-    border: 2px solid lightgray;
+    border: 2px solid #F4F7Fb;
     border-radius: 3px;
     background-color: #ffffff;
     color: lightgray;
@@ -14,10 +14,10 @@ button.copy-button[disabled] {
 }
 
 .copy-button {
-    border: 2px solid #A112FF;
+    border: 2px solid #5033e1;
     border-radius: 3px;
     background-color: #ffffff;
-    color: #A112FF;
+    color: #5033e1;
     width: fit-content;
     height: 40px;
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
@@ -28,10 +28,9 @@ button.copy-button[disabled] {
 }
 
 .copy-button:hover {
-    background-color: #A112FF;
+    background-color: #5033e1;
     color: white;
     cursor: pointer;
-
     padding-right: 22px;
     padding-left: 22px;
 }

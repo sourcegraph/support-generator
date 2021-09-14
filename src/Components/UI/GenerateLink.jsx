@@ -42,7 +42,7 @@ export default function GenerateLink({
         <>
             {action === "Function" ? (
                 <button
-                    className="generate-btn"
+                    className="btn"
                     onClick={generateURL}
                     disabled
                 >
@@ -51,7 +51,7 @@ export default function GenerateLink({
 
             ) : (
                 <button
-                    className="generate-btn"
+                    className="btn"
                     onClick={generateURL}
                 >
                     {generatedURI !== "" ? (

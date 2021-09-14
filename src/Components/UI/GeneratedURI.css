@@ -39,7 +39,7 @@ input.generated-uri[type="text"]:focus {
 }
 
 .copied-message {
-    color: #ff5543;
+    color: #ED2E20;
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
     font-size: 1.0;
     font-weight: light;
@@ -53,43 +53,11 @@ input.generated-uri[type="text"]:focus {
     opacity: 1;
 }
 
-button.copy-url:disabled,
-button.copy-url[disabled] {
-    border: 2px solid lightgray;
-    border-radius: 3px;
-    background-color: #ffffff;
-    color: lightgray;
-    width: fit-content;
-    height: 40px;
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
-    font-weight: regular;
-    margin-top: 10px;
-    font-size: 1.0rem;
-    padding-right: 22px;
-    padding-left: 22px;
-    justify-self: flex-end;
+button.btn.w-margin:disabled,
+button.btn.w-margin[disabled] {
+    margin-left: 10px;
 }
 
-.copy-url {
-    border: 2px solid #A112FF;
-    border-radius: 3px;
-    background-color: #ffffff;
-    color: #A112FF;
-    width: fit-content;
-    height: 40px;
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 1.0rem;
-    margin-top: 10px;
-    padding-right: 22px;
-    padding-left: 22px;
-    justify-self: flex-end;
-}
-
-.copy-url:hover {
-    background-color: #A112FF;
-    color: white;
-    cursor: pointer;
-    padding-right: 22px;
-    padding-left: 22px;
+.btn.w-margin {
+    margin-left: 10px;
 }
