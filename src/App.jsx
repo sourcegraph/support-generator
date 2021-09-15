@@ -1,5 +1,5 @@
 // ANCHOR External Modules
-import { useState } from 'react'
+import { useState } from 'react';
 
 // ANCHOR Internal Modules
 import Deployment from './Components/Deployment/Deployment';
@@ -15,6 +15,8 @@ import GeneratedCommand from './Components/Command/GeneratedCommand';
 
 
 function App() {
+	const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	console.log(preferDark ? "dark" : "light")
 	const queryParams = new URLSearchParams(window.location.search);
 
 	const deployment = queryParams.get('deployment');
@@ -32,6 +34,7 @@ function App() {
 
 	return (
 		<div className="App">
+			{preferDark ? (<p>"hi dark!"</p>) : (<p>"hi light!"</p>)}
 			<img
 				alt="sourcegraph-logo"
 				src="https://github.com/sourcegraph/support-generator/blob/main/public/images/Sourcegraph_Logo_FullColor_light.png?raw=true"
