@@ -46,7 +46,7 @@ export default function GenerateLink({
                     onClick={generateURL}
                     disabled
                 >
-                    Generate URL for re-use
+                    Generate URL
                 </button>
 
             ) : (
@@ -57,7 +57,7 @@ export default function GenerateLink({
                     {generatedURI !== "" ? (
                         <>Clear Command</>
                     ) : (
-                        <>Generate URL for re-use</>
+                        <>Generate URL</>
                     )}
                 </button>
             )

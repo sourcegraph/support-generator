@@ -10,13 +10,14 @@
 .or {
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
+    color: var(--sg-dark-gray);
     font-weight: regular;
     width: 20px;
     width: 58px;
 }
 
 .dash {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--sg-dark-gray);
     height: 0px;
     width: 100px;
 }

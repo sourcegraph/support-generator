@@ -1,29 +1,30 @@
 .generated-uri-container {
-    width: 65%;
+    width: 100%;
     max-width: 800px;
+    min-width: 550px;
     padding-top: 25px;
     margin: auto;
     display: flex;
     flex-flow: column nowrap;
-    /* border: 1px solid black; */
+    justify-content: center;
 }
 
 .generated-uri {
-    width: 100%;
+    width: 65%;
     border: 1px solid black;
     max-width: 1000px;
-    min-width: 790px;
+    min-width: 782px;
     border: 1px solid lightgray;
-    border-radius: 4px;
+    border-radius: 3px;
     font-family: "Source Code Pro",
         monospace;
-    font-size: 1rem;
+    font-size: .9rem;
     color: rgb(70, 70, 70);
     outline: #00cbec;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 3px;
-    /* padding-left: 10px; */
+    padding-left: 10px;
 }
 
 input.generated-uri[type="text"] {
@@ -37,6 +38,8 @@ input.generated-uri[type="text"]:focus {
 
 .copied-url-container {
     display: flex;
+    width: 100%;
+    /* border: 1px solid black; */
     flex-flow: row nowrap;
     justify-content: space-between;
 }
@@ -49,10 +52,20 @@ input.generated-uri[type="text"]:focus {
     opacity: 0;
     text-align: left;
     transition-duration: .4s;
+    /* border: 1px solid black; */
 }
 
 .copied-message.show {
     opacity: 1;
+}
+
+.btns-container-2 {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-right: 5px;
 }
 
 button.btn.w-margin:disabled,
