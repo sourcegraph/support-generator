@@ -15,7 +15,7 @@
     font-family: "Source Sans Pro", monospace;
     font-size: 1rem;
     color: rgb(47, 47, 47);
-    outline: #00CBEC;
+    outline-color: var(--sg-blurple);
     padding: 5px;
     height: 38px;
     width: 100%;
@@ -29,7 +29,8 @@
     font-family: "Source Code Pro", monospace;
     font-size: 1rem;
     color: rgb(47, 47, 47);
-    outline: #00cbec;
+    /* outline-style: solid; */
+    outline-color: var(--sg-blurple);
     /* padding: 5px; */
     padding-left: 8px;
     margin-top: 3px;
