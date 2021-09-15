@@ -29,6 +29,7 @@ code {
   background-color: #5033e1;
   color: #ffffff;
   width: fit-content;
+  min-width: 175px;
   height: 40px;
   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   font-weight: 600;
