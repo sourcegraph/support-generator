@@ -28,7 +28,7 @@ export default function Description({
     return (
         <>
             {func !== "Function" &&
-                <li
+                <div
                     className="desc-item"
                     onMouseEnter={() => setShowInfoOption(true)}
                     onMouseLeave={() => setShowInfoOption(false)}
@@ -65,7 +65,7 @@ export default function Description({
                             </ul>
                         </div>
                     }
-                </li>
+                </div>
             }
         </>
 

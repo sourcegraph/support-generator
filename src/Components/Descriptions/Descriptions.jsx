@@ -34,7 +34,7 @@ export default function Descriptions({ selectedDeployment }) {
 
     return (
         <div>
-            <h4 className="section right">Descriptions &nbsp;
+            <h4 className="section">Descriptions &nbsp;
                 {len !== 0 &&
                     <span className="instruction">
                         (click to expand)
@@ -43,9 +43,9 @@ export default function Descriptions({ selectedDeployment }) {
 
             </h4>
             {len !== 0 ? (
-                <ul className="desc-list">
+                <div className="desc-list">
                     {generateDescriptions()}
-                </ul>
+                </div>
             ) : (
                 <div className="desc-list placeholder">
                     <p>Choose Deployment to list function descriptions.</p>

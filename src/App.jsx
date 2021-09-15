@@ -40,39 +40,39 @@ function App() {
 			<h2 className="subtitle">Command Line Generator</h2>
 
 			<div className="container">
-				<div className="actions">
+				{/* <div className="actions"> */}
 
-					{/* USER selects their deployment */}
-					<div className="deploy-container">
-						<Deployment
-							selectedDeployment={selectedDeployment}
-							setSelectedDeployment={setSelectedDeployment}
-							setSelectedAction={setSelectedAction}
-							hasNamespace={hasNamespace}
-							setHasNamespace={setHasNamespace}
-							namespace={namespace}
-							setNamespace={setNamespace}
-							setCommand={setCommand}
-							setOption={setOption}
-							setGeneratedURI={setGeneratedURI}
-						/>
+				{/* USER selects their deployment */}
+				<div className="deploy-container">
+					<Deployment
+						selectedDeployment={selectedDeployment}
+						setSelectedDeployment={setSelectedDeployment}
+						setSelectedAction={setSelectedAction}
+						hasNamespace={hasNamespace}
+						setHasNamespace={setHasNamespace}
+						namespace={namespace}
+						setNamespace={setNamespace}
+						setCommand={setCommand}
+						setOption={setOption}
+						setGeneratedURI={setGeneratedURI}
+					/>
 
-						{/* USER selects the action they want to take */}
-						<Action
-							selectedDeployment={selectedDeployment}
-							selectedAction={selectedAction}
-							setSelectedAction={setSelectedAction}
-							option={option}
-							setOption={setOption}
-							command={command}
-							setCommand={setCommand}
-							hasNamespace={hasNamespace}
-							namespace={namespace}
-							setGeneratedURI={setGeneratedURI}
-						/>
-					</div>
-
+					{/* USER selects the action they want to take */}
+					<Action
+						selectedDeployment={selectedDeployment}
+						selectedAction={selectedAction}
+						setSelectedAction={setSelectedAction}
+						option={option}
+						setOption={setOption}
+						command={command}
+						setCommand={setCommand}
+						hasNamespace={hasNamespace}
+						namespace={namespace}
+						setGeneratedURI={setGeneratedURI}
+					/>
 				</div>
+
+				{/* </div> */}
 
 				<div className="line-break">
 				</div>

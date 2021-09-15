@@ -16,7 +16,7 @@ export default function Deployment({
         <div className="deployment-container">
 
             <div className="deployment-type">
-                <h4 className="section">Select deployment:</h4>
+                <h4 className="section">Select deployment</h4>
                 <select
                     onChange={(e) => {
                         setSelectedDeployment(e.target.value)
