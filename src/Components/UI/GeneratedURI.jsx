@@ -50,7 +50,7 @@ export default function GeneratedURI({
                 <p className={`copied-message ${copiedUrl && "show"}`}>
                     URL copied to clipboard
                 </p>
-                <div>
+                <div className="btns-container-2">
                     <GenerateLink
                         deployment={selectedDeployment}
                         action={selectedAction}
