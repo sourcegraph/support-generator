@@ -1,7 +1,9 @@
 // ANCHOR External Modules
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
 
 // ANCHOR Internal Modules
+import modeState from './recoil/atoms';
 import Deployment from './Components/Deployment/Deployment';
 import Action from './Components/Action/Action';
 import GeneratedURI from './Components/UI/GeneratedURI';
@@ -15,15 +17,17 @@ import GeneratedCommand from './Components/Command/GeneratedCommand';
 
 
 function App() {
-	const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-	console.log(preferDark ? "dark" : "light")
-	const queryParams = new URLSearchParams(window.location.search);
+	// determine user preference for dark or light mode.
+	const [mode, setMode] = useRecoilState(modeState)
 
+	// Use search params if present in URL
+	const queryParams = new URLSearchParams(window.location.search);
 	const deployment = queryParams.get('deployment');
 	const action = queryParams.get('function');
 	const nSpace = queryParams.get('namespace');
 	const opt = queryParams.get('option');
 
+	// States
 	const [selectedDeployment, setSelectedDeployment] = useState(deployment || "select-deployment");
 	const [selectedAction, setSelectedAction] = useState(action || "Function")
 	const [namespace, setNamespace] = useState(nSpace || "");
@@ -32,9 +36,16 @@ function App() {
 	const [command, setCommand] = useState("");
 	const [generatedURI, setGeneratedURI] = useState("");
 
+	useEffect(() => {
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			setMode('dark');
+		}
+	}, [mode, setMode])
+
 	return (
 		<div className="App">
-			{preferDark ? (<p>"hi dark!"</p>) : (<p>"hi light!"</p>)}
+			{/* DARK MODE TEST  (works.)*/}
+			{/* {mode === "light" ? (<p>"hi light!"</p>) : (<p>"hi dark!"</p>)} */}
 			<img
 				alt="sourcegraph-logo"
 				src="https://github.com/sourcegraph/support-generator/blob/main/public/images/Sourcegraph_Logo_FullColor_light.png?raw=true"
