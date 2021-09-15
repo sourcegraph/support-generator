@@ -88,6 +88,7 @@
     font-size: .7rem;
     padding-bottom: 10px;
     width: 100%;
+    max-width: 350px;
     animation: fadeIN .2s linear;
     opacity: 1;
 }
