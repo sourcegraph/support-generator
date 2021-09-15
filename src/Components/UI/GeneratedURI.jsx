@@ -24,6 +24,10 @@ export default function GeneratedURI({
         setCopiedUrl(true);
     }
 
+    const handleFocus = (e) => {
+        e.target.select();
+    }
+
     useEffect(() => {
         if (copiedUrl) {
             setTimeout(() => {
@@ -39,6 +43,7 @@ export default function GeneratedURI({
                 type="text"
                 placeholder="Generated URL will appear here."
                 value={generatedURI}
+                onFocus={handleFocus}
                 readOnly
             />
             <div className="copied-url-container">
