@@ -1,6 +1,6 @@
 # Command Generator
 
-[The Command Generator](https://command-generator.netlify.app/) is a simple web app that can be used to generate the most frequently used commands for different deployment type when running Sourcegraph.
+[The Command Generator](https://sourcegraph.github.io/support-generator/) is a simple web app that can be used to generate the most frequently used commands for different deployment type when running Sourcegraph.
 
 ## Features
 - Generate commands based on selected deployment type, currently supports Docker, Docker Compose, K8s
