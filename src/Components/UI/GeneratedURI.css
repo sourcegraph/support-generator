@@ -1,6 +1,7 @@
 .generated-uri-container {
-    width: 65%;
+    width: 100%;
     max-width: 800px;
+    min-width: 550px;
     padding-top: 25px;
     margin: auto;
     display: flex;
@@ -9,7 +10,7 @@
 }
 
 .generated-uri {
-    width: 100%;
+    width: 65%;
     border: 1px solid black;
     max-width: 1000px;
     min-width: 790px;

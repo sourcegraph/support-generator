@@ -3,6 +3,5 @@ export const getOptionValues = (obj) => {
     for (let i in obj) {
         arr.push(i);
     }
-    console.log(arr);
     return arr;
 }
