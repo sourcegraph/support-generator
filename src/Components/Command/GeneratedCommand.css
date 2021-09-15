@@ -12,9 +12,11 @@
 .generated-command {
     font-family: "Source Code Pro", monospace;
     font-weight: normal;
-    font-size: 1.2rem;
+    font-size: .9rem;
     background-color: var(--sg-black);
     padding-top: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-bottom: 25px;
     color: var(--sg-mint);
     border-radius: 3px;
