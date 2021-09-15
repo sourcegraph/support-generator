@@ -24,7 +24,7 @@
 }
 
 input.generated-uri[type="text"] {
-    color: gray;
+    color: var(--sg-dark-gray);
     text-shadow: 0 0 0 #fff;
 }
 
@@ -60,4 +60,13 @@ button.btn.w-margin[disabled] {
 
 .btn.w-margin {
     margin-left: 10px;
+}
+
+.generated-uri::placeholder {
+    color: rgb(205, 205, 205);
+    opacity: 1;
+}
+
+.generated-uri::selection {
+    background: var(--sg-mint);
 }
