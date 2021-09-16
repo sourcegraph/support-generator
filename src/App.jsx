@@ -47,8 +47,10 @@ function App() {
 			{/* DARK MODE TEST  (works.)*/}
 			{/* {mode === "light" ? (<p>"hi light!"</p>) : (<p>"hi dark!"</p>)} */}
 			<img
-				alt="sourcegraph-logo"
-				src="https://github.com/sourcegraph/support-generator/blob/main/public/images/Sourcegraph_Logo_FullColor_light.png?raw=true"
+				alt={`sourcegraph-logo ${mode === "dark" ? "dark" : "light"}`}
+				src={mode === 'dark'
+					? "https://github.com/sourcegraph/support-generator/blob/main/public/images/Sourcegraph_Logo_FullColor_dark.png?raw=true"
+					: "https://github.com/sourcegraph/support-generator/blob/main/public/images/Sourcegraph_Logo_FullColor_light.png?raw=true"}
 				className="logo"
 			/>
 			<h2 className="subtitle">Command Line Generator</h2>
