@@ -44,8 +44,6 @@ function App() {
 
 	return (
 		<div className={`App ${mode === 'dark' && "dark"}`}>
-			{/* DARK MODE TEST  (works.)*/}
-			{/* {mode === "light" ? (<p>"hi light!"</p>) : (<p>"hi dark!"</p>)} */}
 			<img
 				alt={`sourcegraph-logo ${mode === "dark" ? "dark" : "light"}`}
 				src={mode === 'dark'
