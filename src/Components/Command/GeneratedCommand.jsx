@@ -28,7 +28,7 @@ export default function GeneratedCommand({
 
     return (
         <div className="generated-command-container">
-            <div className="generated-command">
+            <div className={`generated-command ${mode === "dark" ? "dark" : "light"}`}>
                 {selectedDeployment === 'select-deployment' ? (
                     <>
                         [SELECT DEPLOYMENT TYPE and FUNCTION]

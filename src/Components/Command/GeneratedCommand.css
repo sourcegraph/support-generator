@@ -13,13 +13,18 @@
     font-family: "Source Code Pro", monospace;
     font-weight: normal;
     font-size: .9rem;
-    background-color: var(--sg-bg-dark-3);
+    background-color: #000000;
     padding-top: 25px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 25px;
-    color: #ffffff;
+    color: var(--sg-mint);
     border-radius: 3px;
+}
+
+.generated-command.dark {
+    background-color: var(--sg-bg-dark-3);
+    color: #ffffff;
 }
 
 .btns-container {
