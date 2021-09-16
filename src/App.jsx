@@ -43,7 +43,7 @@ function App() {
 	}, [mode, setMode])
 
 	return (
-		<div className="App">
+		<div className={`App ${mode === 'dark' && "dark"}`}>
 			{/* DARK MODE TEST  (works.)*/}
 			{/* {mode === "light" ? (<p>"hi light!"</p>) : (<p>"hi dark!"</p>)} */}
 			<img

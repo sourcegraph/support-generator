@@ -3,7 +3,13 @@
 
 .App {
   text-align: center;
-  margin-top: 100px;
+  /* margin-top: 100px; */
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+.App.dark {
+  background-color: var(--sg-bg-dark-1);
 }
 
 .container {
@@ -50,6 +56,7 @@
 
 .logo {
   width: 300px;
+  margin-top: 100px;
 }
 
 .subtitle {

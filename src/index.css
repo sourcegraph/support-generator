@@ -7,6 +7,9 @@
   --sg-black: #000000;
   --sg-btn-hover: #3c26a5;
   --sg-dark-gray: #6C757D;
+  --sg-bg-dark-1: #181b26;
+  --sg-bg-dark-2: #1d212f;
+  --sg-bg-dark-3: #343a4d;
 }
 
 body {
