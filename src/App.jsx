@@ -7,12 +7,17 @@ import modeState from './recoil/atoms';
 import Deployment from './Components/Deployment/Deployment';
 import Action from './Components/Action/Action';
 import GeneratedURI from './Components/UI/GeneratedURI';
-
-// ANCHOR CSS
-import './App.css';
 import Descriptions from './Components/Descriptions/Descriptions';
 import Or from './Components/UI/Or';
 import GeneratedCommand from './Components/Command/GeneratedCommand';
+
+// ANCHOR Images
+import logo_dark from './images/Sourcegraph_Logo_FullColor_dark.png';
+import logo_light from './images/Sourcegraph_Logo_FullColor_light.png';
+
+// ANCHOR CSS
+import './App.css';
+
 
 
 
@@ -47,8 +52,8 @@ function App() {
 			<img
 				alt={`sourcegraph-logo ${mode === "dark" ? "dark" : "light"}`}
 				src={mode === 'dark'
-					? "https://github.com/sourcegraph/support-generator/blob/main/public/images/Sourcegraph_Logo_FullColor_dark.png?raw=true"
-					: "https://github.com/sourcegraph/support-generator/blob/main/public/images/Sourcegraph_Logo_FullColor_light.png?raw=true"}
+					? logo_dark
+					: logo_light}
 				className="logo"
 			/>
 			{mode === "dark" ? (
