@@ -1,12 +1,12 @@
 // ANCHOR css
 import './CopyBtn.css';
 
-export default function CopyBtn({ selectedAction, copyCommand }) {
+export default function CopyBtn({ selectedAction, copyCommand, mode }) {
     return (
         <>
             {selectedAction === "Function" ? (
                 <button
-                    className="btn"
+                    className={`btn ${mode === "dark" ? "dark" : "light"}`}
                     onClick={copyCommand}
                     disabled
                 >
@@ -14,7 +14,7 @@ export default function CopyBtn({ selectedAction, copyCommand }) {
                 </button>
             ) : (
                 <button
-                    className="btn"
+                    className={`btn ${mode === "dark" ? "dark" : "light"}`}
                     onClick={copyCommand}
                 >
                     Copy Command

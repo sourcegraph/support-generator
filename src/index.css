@@ -63,3 +63,41 @@ button.btn[disabled] {
   font-weight: regular;
   cursor: default;
 }
+
+.btn.dark {
+  border: none;
+  border-radius: 3px;
+  background-color: var(--sg-blurple);
+  color: #ffffff;
+  width: fit-content;
+  min-width: fit-content;
+  height: 40px;
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 1.0rem;
+  margin-top: 10px;
+  padding-right: 22px;
+  padding-left: 22px;
+  justify-self: flex-end;
+  transition: all .2s ease-in;
+  cursor: pointer;
+}
+
+.btn.dark:hover {
+  background-color: var(--sg-btn-hover);
+  color: white;
+}
+
+.btn.dark:active {
+  background-color: #2b1b79;
+  color: white;
+}
+
+button.btn.dark:disabled,
+button.btn.dark[disabled] {
+  border-color: var(--sg-bg-dark-2);
+  background-color: var(--sg-bg-dark-2);
+  color: var(--sg-bg-dark-3);
+  font-weight: regular;
+  cursor: default;
+}

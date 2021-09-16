@@ -46,6 +46,7 @@ export default function GeneratedCommand({
                 <CopyBtn
                     selectedAction={selectedAction}
                     copyCommand={copyCommand}
+                    mode={mode}
                 />
             </div>
         </div >

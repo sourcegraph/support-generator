@@ -59,10 +59,11 @@ export default function GeneratedURI({
                         option={option}
                         setGeneratedURI={setGeneratedURI}
                         generatedURI={generatedURI}
+                        mode={mode}
                     />
                     {generatedURI ? (
                         <button
-                            className="btn w-margin"
+                            className={`btn w-margin ${mode === "dark" ? "dark" : "light"}`}
                             onClick={copyUrl}
                         >
                             Copy URL
@@ -70,7 +71,7 @@ export default function GeneratedURI({
 
                     ) : (
                         <button
-                            className="btn w-margin"
+                            className={`btn w-margin ${mode === "dark" ? "dark" : "light"}`}
                             onClick={copyUrl}
                             disabled
                         >
