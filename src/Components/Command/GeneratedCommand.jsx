@@ -8,6 +8,7 @@ export default function GeneratedCommand({
     selectedDeployment,
     selectedAction,
     command,
+    mode
 }) {
 
     const [commandCopied, setCommandCopied] = useState(false);
@@ -39,7 +40,7 @@ export default function GeneratedCommand({
                 )}
             </div>
             <div className="btns-container">
-                <p className={`copied-message ${commandCopied && "show"}`}>
+                <p className={`copied-message ${commandCopied && "show"} ${mode === "dark" ? "dark" : "light"}`}>
                     Command copied to clipboard.
                 </p>
                 <CopyBtn

@@ -27,6 +27,11 @@
     padding-left: 10px;
 }
 
+.generated-uri.dark {
+    background-color: var(--sg-bg-dark-2);
+    border: 1px solid var(--sg-dark-gray);
+}
+
 input.generated-uri[type="text"] {
     color: var(--sg-dark-gray);
     text-shadow: 0 0 0 #fff;
@@ -53,6 +58,10 @@ input.generated-uri[type="text"]:focus {
     text-align: left;
     transition-duration: .4s;
     /* border: 1px solid black; */
+}
+
+.copied-message.dark {
+    color: var(--sg-mint);
 }
 
 .copied-message.show {
