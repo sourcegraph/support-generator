@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/support-generator/static/css/main.3e607208.chunk.css",
-    "main.js": "/support-generator/static/js/main.4586ed8f.chunk.js",
-    "main.js.map": "/support-generator/static/js/main.4586ed8f.chunk.js.map",
-    "runtime-main.js": "/support-generator/static/js/runtime-main.b781c0fe.js",
-    "runtime-main.js.map": "/support-generator/static/js/runtime-main.b781c0fe.js.map",
-    "static/js/2.705c73fd.chunk.js": "/support-generator/static/js/2.705c73fd.chunk.js",
-    "static/js/2.705c73fd.chunk.js.map": "/support-generator/static/js/2.705c73fd.chunk.js.map",
-    "static/js/3.83393df3.chunk.js": "/support-generator/static/js/3.83393df3.chunk.js",
-    "static/js/3.83393df3.chunk.js.map": "/support-generator/static/js/3.83393df3.chunk.js.map",
+    "main.css": "/support-generator/static/css/main.ba085264.chunk.css",
+    "main.js": "/support-generator/static/js/main.9987567c.chunk.js",
+    "main.js.map": "/support-generator/static/js/main.9987567c.chunk.js.map",
+    "runtime-main.js": "/support-generator/static/js/runtime-main.6bf1b684.js",
+    "runtime-main.js.map": "/support-generator/static/js/runtime-main.6bf1b684.js.map",
+    "static/js/2.d21d4be3.chunk.js": "/support-generator/static/js/2.d21d4be3.chunk.js",
+    "static/js/2.d21d4be3.chunk.js.map": "/support-generator/static/js/2.d21d4be3.chunk.js.map",
+    "static/js/3.ab081b31.chunk.js": "/support-generator/static/js/3.ab081b31.chunk.js",
+    "static/js/3.ab081b31.chunk.js.map": "/support-generator/static/js/3.ab081b31.chunk.js.map",
     "index.html": "/support-generator/index.html",
-    "static/css/main.3e607208.chunk.css.map": "/support-generator/static/css/main.3e607208.chunk.css.map",
-    "static/js/2.705c73fd.chunk.js.LICENSE.txt": "/support-generator/static/js/2.705c73fd.chunk.js.LICENSE.txt"
+    "static/css/main.ba085264.chunk.css.map": "/support-generator/static/css/main.ba085264.chunk.css.map",
+    "static/js/2.d21d4be3.chunk.js.LICENSE.txt": "/support-generator/static/js/2.d21d4be3.chunk.js.LICENSE.txt",
+    "static/media/Sourcegraph_Logo_FullColor_dark.ad85e056.png": "/support-generator/static/media/Sourcegraph_Logo_FullColor_dark.ad85e056.png",
+    "static/media/Sourcegraph_Logo_FullColor_light.66076257.png": "/support-generator/static/media/Sourcegraph_Logo_FullColor_light.66076257.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.b781c0fe.js",
-    "static/js/2.705c73fd.chunk.js",
-    "static/css/main.3e607208.chunk.css",
-    "static/js/main.4586ed8f.chunk.js"
+    "static/js/runtime-main.6bf1b684.js",
+    "static/js/2.d21d4be3.chunk.js",
+    "static/css/main.ba085264.chunk.css",
+    "static/js/main.9987567c.chunk.js"
   ]
 }
