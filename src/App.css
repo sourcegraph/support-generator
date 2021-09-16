@@ -60,9 +60,15 @@
 }
 
 .subtitle {
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source Sans Pro", monospace;
+  font-style: italic;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.0rem;
+  color: var(--sg-dark-gray);
+}
+
+.subtitle.dark {
+  color: white;
 }
 
 .section {
@@ -73,4 +79,8 @@
 
 .section.right {
   text-align: right;
+}
+
+.section.dark {
+  color: white;
 }

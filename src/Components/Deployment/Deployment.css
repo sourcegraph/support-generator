@@ -23,6 +23,13 @@
     min-width: fit-content;
 }
 
+.dropdown-menu.dark {
+    background-color: var(--sg-bg-dark-2);
+    border: 1px solid var(--sg-dark-gray);
+    outline-color: var(--sg-dark-gray);
+    color: white;
+}
+
 .text-input {
     border: 1px solid lightgray;
     border-radius: 4px;
@@ -40,6 +47,13 @@
     min-width: 200px; */
 }
 
+.text-input.dark {
+    background-color: var(--sg-bg-dark-2);
+    border: 1px solid var(--sg-dark-gray);
+    outline-color: var(--sg-dark-gray);
+    color: white;
+}
+
 .namespace-check {
     margin-top: 10px;
     display: flex;
@@ -52,6 +66,10 @@
 .namespace-label {
     margin-left: 4px;
     min-width: fit-content;
+}
+
+.namespace-label.dark {
+    color: white;
 }
 
 .namespace-input {

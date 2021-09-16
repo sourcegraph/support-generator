@@ -17,7 +17,8 @@ export default function Dropdown({
     setCommand,
     hasNamespace,
     namespace,
-    setGeneratedURI
+    setGeneratedURI,
+    mode
 }) {
     function generateOptions() {
         return optionValues.map((val, i) => {
@@ -59,7 +60,7 @@ export default function Dropdown({
 
     return (
         <div className="deployment-type">
-            <h4 className="section">Select action to take</h4>
+            <h4 className={`section ${mode === 'dark' ? 'dark' : 'light'}`}>Select action to take</h4>
             <select
                 onChange={(e) => {
                     setSelectedAction(e.target.value);
@@ -68,7 +69,7 @@ export default function Dropdown({
                 }}
                 defaultValue={defaultValue}
                 value={selectedDeployment}
-                className="dropdown-menu"
+                className={`dropdown-menu ${mode === 'dark' ? 'dark' : 'light'}`}
             >
                 {optionValues && generateOptions()}
             </select>

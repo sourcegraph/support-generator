@@ -17,7 +17,8 @@ export default function Action({
     setCommand,
     namespace,
     hasNamespace,
-    setGeneratedURI
+    setGeneratedURI,
+    mode
 }) {
     const dockerMap = commands["Docker"];
     const dockerComposeMap = commands["Docker Compose"];
@@ -43,6 +44,7 @@ export default function Action({
                         command={setCommand}
                         setCommand={setCommand}
                         setGeneratedURI={setGeneratedURI}
+                        mode={mode}
                     />
                     {dockerMap[selectedAction]["option"] &&
                         <div className="action-option">
@@ -72,6 +74,7 @@ export default function Action({
                         command={setCommand}
                         setCommand={setCommand}
                         setGeneratedURI={setGeneratedURI}
+                        mode={mode}
                     />
 
                     {dockerComposeMap[selectedAction]["option"] &&
@@ -104,6 +107,7 @@ export default function Action({
                         hasNamespace={hasNamespace}
                         namespace={namespace}
                         setGeneratedURI={setGeneratedURI}
+                        mode={mode}
                     />
 
                     {kubernetesMap[selectedAction]["option"] &&
@@ -113,7 +117,7 @@ export default function Action({
                                 placeholder={kubernetesMap[selectedAction]["option"]}
                                 value={option}
                                 onChange={(e) => setOption(e.target.value)}
-                                className="text-input"
+                                className={`text-input ${mode === 'dark' ? 'dark' : 'light'}`}
                             />
                         </div>
                     }

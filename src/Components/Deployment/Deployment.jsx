@@ -10,13 +10,14 @@ export default function Deployment({
     namespace,
     setNamespace,
     setOption,
-    setGeneratedURI
+    setGeneratedURI,
+    mode
 }) {
     return (
         <div className="deployment-container">
 
             <div className="deployment-type">
-                <h4 className="section">Select deployment</h4>
+                <h4 className={`section ${mode === "dark" ? "dark" : "light"}`}>Select deployment</h4>
                 <select
                     onChange={(e) => {
                         setSelectedDeployment(e.target.value)
@@ -27,7 +28,7 @@ export default function Deployment({
                         setGeneratedURI("")
                     }}
                     value={selectedDeployment}
-                    className="dropdown-menu"
+                    className={`dropdown-menu ${mode === "dark" ? "dark" : "light"}`}
                 >
                     <option value="select-deployment">Select Your Deployment Type...</option>
                     <option value="Docker">Docker</option>
@@ -54,7 +55,7 @@ export default function Deployment({
                             />
                         )}
 
-                        <label className="namespace-label" name="namespace">I am using a namespace.</label>
+                        <label className={`namespace-label ${mode === "dark" ? "dark" : "light"}`} name="namespace">I am using a namespace.</label>
                     </div>
 
                     {hasNamespace &&
@@ -64,7 +65,7 @@ export default function Deployment({
                                 placeholder="$NAMESPACE"
                                 value={namespace}
                                 onChange={(e) => setNamespace(e.target.value)}
-                                className="text-input"
+                                className={`text-input ${mode === "dark" ? "dark" : "light"}`}
                             />
                         </div>
                     }
