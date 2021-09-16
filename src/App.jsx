@@ -106,6 +106,7 @@ function App() {
 					/> */}
 					<Descriptions
 						selectedDeployment={selectedDeployment}
+						mode={mode}
 					/>
 				</div>
 			</div>
@@ -121,6 +122,7 @@ function App() {
 					namespace={namespace}
 					option={option}
 					setGeneratedURI={setGeneratedURI}
+					mode={mode}
 				/>
 
 				{/* divider */}
@@ -134,6 +136,7 @@ function App() {
 					option={option}
 					generatedURI={generatedURI}
 					setGeneratedURI={setGeneratedURI}
+					mode={mode}
 				/>
 			</div>
 		</div>

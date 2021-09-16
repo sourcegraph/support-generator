@@ -11,17 +11,28 @@
     flex-flow: column nowrap;
 }
 
+.desc-item {
+    color: white;
+}
+
 .desc-list.placeholder {
     font-size: .8rem;
+}
+
+.desc-list.placeholder.dark {
+    color: white;
 }
 
 .description {
     list-style: none;
     padding-right: 5px;
+    background-color: var(--sg-bg-dark-3);
 }
 
 .instruction {
     font-weight: normal;
+    font-style: italic;
+    font-size: .8rem;
 }
 
 .row {
@@ -44,8 +55,16 @@
     background-color: var(--sg-light-gray);
 }
 
+.row.dark:hover {
+    background-color: var(--sg-bg-dark-3);
+}
+
 .row.expanded {
     background-color: var(--sg-light-gray);
+}
+
+.row.expanded.dark {
+    background-color: var(--sg-bg-dark-3);
 }
 
 .expand {
@@ -62,6 +81,10 @@
     left: 40px;
     opacity: 0;
     transition: all .3s ease-in-out;
+}
+
+.expand.dark {
+    color: white;
 }
 
 .expand.active {
@@ -91,6 +114,11 @@
     max-width: 350px;
     animation: fadeIN .2s linear;
     opacity: 1;
+}
+
+.command-info.dark {
+    background-color: var(--sg-bg-dark-3);
+    color: white;
 }
 
 @keyframes fadeIN {
