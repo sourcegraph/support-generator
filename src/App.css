@@ -3,7 +3,13 @@
 
 .App {
   text-align: center;
-  margin-top: 100px;
+  /* margin-top: 100px; */
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+.App.dark {
+  background-color: var(--sg-bg-dark-1);
 }
 
 .container {
@@ -50,12 +56,19 @@
 
 .logo {
   width: 300px;
+  margin-top: 100px;
 }
 
 .subtitle {
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source Sans Pro", monospace;
+  font-style: italic;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.0rem;
+  color: var(--sg-dark-gray);
+}
+
+.subtitle.dark {
+  color: white;
 }
 
 .section {
@@ -66,4 +79,8 @@
 
 .section.right {
   text-align: right;
+}
+
+.section.dark {
+  color: white;
 }

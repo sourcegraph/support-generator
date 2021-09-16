@@ -11,7 +11,7 @@ import './Descriptions.css';
 
 
 
-export default function Descriptions({ selectedDeployment }) {
+export default function Descriptions({ selectedDeployment, mode }) {
     const deploymentMap = commands[selectedDeployment];
     const mapKeys = getOptionValues(deploymentMap);
     const [currentInfoOpen, setCurrentInfoOpen] = useState("Function");
@@ -27,6 +27,7 @@ export default function Descriptions({ selectedDeployment }) {
                     info={vals}
                     currentInfoOpen={currentInfoOpen}
                     setCurrentInfoOpen={setCurrentInfoOpen}
+                    mode={mode}
                 />
             )
         })
@@ -34,10 +35,10 @@ export default function Descriptions({ selectedDeployment }) {
 
     return (
         <div>
-            <h4 className="section">Descriptions &nbsp;
+            <h4 className={`section ${mode === 'dark' ? 'dark' : 'light'}`}>Descriptions &nbsp;
                 {len !== 0 &&
                     <span className="instruction">
-                        (click to expand)
+                        - &nbsp;click to expand
                     </span>
                 }
 
@@ -47,7 +48,7 @@ export default function Descriptions({ selectedDeployment }) {
                     {generateDescriptions()}
                 </div>
             ) : (
-                <div className="desc-list placeholder">
+                <div className={`desc-list placeholder ${mode === 'dark' ? 'dark' : 'light'}`}>
                     <p>Choose Deployment to list function descriptions.</p>
                 </div>
             )}

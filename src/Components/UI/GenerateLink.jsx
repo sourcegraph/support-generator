@@ -10,7 +10,8 @@ export default function GenerateLink({
     namespace,
     option,
     generatedURI,
-    setGeneratedURI
+    setGeneratedURI,
+    mode
 }) {
     const generateURL = () => {
         const BASE_URL = (window.location.href).split("?")[0];
@@ -42,7 +43,7 @@ export default function GenerateLink({
         <>
             {action === "Function" ? (
                 <button
-                    className="btn"
+                    className={`btn ${mode === "dark" ? "dark" : "light"}`}
                     onClick={generateURL}
                     disabled
                 >
@@ -51,7 +52,7 @@ export default function GenerateLink({
 
             ) : (
                 <button
-                    className="btn"
+                    className={`btn ${mode === "dark" ? "dark" : "light"}`}
                     onClick={generateURL}
                 >
                     {generatedURI !== "" ? (

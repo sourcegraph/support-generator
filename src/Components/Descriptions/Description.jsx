@@ -8,7 +8,8 @@ export default function Description({
     func,
     info,
     currentInfoOpen,
-    setCurrentInfoOpen
+    setCurrentInfoOpen,
+    mode
 }) {
     const [showInfoOption, setShowInfoOption] = useState(false);
     const [showDesc, setShowDesc] = useState(false);
@@ -29,17 +30,17 @@ export default function Description({
         <>
             {func !== "Function" &&
                 <div
-                    className="desc-item"
+                    className={`desc-item ${mode === 'dark' ? 'dark' : 'light'}`}
                     onMouseEnter={() => setShowInfoOption(true)}
                     onMouseLeave={() => setShowInfoOption(false)}
                     onClick={handleExpand}
                 >
-                    <div className={`row ${currentInfoOpen === func && 'expanded'}`}>
+                    <div className={`row ${currentInfoOpen === func && 'expanded'} ${mode === "dark" ? "dark" : "light"}`} >
                         <div>
                             {func}
                         </div>
                         <button
-                            className={`expand ${showInfoOption && "active"}`}
+                            className={`expand ${showInfoOption && "active"} ${mode === "dark" ? "dark" : "light"}`}
                             onClick={handleExpand}
                         >
                             <div>
@@ -57,7 +58,7 @@ export default function Description({
                         </button>
                     </div>
                     {currentInfoOpen === func &&
-                        <div className="command-info">
+                        <div className={`command-info ${mode === 'dark' ? 'dark' : 'light'}`}>
                             <ul className="description">
                                 <li>
                                     {info.description}

@@ -1,27 +1,38 @@
 // ANCHOR External Modules
-import { useState } from 'react'
+import { useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
 
 // ANCHOR Internal Modules
+import modeState from './recoil/atoms';
 import Deployment from './Components/Deployment/Deployment';
 import Action from './Components/Action/Action';
 import GeneratedURI from './Components/UI/GeneratedURI';
-
-// ANCHOR CSS
-import './App.css';
 import Descriptions from './Components/Descriptions/Descriptions';
 import Or from './Components/UI/Or';
 import GeneratedCommand from './Components/Command/GeneratedCommand';
 
+// ANCHOR Images
+import logo_dark from './images/Sourcegraph_Logo_FullColor_dark.png';
+import logo_light from './images/Sourcegraph_Logo_FullColor_light.png';
+
+// ANCHOR CSS
+import './App.css';
+
+
 
 
 function App() {
-	const queryParams = new URLSearchParams(window.location.search);
+	// determine user preference for dark or light mode.
+	const [mode, setMode] = useRecoilState(modeState)
 
+	// Use search params if present in URL
+	const queryParams = new URLSearchParams(window.location.search);
 	const deployment = queryParams.get('deployment');
 	const action = queryParams.get('function');
 	const nSpace = queryParams.get('namespace');
 	const opt = queryParams.get('option');
 
+	// States
 	const [selectedDeployment, setSelectedDeployment] = useState(deployment || "select-deployment");
 	const [selectedAction, setSelectedAction] = useState(action || "Function")
 	const [namespace, setNamespace] = useState(nSpace || "");
@@ -30,14 +41,27 @@ function App() {
 	const [command, setCommand] = useState("");
 	const [generatedURI, setGeneratedURI] = useState("");
 
+	useEffect(() => {
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			setMode('dark');
+		}
+	}, [mode, setMode])
+
 	return (
-		<div className="App">
+		<div className={`App ${mode === 'dark' && "dark"}`}>
 			<img
-				alt="sourcegraph-logo"
-				src="https://github.com/sourcegraph/support-generator/blob/main/public/images/Sourcegraph_Logo_FullColor_light.png?raw=true"
+				alt={`sourcegraph-logo ${mode === "dark" ? "dark" : "light"}`}
+				src={mode === 'dark'
+					? logo_dark
+					: logo_light}
 				className="logo"
 			/>
-			<h2 className="subtitle">Command Line Generator</h2>
+			{mode === "dark" ? (
+				<h2 className="subtitle dark">command line generator</h2>
+			) : (
+				<h2 className="subtitle">Command Line Generator</h2>
+			)}
+
 
 			<div className="container">
 				{/* <div className="actions"> */}
@@ -55,6 +79,7 @@ function App() {
 						setCommand={setCommand}
 						setOption={setOption}
 						setGeneratedURI={setGeneratedURI}
+						mode={mode}
 					/>
 
 					{/* USER selects the action they want to take */}
@@ -69,6 +94,7 @@ function App() {
 						hasNamespace={hasNamespace}
 						namespace={namespace}
 						setGeneratedURI={setGeneratedURI}
+						mode={mode}
 					/>
 				</div>
 
@@ -83,6 +109,7 @@ function App() {
 					/> */}
 					<Descriptions
 						selectedDeployment={selectedDeployment}
+						mode={mode}
 					/>
 				</div>
 			</div>
@@ -98,6 +125,7 @@ function App() {
 					namespace={namespace}
 					option={option}
 					setGeneratedURI={setGeneratedURI}
+					mode={mode}
 				/>
 
 				{/* divider */}
@@ -111,6 +139,7 @@ function App() {
 					option={option}
 					generatedURI={generatedURI}
 					setGeneratedURI={setGeneratedURI}
+					mode={mode}
 				/>
 			</div>
 		</div>

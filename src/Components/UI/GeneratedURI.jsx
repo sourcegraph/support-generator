@@ -15,7 +15,8 @@ export default function GeneratedURI({
     namespace,
     option,
     generatedURI,
-    setGeneratedURI
+    setGeneratedURI,
+    mode
 }) {
     const [copiedUrl, setCopiedUrl] = useState(false);
 
@@ -39,7 +40,7 @@ export default function GeneratedURI({
     return (
         <div className="generated-uri-container">
             <input
-                className="generated-uri"
+                className={`generated-uri ${mode === 'dark' ? 'dark' : 'light'}`}
                 type="text"
                 placeholder="Generated URL will appear here."
                 value={generatedURI}
@@ -47,7 +48,7 @@ export default function GeneratedURI({
                 readOnly
             />
             <div className="copied-url-container">
-                <p className={`copied-message ${copiedUrl && "show"}`}>
+                <p className={`copied-message ${copiedUrl && "show"} ${mode === "dark" ? "dark" : "light"}`}>
                     URL copied to clipboard
                 </p>
                 <div className="btns-container-2">
@@ -58,10 +59,11 @@ export default function GeneratedURI({
                         option={option}
                         setGeneratedURI={setGeneratedURI}
                         generatedURI={generatedURI}
+                        mode={mode}
                     />
                     {generatedURI ? (
                         <button
-                            className="btn w-margin"
+                            className={`btn w-margin ${mode === "dark" ? "dark" : "light"}`}
                             onClick={copyUrl}
                         >
                             Copy URL
@@ -69,7 +71,7 @@ export default function GeneratedURI({
 
                     ) : (
                         <button
-                            className="btn w-margin"
+                            className={`btn w-margin ${mode === "dark" ? "dark" : "light"}`}
                             onClick={copyUrl}
                             disabled
                         >
