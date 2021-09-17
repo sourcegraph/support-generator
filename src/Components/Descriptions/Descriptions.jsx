@@ -35,7 +35,7 @@ export default function Descriptions({ selectedDeployment, mode }) {
 
     return (
         <div>
-            <h4 className={`section ${mode === 'dark' ? 'dark' : 'light'}`}>Descriptions &nbsp;
+            <h4 className={`section ${mode === 'dark' ? 'dark' : 'light'}`}>Function Descriptions &nbsp;
                 {len !== 0 &&
                     <span className="instruction">
                         - &nbsp;click to expand
