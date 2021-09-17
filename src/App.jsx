@@ -125,14 +125,15 @@ function App() {
 					namespace={namespace}
 					option={option}
 					setGeneratedURI={setGeneratedURI}
+					generatedURI={generatedURI}
 					mode={mode}
 				/>
 
 				{/* divider */}
-				<Or />
+				{/* <Or /> */}
 
 				{/* URI Generated so that user can revisit with the same options selected */}
-				<GeneratedURI
+				{/* <GeneratedURI
 					selectedDeployment={selectedDeployment}
 					selectedAction={selectedAction}
 					namespace={namespace}
@@ -140,7 +141,7 @@ function App() {
 					generatedURI={generatedURI}
 					setGeneratedURI={setGeneratedURI}
 					mode={mode}
-				/>
+				/> */}
 			</div>
 		</div>
 	);

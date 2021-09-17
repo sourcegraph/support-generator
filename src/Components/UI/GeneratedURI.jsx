@@ -48,9 +48,12 @@ export default function GeneratedURI({
                 readOnly
             />
             <div className="copied-url-container">
+                {/* turn into seperate component */}
                 <p className={`copied-message ${copiedUrl && "show"} ${mode === "dark" ? "dark" : "light"}`}>
                     URL copied to clipboard
                 </p>
+
+
                 <div className="btns-container-2">
                     <GenerateLink
                         deployment={selectedDeployment}
