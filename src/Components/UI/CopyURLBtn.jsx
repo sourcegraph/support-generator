@@ -1,5 +1,3 @@
-// import "./CopyURLBtn.css"
-
 export default function CopyURLBtn({ selectedAction, mode, copyURL }) {
     return (
         <>

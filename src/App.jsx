@@ -6,9 +6,7 @@ import { useRecoilState } from 'recoil';
 import modeState from './recoil/atoms';
 import Deployment from './Components/Deployment/Deployment';
 import Action from './Components/Action/Action';
-// import GeneratedURI from './Components/UI/GeneratedURI';
 import Descriptions from './Components/Descriptions/Descriptions';
-// import Or from './Components/UI/Or';
 import GeneratedCommand from './Components/Command/GeneratedCommand';
 
 // ANCHOR Images
@@ -50,7 +48,7 @@ function App() {
 	return (
 		<div className={`App ${mode === 'dark' && "dark"}`}>
 			<img
-				alt={`sourcegraph-logo ${mode === "dark" ? "dark" : "light"}`}
+				alt={`sourcegraph-logo ${mode === "dark" && "dark"}`}
 				src={mode === 'dark'
 					? logo_dark
 					: logo_light}
@@ -59,13 +57,11 @@ function App() {
 			{mode === "dark" ? (
 				<h2 className="subtitle dark">command line generator</h2>
 			) : (
-				<h2 className="subtitle">Command Line Generator</h2>
+				<h2 className="subtitle">command line generator</h2>
 			)}
 
 
 			<div className="container">
-				{/* <div className="actions"> */}
-
 				{/* USER selects their deployment */}
 				<div className="deploy-container">
 					<Deployment
@@ -82,7 +78,7 @@ function App() {
 						mode={mode}
 					/>
 
-					{/* USER selects the action they want to take */}
+					{/* USER selects the function they want */}
 					<Action
 						selectedDeployment={selectedDeployment}
 						selectedAction={selectedAction}
@@ -98,23 +94,16 @@ function App() {
 					/>
 				</div>
 
-				{/* </div> */}
-
 				<div className="line-break">
 				</div>
 
 				<div className="descriptions-container">
-					{/* <Descriptions
-						selectedDeployment={selectedDeployment}
-					/> */}
 					<Descriptions
 						selectedDeployment={selectedDeployment}
 						mode={mode}
 					/>
 				</div>
 			</div>
-
-
 
 			{/* Command generated from the first two options. */}
 			<div className="user-options-container">
@@ -128,20 +117,6 @@ function App() {
 					generatedURI={generatedURI}
 					mode={mode}
 				/>
-
-				{/* divider */}
-				{/* <Or /> */}
-
-				{/* URI Generated so that user can revisit with the same options selected */}
-				{/* <GeneratedURI
-					selectedDeployment={selectedDeployment}
-					selectedAction={selectedAction}
-					namespace={namespace}
-					option={option}
-					generatedURI={generatedURI}
-					setGeneratedURI={setGeneratedURI}
-					mode={mode}
-				/> */}
 			</div>
 		</div>
 	);

@@ -41,7 +41,6 @@ export default function Descriptions({ selectedDeployment, mode }) {
                         - &nbsp;click to expand
                     </span>
                 }
-
             </h4>
             {len !== 0 ? (
                 <div className="desc-list">

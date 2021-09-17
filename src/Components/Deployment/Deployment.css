@@ -2,7 +2,6 @@
     width: 100%;
     text-align: left;
     max-width: 325px;
-    /* border: 1px solid black; */
 }
 
 .deployment-type {
@@ -53,15 +52,11 @@
     font-family: "Source Code Pro", monospace;
     font-size: 1rem;
     color: rgb(47, 47, 47);
-    /* outline-style: solid; */
     outline-color: var(--sg-blurple);
-    /* padding: 5px; */
     padding-left: 8px;
     margin-top: 3px;
     height: 32px;
     width: 97%;
-    /* max-width: 300px;
-    min-width: 200px; */
 }
 
 .text-input.dark {
