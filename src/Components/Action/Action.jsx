@@ -53,7 +53,7 @@ export default function Action({
                                 placeholder={dockerMap[selectedAction]["option"]}
                                 value={option}
                                 onChange={(e) => setOption(e.target.value)}
-                                className="text-input"
+                                className={`text-input ${mode === 'dark' ? 'dark' : 'light'}`}
                             />
                         </div>
                     }
@@ -84,7 +84,7 @@ export default function Action({
                                 placeholder={dockerComposeMap[selectedAction]["option"]}
                                 value={option}
                                 onChange={(e) => setOption(e.target.value)}
-                                className="text-input"
+                                className={`text-input ${mode === 'dark' ? 'dark' : 'light'}`}
                             />
                         </div>
                     }

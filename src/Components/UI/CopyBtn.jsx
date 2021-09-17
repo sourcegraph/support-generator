@@ -2,7 +2,6 @@
 import './CopyBtn.css';
 
 export default function CopyBtn({ selectedAction, copyCommand, mode }) {
-    console.log(copyCommand);
     return (
         <>
             {selectedAction === "Function" ? (

@@ -10,13 +10,38 @@ export default function GeneratedCommand({
     selectedAction,
     command,
     generatedURI,
+    setGeneratedURI,
+    namespace,
+    option,
     mode
 }) {
     const [commandCopied, setCommandCopied] = useState(false);
     const [urlCopied, setUrlCopied] = useState(false);
 
-    console.log("command copied: ", commandCopied);
-    console.log("url copied: ", urlCopied);
+    //FIXME need to change this so that url copies the first time you click it, not on the second time.
+
+    const generateURL = () => {
+        const BASE_URL = (window.location.href).split("?")[0];
+
+        // if (generatedURI.length !== 0) {
+        //     setGeneratedURI("");
+        //     window.location.href = BASE_URL
+        //     return;
+        // }
+
+        const DEPLOYMENT_PARAM = selectedDeployment ? `?deployment=${encodeURIComponent(selectedDeployment)}` : "";
+        const ACTION_PARAM = selectedAction ? `&function=${encodeURIComponent(selectedAction)}` : "";
+        const NAMESPACE_PARAM = namespace ? `&namespace=${namespace}` : "";
+        const OPTION_PARAM = option ? `&option=${option}` : "";
+
+        const QUERY_STRING = DEPLOYMENT_PARAM
+            + ACTION_PARAM
+            + NAMESPACE_PARAM
+            + OPTION_PARAM;
+
+        setGeneratedURI(`${BASE_URL}${QUERY_STRING}`)
+        console.log(generatedURI);
+    }
 
     const copyCommand = () => {
         navigator.clipboard.writeText(command);
@@ -25,12 +50,14 @@ export default function GeneratedCommand({
     }
 
     const copyUrl = () => {
+        generateURL();
         navigator.clipboard.writeText(generatedURI)
         setUrlCopied(true);
         setCommandCopied(false);
     }
 
-    console.log(copyUrl);
+    useEffect(() => {
+    }, [generatedURI])
 
     useEffect(() => {
         if (commandCopied) {
@@ -71,7 +98,7 @@ export default function GeneratedCommand({
                     {urlCopied && <>URL copied to clipboard.</>}
                     {commandCopied && <>Command copied to clipboard.</>}
                 </p>
-                <div>
+                <div className="btns">
                     <CopyBtn
                         selectedAction={selectedAction}
                         copyCommand={copyCommand}

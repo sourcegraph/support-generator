@@ -27,6 +27,25 @@
     color: #ffffff;
 }
 
+.copied-message {
+    color: #ED2E20;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-size: 1.0;
+    font-weight: light;
+    opacity: 0;
+    text-align: left;
+    transition-duration: .4s;
+    /* border: 1px solid black; */
+}
+
+.copied-message.dark {
+    color: var(--sg-mint);
+}
+
+.copied-message.show {
+    opacity: 1;
+}
+
 .btns-container {
     width: 100%;
     max-width: 800px;
@@ -36,4 +55,12 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     /* border: 1px solid white; */
+}
+
+.btns {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 36%;
 }

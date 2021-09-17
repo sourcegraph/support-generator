@@ -6,9 +6,9 @@ import { useRecoilState } from 'recoil';
 import modeState from './recoil/atoms';
 import Deployment from './Components/Deployment/Deployment';
 import Action from './Components/Action/Action';
-import GeneratedURI from './Components/UI/GeneratedURI';
+// import GeneratedURI from './Components/UI/GeneratedURI';
 import Descriptions from './Components/Descriptions/Descriptions';
-import Or from './Components/UI/Or';
+// import Or from './Components/UI/Or';
 import GeneratedCommand from './Components/Command/GeneratedCommand';
 
 // ANCHOR Images
