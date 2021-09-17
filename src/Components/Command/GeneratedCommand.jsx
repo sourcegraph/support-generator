@@ -1,9 +1,13 @@
+// ANCHOR External Modules
 import { useState, useEffect } from 'react';
 
+// ANCHOR Internal Modules
 import CopyBtn from '../UI/CopyBtn';
 import CopyURLBtn from '../UI/CopyURLBtn';
 
+// ANCHOR css
 import './GeneratedCommand.css';
+
 
 export default function GeneratedCommand({
     selectedDeployment,
@@ -22,6 +26,7 @@ export default function GeneratedCommand({
         setGeneratedURI("");
         setCommandCopied(false);
         setUrlCopied(true);
+
         const BASE_URL = (window.location.href).split("?")[0];
 
         const DEPLOYMENT_PARAM = selectedDeployment ? `?deployment=${encodeURIComponent(selectedDeployment)}` : "";
