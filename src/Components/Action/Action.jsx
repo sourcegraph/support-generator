@@ -30,7 +30,7 @@ export default function Action({
     return (
         <div className="actions-container">
 
-            {/* Docker Action Menu */}
+            {/* Docker Function Menu */}
             {selectedDeployment === "Docker" &&
                 <>
                     <Dropdown
@@ -53,14 +53,14 @@ export default function Action({
                                 placeholder={dockerMap[selectedAction]["option"]}
                                 value={option}
                                 onChange={(e) => setOption(e.target.value)}
-                                className="text-input"
+                                className={`text-input ${mode === 'dark' && 'dark'}`}
                             />
                         </div>
                     }
                 </>
             }
 
-            {/* Docker Compose Action Menu */}
+            {/* Docker Compose Function Menu */}
             {selectedDeployment === "Docker Compose" &&
                 <>
                     <Dropdown
@@ -84,14 +84,14 @@ export default function Action({
                                 placeholder={dockerComposeMap[selectedAction]["option"]}
                                 value={option}
                                 onChange={(e) => setOption(e.target.value)}
-                                className="text-input"
+                                className={`text-input ${mode === 'dark' && 'dark'}`}
                             />
                         </div>
                     }
                 </>
             }
 
-            {/* Kubernetes Menu */}
+            {/* Kubernetes Function Menu */}
             {selectedDeployment === "Kubernetes" &&
                 <>
                     <Dropdown
@@ -117,7 +117,7 @@ export default function Action({
                                 placeholder={kubernetesMap[selectedAction]["option"]}
                                 value={option}
                                 onChange={(e) => setOption(e.target.value)}
-                                className={`text-input ${mode === 'dark' ? 'dark' : 'light'}`}
+                                className={`text-input ${mode === 'dark' && 'dark'}`}
                             />
                         </div>
                     }

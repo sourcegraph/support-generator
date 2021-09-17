@@ -6,7 +6,6 @@
     max-width: 800px;
     min-width: 550px;
     margin: auto;
-    /* border: 1px solid black; */
 }
 
 .generated-command {
@@ -27,6 +26,21 @@
     color: #ffffff;
 }
 
+.copied-message.show {
+    color: #ED2E20;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-size: 1.0;
+    font-weight: light;
+    animation-name: fadeIn;
+    animation-duration: .4s;
+    text-align: left;
+    transition-duration: .4s;
+}
+
+.copied-message.dark {
+    color: var(--sg-mint);
+}
+
 .btns-container {
     width: 100%;
     max-width: 800px;
@@ -35,4 +49,21 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+}
+
+.btns {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 36%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

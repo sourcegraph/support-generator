@@ -2,7 +2,6 @@
     width: 100%;
     text-align: left;
     max-width: 325px;
-    /* border: 1px solid black; */
 }
 
 .deployment-type {
@@ -23,6 +22,23 @@
     min-width: fit-content;
 }
 
+.ns-check.dark {
+    background-color: var(--sg-bg-dark-3);
+    border: 1px solid var(--sg-dark-gray);
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+.ns-check.dark:checked:after {
+    content: '\2713';
+    font-size: 14px;
+    color: white;
+    position: relative;
+    top: -2.5px;
+}
+
 .dropdown-menu.dark {
     background-color: var(--sg-bg-dark-2);
     border: 1px solid var(--sg-dark-gray);
@@ -36,15 +52,11 @@
     font-family: "Source Code Pro", monospace;
     font-size: 1rem;
     color: rgb(47, 47, 47);
-    /* outline-style: solid; */
     outline-color: var(--sg-blurple);
-    /* padding: 5px; */
     padding-left: 8px;
     margin-top: 3px;
     height: 32px;
     width: 97%;
-    /* max-width: 300px;
-    min-width: 200px; */
 }
 
 .text-input.dark {

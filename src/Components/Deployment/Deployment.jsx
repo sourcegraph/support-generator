@@ -44,6 +44,7 @@ export default function Deployment({
                             <input
                                 type="checkbox"
                                 value={hasNamespace}
+                                className={`ns-check ${mode === "dark" && "dark"}`}
                                 onChange={() => setHasNamespace(!hasNamespace)}
                                 checked
                             />
@@ -51,6 +52,7 @@ export default function Deployment({
                             <input
                                 type="checkbox"
                                 value={hasNamespace}
+                                className={`ns-check ${mode === "dark" && "dark"}`}
                                 onChange={() => setHasNamespace(!hasNamespace)}
                             />
                         )}
