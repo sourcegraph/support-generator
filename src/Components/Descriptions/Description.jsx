@@ -59,7 +59,7 @@ export default function Description({
                     </div>
                     {currentInfoOpen === func &&
                         <div className={`command-info ${mode === 'dark' ? 'dark' : 'light'}`}>
-                            <ul className="description">
+                            <ul className={`description ${mode === 'dark' && 'dark'}`}>
                                 <li>
                                     {info.description}
                                 </li>

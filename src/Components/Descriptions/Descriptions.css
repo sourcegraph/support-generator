@@ -26,6 +26,9 @@
 .description {
     list-style: none;
     padding-right: 5px;
+}
+
+.description.dark {
     background-color: var(--sg-bg-dark-3);
 }
 
