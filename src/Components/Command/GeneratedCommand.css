@@ -27,12 +27,13 @@
     color: #ffffff;
 }
 
-.copied-message {
+.copied-message.show {
     color: #ED2E20;
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
     font-size: 1.0;
     font-weight: light;
-    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: .4s;
     text-align: left;
     transition-duration: .4s;
     /* border: 1px solid black; */
@@ -40,10 +41,6 @@
 
 .copied-message.dark {
     color: var(--sg-mint);
-}
-
-.copied-message.show {
-    opacity: 1;
 }
 
 .btns-container {
@@ -58,9 +55,19 @@
 }
 
 .btns {
-    /* border: 1px solid white; */
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     width: 36%;
+    /* border: 1px solid black; */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

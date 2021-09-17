@@ -49,7 +49,7 @@ export default function Descriptions({ selectedDeployment, mode }) {
                 </div>
             ) : (
                 <div className={`desc-list placeholder ${mode === 'dark' ? 'dark' : 'light'}`}>
-                    <p>Choose Deployment to list function descriptions.</p>
+                    <p>Choose Deployment type on the left to list function descriptions.</p>
                 </div>
             )}
         </div>

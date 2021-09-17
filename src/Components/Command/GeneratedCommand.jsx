@@ -18,16 +18,11 @@ export default function GeneratedCommand({
     const [commandCopied, setCommandCopied] = useState(false);
     const [urlCopied, setUrlCopied] = useState(false);
 
-    //FIXME need to change this so that url copies the first time you click it, not on the second time.
-
-    const generateURL = () => {
+    const copyURL = async () => {
+        setGeneratedURI("");
+        setCommandCopied(false);
+        setUrlCopied(true);
         const BASE_URL = (window.location.href).split("?")[0];
-
-        // if (generatedURI.length !== 0) {
-        //     setGeneratedURI("");
-        //     window.location.href = BASE_URL
-        //     return;
-        // }
 
         const DEPLOYMENT_PARAM = selectedDeployment ? `?deployment=${encodeURIComponent(selectedDeployment)}` : "";
         const ACTION_PARAM = selectedAction ? `&function=${encodeURIComponent(selectedAction)}` : "";
@@ -39,21 +34,21 @@ export default function GeneratedCommand({
             + NAMESPACE_PARAM
             + OPTION_PARAM;
 
-        setGeneratedURI(`${BASE_URL}${QUERY_STRING}`)
-        console.log(generatedURI);
+        navigator.clipboard.writeText(`${BASE_URL}${QUERY_STRING}`);
+        let content = await navigator.clipboard.readText();
+
+        if (content) {
+            setGeneratedURI(content);
+        } else {
+            console.log("Unable to copy this url.");
+        }
     }
 
     const copyCommand = () => {
         navigator.clipboard.writeText(command);
-        setCommandCopied(true);
         setUrlCopied(false);
-    }
+        setCommandCopied(true);
 
-    const copyUrl = () => {
-        generateURL();
-        navigator.clipboard.writeText(generatedURI)
-        setUrlCopied(true);
-        setCommandCopied(false);
     }
 
     useEffect(() => {
@@ -73,12 +68,7 @@ export default function GeneratedCommand({
                 setUrlCopied(false);
             }, 3000);
         }
-    }, [
-        commandCopied,
-        setCommandCopied,
-        urlCopied,
-        setUrlCopied
-    ]);
+    }, [commandCopied, setCommandCopied, urlCopied, setUrlCopied]);
 
     return (
         <div className="generated-command-container">
@@ -94,11 +84,21 @@ export default function GeneratedCommand({
                 )}
             </div>
             <div className="btns-container">
-                <p className={`copied-message ${(commandCopied || urlCopied) && "show"} ${mode === "dark" ? "dark" : "light"}`}>
-                    {urlCopied && <>URL copied to clipboard.</>}
-                    {commandCopied && <>Command copied to clipboard.</>}
-                </p>
-                <div className="btns">
+                {commandCopied && (
+                    <p className={`copied-message show ${mode === "dark" ? "dark" : "light"}`}>
+                        Command copied to clipboard.
+                    </p>
+                )}
+                {urlCopied && (
+                    <p className={`copied-message show ${mode === "dark" ? "dark" : "light"}`}>
+                        URL copied to clipboard.
+                    </p>
+                )}
+                {(!urlCopied && !commandCopied) && (
+                    <p className={`copied-message show ${mode === "dark" ? "dark" : "light"}`}>
+                    </p>
+                )}
+                <div className={`btns`}>
                     <CopyBtn
                         selectedAction={selectedAction}
                         copyCommand={copyCommand}
@@ -106,7 +106,7 @@ export default function GeneratedCommand({
                     />
                     <CopyURLBtn
                         selectedAction={selectedAction}
-                        copyUrl={copyUrl}
+                        copyURL={copyURL}
                         mode={mode}
                     />
                 </div>
