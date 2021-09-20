@@ -57,7 +57,9 @@ export default function Deployment({
                             />
                         )}
 
-                        <label className={`namespace-label ${mode === "dark" ? "dark" : "light"}`} name="namespace">I am using a namespace.</label>
+                        <label className={`namespace-label ${mode === "dark" ? "dark" : "light"}`} name="namespace">
+                            I am using a custom namespace.
+                        </label>
                     </div>
 
                     {hasNamespace &&
