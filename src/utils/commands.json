@@ -101,7 +101,7 @@
             "description": "Get a list of pods within the cluster and their health status."
         },
         "Describe Pod": {
-            "command": "kubectl describe",
+            "command": "kubectl describe pod",
             "option": "$POD",
             "description": "Display detailed information about the status of a single pod"
         },
