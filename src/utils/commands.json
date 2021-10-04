@@ -103,9 +103,8 @@
             "description": "This allows you to access codeintel database and run psql commands on a running container."
         },
         "Generate the database dumps": {
-            "command": "docker exec",
-            "option": "pgsql",
-            "command2": "sh -c 'pg_dump -C --username sg sg' > sourcegraph_db.out",
+            "command": "docker exec pgsql sh -c 'pg_dump -C --username sg sg' > sourcegraph_db.out",
+            "option": "",
             "description": "This allows you to generate the database dumps for the main database. Replace pgsql to codeintel-db for codeintel-db."
         }
     },
