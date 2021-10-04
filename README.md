@@ -22,4 +22,7 @@ In the project directory, you can run:
 1. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 1. App will reload if you make edits. You will also see any lint errors in the console.
 
+## Deployment
+1. Runs `npm run deploy` to deploy.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
