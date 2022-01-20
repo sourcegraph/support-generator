@@ -41,12 +41,23 @@
         "Kill Container": {
             "command": "docker kill",
             "option": "$CONTAINER",
-            "description": "Kill one or more containers."
+            "description": "Kill one or more running containers (SIGKILL)"
+        },
+        "Stop Container" : {
+            "command": "docker stop",
+            "option": "$CONTAINER",
+            "description": "Stop one or more running containers (SIGTERM)"
+            
+        },
+        "Start Container": {
+            "command": "docker start",
+            "option": "$CONTAINER",
+            "description": "Start a container."
         },
         "Restart Container": {
             "command": "docker restart",
             "option": "$CONTAINER",
-            "description": "Restart one or more containers."
+            "description": "Stop and start a container in one command."
         },
         "Run Interactive Shell": {
             "command": "docker exec -it",
