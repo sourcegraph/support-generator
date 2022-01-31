@@ -173,7 +173,7 @@
         "Run Interactive Shell": {
             "command": "kubectl exec -it",
             "option": "$POD",
-            "command2": " sh",
+            "command2": " -- sh",
             "description": "This allows you to execute an interactive shell on a Pod."
         },
         "Check Dirty Database": {
