@@ -38,6 +38,12 @@
             "command2": "bash",
             "description": "This allows you to execute an interactive bash shell on a running container."
         },
+        "Access pgsql database": {
+            "command": "docker container exec -it",
+            "option": "$CONTAINER",
+            "command2": "psql -U postgres sourcegraph",
+            "description": "This allows you to access the main database and run psql commands on a running container."
+        },
         "Kill Container": {
             "command": "docker kill",
             "option": "$CONTAINER",
