@@ -25,7 +25,7 @@ You may add more commands to the Command Generator by modifying our [commands.JS
             "description": "Get the logs/pods or something from a container." // REQUIRED: Short description of what the command does
         },
 ```
-3. Visually confirm and test edits by running locally in Development.
+3. Visually confirm and test edits by running the [deployment steps.](#deployment)
 
 ## Development
 
