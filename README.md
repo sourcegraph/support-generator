@@ -12,7 +12,20 @@
 
 ## Add Commands
 
-You may add more commands to the Command Generator by modifying our [commands.JSON file](https://github.com/sourcegraph/support-generator/blob/master/src/utils/commands.json).
+You may add more commands to the Command Generator by modifying our [commands.JSON file](https://github.com/sourcegraph/support-generator/blob/master/src/utils/commands.json), and following the format below:
+
+1. Find the appropriate section for the new command addition, or create one if it does not exist. For example, if it's a Kubernetes command, find where the code starts at `"Kubernetes":`
+2. Add Json in the format of the following example:
+
+```
+        "My new command": {     // REQUIRED: short name for the command
+            "command": "deployment do something",     // REQUIRED: the beginning part of the command
+            "option": "$SOME_COMMAND_VARIABLE",     // REQUIRED: Add either a command variable like $POD or $CONTAINER or "" for null
+            "command2": "the rest of the command",     // OPTIONAL: Add this if there is more to the command after the option variable
+            "description": "Get the logs/pods or something from a container." // REQUIRED: Short description of what the command does
+        },
+```
+3. Visually confirm and test edits by running locally in Development.
 
 ## Development
 
