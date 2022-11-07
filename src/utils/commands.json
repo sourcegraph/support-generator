@@ -184,23 +184,17 @@
             "command2": " -- sh",
             "description": "This allows you to execute an interactive shell on a Pod."
         },
-        "Check Dirty Database": {
-            "command": "kubectl exec",
-            "option": "$PGSQL_POD",
-            "command2": "-- psql -U sg -c 'SELECT * FROM schema_migrations'",
-            "description": "Get inside the PGSQL Pod to check for dirty database."
+        "Exec into frontend or codeintel database": {
+            "command": "kubectl exec -it",
+            "option": "$DB_NAME", 
+            "command2": "-- psql -U sg",
+            "description": "Access the postgres shell for the frontend or code intel databases."
         },
-        "Generate Postgres Database Dump": {
-            "command": "kubectl exec -it -- bash",
-            "option": "$PGSQL_POD",
-            "command2": "-c 'pg_dump -C -U sg' > sourcegraph_db.out",
-            "description": "This allows you to generate a database dump for Postgres."
-        },
-        "Generate Code Intel Database Dump": {
-            "command": "kubectl exec -it -- bash",
-            "option": "$CODEINTEL_POD",
-            "command2": "-c 'pg_dump -C -U sg' > codeintel_db.out",
-            "description": "This allows you to generate a database dump for the Code Intel service."
+        "Exec into code insights database": {
+            "command": "kubectl exec -it",
+            "option": "$DB_NAME", 
+            "command2": "-- psql -U sg",
+            "description": "Access the postgres shell for the code insights databases."
         },
         "Stop existing deployment": {
             "command": "kubectl scale --replicas=0 deployment/sourcegraph-frontend",

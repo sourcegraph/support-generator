@@ -53,7 +53,6 @@ export default function GeneratedCommand({
         navigator.clipboard.writeText(command);
         setUrlCopied(false);
         setCommandCopied(true);
-
     }
 
     useEffect(() => {
