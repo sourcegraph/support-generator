@@ -79,48 +79,50 @@
             "description": "Default option"
         },
         "Get Logs": {
-            "command": "docker-compose logs",
+            "command": "docker compose logs",
             "option": "$CONTAINER",
             "description": "Get the logs of a container."
         },
         "List Containers": {
-            "command": "docker-compose ps -a",
+            "command": "docker compose ps -a",
             "option": "",
             "description": "Get a list of containers."
         },
         "Kill Containers": {
-            "command": "docker-compose kill",
+            "command": "docker compose kill",
             "option": "",
             "description": "Get a list of containers."
         },
         "Start Sourcegraph": {
-            "command": "docker-compose up -d",
+            "command": "docker compose up -d",
             "option": "",
             "description": "Builds, (re)creates, starts, and attaches to containers for Sourcegraph. `-d` flag starts the container in the detached mode where the container runs in the background."
         },
         "Shutdown Sourcegraph": {
-            "command": "docker-compose down",
+            "command": "docker compose down",
             "option": "",
             "description": "Stops containers and removes containers, networks, volumes, and images created by docker up."
         },
         "Run Bash Shell": {
-            "command": "docker-compose exec -it",
+            "command": "docker compose exec -it",
             "option": "$CONTAINER",
             "command2": "bash",
             "description": "This allows you to execute an interactive bash shell on a running container."
         },
-        "Access pgsql database": {
-            "command": "docker exec -it pgsql psql -U sg",
-            "option": "",
-            "description": "This allows you to access the main database and run psql commands on a running container."
-        },
-        "Access codeintel database": {
-            "command": "docker exec -it codeintel-db psql -U sg",
-            "option": "",
-            "description": "This allows you to access codeintel database and run psql commands on a running container."
+        "Access frontend or codeintel DB postgres shell": {
+            "command": "docker compose exec -it",
+            "option": "$CONTAINER", 
+            "command2": "psql -U sg",
+            "description": "Access the postgres shell for the frontend or code-intel databases."
+        }, 
+        "Access Codeinsights DB postgres shell": {
+            "command": "docker compose exec -it",
+            "option": "$CONTAINER", 
+            "command2": "psql -U postgres",
+            "description": "Access the postgres shell for the code insights database" 
         },
         "Generate the database dumps": {
-            "command": "docker exec pgsql sh -c 'pg_dump -C --username sg sg' > sourcegraph_db.out",
+            "command": "docker compose exec pgsql sh -c 'pg_dump -C --username sg sg' > sourcegraph_db.out",
             "option": "",
             "description": "This allows you to generate the database dumps for the main database. Replace pgsql to codeintel-db for codeintel-db."
         }
@@ -182,23 +184,17 @@
             "command2": " -- sh",
             "description": "This allows you to execute an interactive shell on a Pod."
         },
-        "Check Dirty Database": {
-            "command": "kubectl exec",
-            "option": "$PGSQL_POD",
-            "command2": "-- psql -U sg -c 'SELECT * FROM schema_migrations'",
-            "description": "Get inside the PGSQL Pod to check for dirty database."
+        "Exec into frontend or codeintel database": {
+            "command": "kubectl exec -it",
+            "option": "$DB_NAME", 
+            "command2": "-- psql -U sg",
+            "description": "Access the postgres shell for the frontend or code intel databases."
         },
-        "Generate Postgres Database Dump": {
-            "command": "kubectl exec -it -- bash",
-            "option": "$PGSQL_POD",
-            "command2": "-c 'pg_dump -C -U sg' > sourcegraph_db.out",
-            "description": "This allows you to generate a database dump for Postgres."
-        },
-        "Generate Code Intel Database Dump": {
-            "command": "kubectl exec -it -- bash",
-            "option": "$CODEINTEL_POD",
-            "command2": "-c 'pg_dump -C -U sg' > codeintel_db.out",
-            "description": "This allows you to generate a database dump for the Code Intel service."
+        "Exec into code insights database": {
+            "command": "kubectl exec -it",
+            "option": "$DB_NAME", 
+            "command2": "-- psql -U sg",
+            "description": "Access the postgres shell for the code insights databases."
         },
         "Stop existing deployment": {
             "command": "kubectl scale --replicas=0 deployment/sourcegraph-frontend",
