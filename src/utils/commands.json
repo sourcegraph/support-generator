@@ -210,6 +210,11 @@
             "command":"kubectl get storage class",
             "option": "",
             "description":"This allows you to check the existence of a storage class and it's name."
+        },
+        "List container images": {
+            "command":"kubectl get pods -o jsonpath='{.items[*].spec.containers[*].image}'",
+            "option": "",
+            "description":"List the container images running in the cluster."
         }
     }
 }
