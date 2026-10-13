@@ -1,41 +1,32 @@
-# Command Generator
+# Support Generator — publishing repository
 
-[The Command Generator](https://sourcegraph.github.io/support-generator/) is a simple web app that can be used to generate the most frequently used commands for different deployment type when running Sourcegraph.
+The public address remains **https://sourcegraph.github.io/support-generator/**.
+Existing bookmarks continue to use this repository's GitHub Pages site.
 
-## Features
-- Generate commands based on selected deployment type, currently supports Docker, Docker Compose, K8s
-- Add/update namespace for K8s commands
-- Add/update name of pod for K8s commands
-- Add/update name of container for Docker commands
-- WIP: sharable links
+## Development has moved
 
+Source, tests, build configuration, and publishing instructions now live in
+**[sourcegraph/support → cmd/support-generator](https://github.com/sourcegraph/support/tree/main/cmd/support-generator)**.
+Make all new changes there. See its [README](https://github.com/sourcegraph/support/blob/main/cmd/support-generator/README.md)
+for local development, command verification, publishing, and rollback.
 
-## Add Commands
+The source files remaining on this branch are historical, not the current app.
+Do not use this repository's old `npm run deploy`: it would replace the current
+site with the legacy build. Publish from the monorepo instead.
 
-You may add more commands to the Command Generator by modifying our [commands.JSON file](https://github.com/sourcegraph/support-generator/blob/master/src/utils/commands.json), and following the format below:
+## Hosting and preserved history
 
-1. Find the appropriate section for the new command addition, or create one if it does not exist. For example, if it's a Kubernetes command, find where the code starts at `"Kubernetes":`
-2. Add Json in the format of the following example:
+- `gh-pages` remains the GitHub Pages source, at `/`. It receives built files
+  through ordinary fast-forward commits from the monorepo's publishing script.
+- The deployed `source-revision.txt` identifies the monorepo commit used to build
+  the site. No source development or cross-repository CI secret is needed here.
+- All original branches and Git history remain intact. Do not archive or delete
+  this repository: it is still the hosting destination for the existing address.
+- [`pre-monorepo-source`](https://github.com/sourcegraph/support-generator/tree/pre-monorepo-source)
+  preserves the original source snapshot and its history.
+- [`pre-monorepo-pages`](https://github.com/sourcegraph/support-generator/tree/pre-monorepo-pages)
+  preserves the old deployed site, verified byte-for-byte before migration.
+  [Download the old site ZIP](https://github.com/sourcegraph/support-generator/archive/refs/tags/pre-monorepo-pages.zip).
 
-```
-        "My new command": {     // REQUIRED: short name for the command
-            "command": "deployment do something",     // REQUIRED: the beginning part of the command
-            "option": "$SOME_COMMAND_VARIABLE",     // REQUIRED: Add either a command variable like $POD or $CONTAINER or "" for null
-            "command2": "the rest of the command",     // OPTIONAL: Add this if there is more to the command after the option variable
-            "description": "Get the logs/pods or something from a container." // REQUIRED: Short description of what the command does
-        },
-```
-3. Visually confirm and test edits by running the [deployment steps.](#deployment)
-
-## Development
-
-In the project directory, you can run:
-
-1. Runs the app in the development mode using `npm install && npm run start`
-1. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-1. App will reload if you make edits. You will also see any lint errors in the console.
-
-## Deployment
-1. Runs `npm run deploy` to deploy.
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The [monorepo rollback instructions](https://github.com/sourcegraph/support/blob/main/cmd/support-generator/README.md#publishing-and-rollback)
+restore a previous site with a new commit, without rewriting deployment history.
