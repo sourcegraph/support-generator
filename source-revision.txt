@@ -1,1 +1,1 @@
-https://github.com/sourcegraph/support/commit/c4659f25812d32f43ea3da23936e176c856f3de7
+https://github.com/sourcegraph/support/commit/b8e466a6e55b969206fd8dfc6bb9905e847540f1
